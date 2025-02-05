@@ -6,9 +6,9 @@ namespace KalandJatek
 {
     public partial class Form2 : Form
     {
-        private Button eletero;
-        private Button szerencse;
-        private Button ugyesseg;
+        private Button v1;
+        private Button v2;
+        private Button v3;
         private PictureBox potionselect;
 
         public Form2()
@@ -24,7 +24,7 @@ namespace KalandJatek
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            eletero = new Button
+            v1 = new Button
             {
                 Text = "Kiválasztás",
                 Size = new Size(140, 75),
@@ -34,34 +34,34 @@ namespace KalandJatek
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
             };
-            eletero.Click += First_Click;
-            Controls.Add(eletero);
+            v1.Click += First_Click;
+            Controls.Add(v1);
 
-            szerencse = new Button
-            {
-                Text = "Kiválasztás",
-                Size = new Size(150, 75),
-                Location = new Point(975, 850),
-                Font = new Font("Arial", 12, FontStyle.Bold),
-                BackColor = ColorTranslator.FromHtml("#a17e51"),
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup
-            };
-            szerencse.Click += Second_Click;
-            Controls.Add(szerencse);
-
-            ugyesseg = new Button
+            v2 = new Button
             {
                 Text = "Kiválasztás",
                 Size = new Size(140, 75),
-                Location = new Point(1150, 850),
+                Location = new Point(960, 850),
                 Font = new Font("Arial", 12, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
             };
-            ugyesseg.Click += Third_Click;
-            Controls.Add(ugyesseg);
+            v2.Click += Second_Click;
+            Controls.Add(v2);
+
+            v3 = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(160, 75),
+                Location = new Point(1110, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            v3.Click += Third_Click;
+            Controls.Add(v3);
 
             potionselect = new PictureBox()
             {
@@ -77,27 +77,15 @@ namespace KalandJatek
 
         private void First_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Kiválasztás Megvalositva!\n"+"Választásod: Életerő ital!");
-            potionselect.Visible = false;
-            eletero.Visible = false;
-            szerencse.Visible = false;
-            ugyesseg.Visible = false;
+
         }
         private void Second_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Kiválasztás Megvalositva!\n" + "Választásod: Szerencse ital!");
-            potionselect.Visible = false;
-            eletero.Visible = false;
-            szerencse.Visible = false;
-            ugyesseg.Visible = false;
+
         }
         private void Third_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Kiválasztás Megvalositva!\n" + "Választásod: Ügyesség ital!");
-            potionselect.Visible = false;
-            eletero.Visible = false;
-            szerencse.Visible = false;
-            ugyesseg.Visible = false;
+
         }
     }
 }

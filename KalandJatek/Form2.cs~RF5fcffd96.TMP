@@ -1,0 +1,37 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace KalandJatek
+{
+    public partial class Form2 : Form
+    {
+        /*private Button v1;
+        private Button v2;
+        private Button v3;*/
+        private PictureBox potionselect;
+
+        public Form2()
+        {
+            this.MaximizeBox = false;
+            this.MinimizeBox = true;
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            Image myimage = new Bitmap("main.png");
+            this.BackgroundImage = myimage;
+        }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            potionselect = new PictureBox()
+            {
+                Image = Image.FromFile("Italvalasztas.png"),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Size = new Size(100, 500),
+                Location = new Point(1000, 600)
+            };
+            Controls.Add(potionselect);
+
+
+        }
+    }
+}
