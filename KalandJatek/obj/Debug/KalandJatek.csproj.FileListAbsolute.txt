@@ -8,3 +8,13 @@ C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJate
 C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.csproj.CoreCompileInputs.cache
 C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.exe
 C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.pdb
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\bin\Debug\KalandJatek.exe.config
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\bin\Debug\KalandJatek.exe
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\bin\Debug\KalandJatek.pdb
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\obj\Debug\KalandJatek.csproj.AssemblyReference.cache
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\obj\Debug\KalandJatek.Form1.resources
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\obj\Debug\KalandJatek.Properties.Resources.resources
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\obj\Debug\KalandJatek.csproj.GenerateResource.cache
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\obj\Debug\KalandJatek.csproj.CoreCompileInputs.cache
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\obj\Debug\KalandJatek.exe
+C:\Users\markm\Documents\GitHub\Szimulacio\KalandJatek\obj\Debug\KalandJatek.pdb

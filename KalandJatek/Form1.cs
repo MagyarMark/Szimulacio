@@ -14,6 +14,7 @@ namespace KalandJatek
     {
         private Button Exit;
         private Button Start;
+        private Label Kszöveg;
         public Form1()
         {
             InitializeComponent();
@@ -51,6 +52,17 @@ namespace KalandJatek
             };
             Start.Click += Start_Click;
             Controls.Add(Start);
+
+            Kszöveg = new Label
+            {
+                Text = "Kalandjáték",
+                Size = new Size(300, 50),
+                Location = new Point(700, 100),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            Controls.Add(Kszöveg);
         }
 
         private void exit_Click(object sender, EventArgs e)
