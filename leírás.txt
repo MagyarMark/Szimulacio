@@ -1,0 +1,7 @@
+Adat, algoritmus, adat -> 02.13(Csütörtök), (kinézet,input output,algoritmus)
+program leírás(folyamat ábra) -> 02.20(Csütörtök)
+kód, dokumentáció -> 03.07(Péntek)
+03.14(-1 jegy)
+
+jegyek:
+-

@@ -1,0 +1,10 @@
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\bin\Debug\KalandJatek.exe.config
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\bin\Debug\KalandJatek.exe
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\bin\Debug\KalandJatek.pdb
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.csproj.AssemblyReference.cache
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.Form1.resources
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.Properties.Resources.resources
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.csproj.GenerateResource.cache
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.csproj.CoreCompileInputs.cache
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.exe
+C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\KalandJatek\obj\Debug\KalandJatek.pdb
