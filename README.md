@@ -1,1 +1,1 @@
-# Szimul-ci-
+# Szimuláció
