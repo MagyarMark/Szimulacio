@@ -18,8 +18,6 @@ namespace KalandJatek
         {
             InitializeComponent();
 
-            this.MaximizeBox = false;
-            this.MinimizeBox = true;
             this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             Image myimage = new Bitmap("hatter2.png");
@@ -44,12 +42,11 @@ namespace KalandJatek
             {
                 Text = "Indulás!",
                 Size = new Size(100, 50),
-                Location = new Point(950, 600),
+                Location = new Point(900, 600),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
             };
-            Start.Click += Start_Click;
             Controls.Add(Start);
         }
 
