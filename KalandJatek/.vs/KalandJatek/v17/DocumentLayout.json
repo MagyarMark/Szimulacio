@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\",
+  "WorkspaceRootPath": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|c:\\users\\magyarmark\\documents\\github\\szimulacio\\kalandjatek\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|c:\\users\\markm\\documents\\github\\szimulacio\\kalandjatek\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9951DE04-F44B-4234-B878-7594C7744C70}|KalandJatek.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,25 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form2.cs",
+              "DocumentMoniker": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form2.cs",
               "RelativeDocumentMoniker": "Form2.cs",
-              "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form2.cs",
+              "ToolTip": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form2.cs",
               "RelativeToolTip": "Form2.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAA9wF8AAAA2AAAA",
+              "ViewState": "AQIAAMMFAAAAAAAAAAAiwNMFAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T11:23:01Z",
               "EditorCaption": ""
@@ -53,9 +45,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.Designer.cs",
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -66,11 +58,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.cs",
+              "ToolTip": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAQwDwAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T10:20:36.751Z",
               "EditorCaption": ""
@@ -79,9 +71,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T10:20:01.735Z",

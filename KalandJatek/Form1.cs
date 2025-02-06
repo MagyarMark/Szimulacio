@@ -24,6 +24,7 @@ namespace KalandJatek
 
             this.MaximizeBox = false;
             this.MinimizeBox = true;
+            this.Icon = new Icon("favicon.ico");
             this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             Image myimage = new Bitmap("hatter2.png");
