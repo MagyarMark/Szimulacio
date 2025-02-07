@@ -319,7 +319,6 @@ namespace KalandJatek
             {
                 Label lbl = new Label();
                 lbl.Size = new Size(600, 250);
-                lbl.Text = "#1\nBelöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. Lapozz a 41-re.";
                 lbl.Location = new Point(750, 600);
                 lbl.Font = new Font("Arial", 12, FontStyle.Bold);
                 lbl.BackColor = ColorTranslator.FromHtml("#a17e51");
@@ -328,6 +327,10 @@ namespace KalandJatek
                 SzovegList.Add(lbl);
                 Controls.Add(lbl);
             }
+
+            SzovegList[0].Text = "#1\nBelöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. Lapozz a 41-re.";
+            SzovegList[1].Text = "#2\nA vízbe ugrasz, az áramlat azonban nagyon eros. Megpróbálsz a felszínen maradni, de ez nem könnyű. Lapozz a 148-ra.";
+            SzovegList[2].Text = "#3\nAhogy óvatosan a drótok között lépkedve eléred a Szobrot, az hirtelen eltünik! A következő pillanatban vészjósló morajlás hangzik fel a fejed fölött, és ahogy arra nézel, látod, hogy hatalmas szikladarabok kezdenek feléd zuhanni. A hatalmas súly porrá örli csontjaidat. Kalandod itt véget ér.";
 
             potionselect = new PictureBox()
             {
@@ -1521,33 +1524,18 @@ namespace KalandJatek
             }
         }
 
-        private int currentIndex = 0;
-
         private void Tovabb_Click(object sender, EventArgs e)
         {
-            switch (currentIndex)
-            {
-                case 0:
-                    tovabb.Text = SzamGombListegesz[41].Text = "Harc";
-                    SzovegList[0].Visible = false;
-                    SzovegList[1].Visible = true;
-                    SzovegList[1].Text = "#41\nAz alagút, bár folyamatosan jobbra-balra kanyarog, nagyjából mégis tartja az északi irányt, végül élesen oldalra kanyarodik, és ekkor majdnem belefutsz egy fekete köpenybe öltözött alakba. Tört tart a kezében, az arcán ülő tekintet rettegésről árulkodik! Rájössz, hogy nem te vagy az egyetlen, akit most próbára tesznek, és hogy mindketten ugyanazon Szobor után kutattok. A fickó rád veti magát, nyilvánvaló, hogy mielőbb végezni akar veled. Harcolnod kell!";
-                    currentIndex++;
-                    break;
-                case 1:
-                    tovabb.Visible = false;
-                    SzovegList[1].Visible = false;
-                    /*tovabb.Text = "Tovább";
-                    SzovegList[1].Visible = false;
-                    SzovegList[2].Visible = true;
-                    SzovegList[2].Text = "#3\nAhogy óvatosan a drótok között lépkedve eléred a Szobrot, az hirtelen eltünik! A következő pillanatban vészjósló morajlás hangzik fel a fejed fölött, és ahogy arra nézel, látod, hogy hatalmas szikladarabok kezdenek feléd zuhanni. A hatalmas súly porrá örli csontjaidat. Kalandod itt véget ér.";
-                    */currentIndex++;
-                    break;
-                default:
-                    MessageBox.Show("A játékod itt véget ért!", "Vesztettél!", MessageBoxButtons.OK);
-                    //this.BackgroundImage = new Bitmap("gamover.png");
-                    break;
-            }
+            SzamGombListegesz[148].Text = "";
+            SzovegList[0].Visible= false;
+            SzovegList[1].Visible= true;
+            SzovegList[1].Text = "#2\nA vízbe ugrasz, az áramlat azonban nagyon eros. Megpróbálsz a felszínen maradni, de ez nem könnyű. Lapozz a 148-ra.";
+            SzamGombListegesz.Clear();
+
+            SzamGombListegesz[2].Text = "";
+            SzovegList[1].Visible = false;
+            SzovegList[2].Visible = true;
+            SzovegList[2].Text = "";
         }
     }
 }
