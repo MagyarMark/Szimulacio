@@ -15,7 +15,6 @@ namespace KalandJatek
         private Button inventory;
         private List<string> invlist = new List<string>();
         private List<Label> SzovegList = new List<Label>();
-        private List<Button> SzamGombList = new List<Button>();
        /* private Label sz1;
         private Label sz2;
         private Label sz3;
@@ -287,7 +286,7 @@ namespace KalandJatek
 
             tovabb = new Button
             {
-                Text = "41",
+                Text = "Tovább",
                 Size = new Size(600, 75),
                 Location = new Point(750, 850),
                 Font = new Font("Arial", 12, FontStyle.Bold),
@@ -299,23 +298,12 @@ namespace KalandJatek
             tovabb.Click += Tovabb_Click;
             Controls.Add(tovabb);
 
-            for (int i = 0; i < 200; i++)
-            {
-                Button btn = new Button();
-                btn.Size = new Size(600, 250);
-                btn.Text = i.ToString();
-                btn.Location = new Point(750, 600);
-                btn.Font = new Font("Arial", 12, FontStyle.Bold);
-                btn.BackColor = ColorTranslator.FromHtml("#a17e51");
-                btn.ForeColor = Color.White;
-                btn.Visible = false;
-                SzamGombList.Add(btn);
-                Controls.Add(btn);
-            }
+            
 
             for (int i = 0; i < 200; i++)
             {
                 Label lbl = new Label();
+                lbl.Text = $"#{i + 1}";
                 lbl.Size = new Size(600, 250);
                 lbl.Location = new Point(750, 600);
                 lbl.Font = new Font("Arial", 12, FontStyle.Bold);
@@ -330,7 +318,7 @@ namespace KalandJatek
             SzovegList[1].Text = "#2\nA vízbe ugrasz, az áramlat azonban nagyon eros. Megpróbálsz a felszínen maradni, de ez nem könnyű. Lapozz a 148-ra.";
             SzovegList[2].Text = "#3\nAhogy óvatosan a drótok között lépkedve eléred a Szobrot, az hirtelen eltünik! A következő pillanatban vészjósló morajlás hangzik fel a fejed fölött, és ahogy arra nézel, látod, hogy hatalmas szikladarabok kezdenek feléd zuhanni. A hatalmas súly porrá örli csontjaidat. Kalandod itt véget ér.";
 
-            potionselect = new PictureBox()
+        potionselect = new PictureBox()
             {
                 Image = Image.FromFile("Italvalasztas.png"),
                 SizeMode = PictureBoxSizeMode.StretchImage,
@@ -1484,8 +1472,8 @@ namespace KalandJatek
             eletero.Visible = false;
             szerencse.Visible = false;
             ugyesseg.Visible = false;
-            inventory.Visible = true; 
-            SzovegList[0].Visible = true;
+            inventory.Visible = true;
+            //sz1.Visible = true;
             tovabb.Visible = true;
         }
         private void Second_Click(object sender, EventArgs e)
@@ -1496,8 +1484,8 @@ namespace KalandJatek
             eletero.Visible = false;
             szerencse.Visible = false;
             ugyesseg.Visible = false;
-            inventory.Visible = true; 
-            SzovegList[0].Visible = true;
+            inventory.Visible = true;
+            //sz1.Visible = true;
             tovabb.Visible = true;
         }
         private void Third_Click(object sender, EventArgs e)
@@ -1509,7 +1497,7 @@ namespace KalandJatek
             szerencse.Visible = false;
             ugyesseg.Visible = false;
             inventory.Visible = true;
-            SzovegList[0].Visible = true;
+            //sz1.Visible = true;
             tovabb.Visible = true;
         }
 
@@ -1524,10 +1512,8 @@ namespace KalandJatek
 
         private void Tovabb_Click(object sender, EventArgs e)
         {
-            tovabb.Text = SzamGombList[148].Text;
-            SzovegList[0].Visible= false;
-            SzovegList[1].Visible= true;
-            SzovegList[1].Text = "#2\nA vízbe ugrasz, az áramlat azonban nagyon eros. Megpróbálsz a felszínen maradni, de ez nem könnyű. Lapozz a 148-ra.";
+            SzovegList[0].Text = "#1\nBelöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. Lapozz a 41-re.";
+
         }
     }
 }
