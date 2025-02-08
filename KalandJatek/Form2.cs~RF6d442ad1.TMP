@@ -28,11 +28,213 @@ namespace KalandJatek
         private Button ugyesseg;
         private Button tovabb;
         private Button inventory;
-        private Label italok;
         private List<string> invlist = new List<string>();
         private List<Label> SzovegList = new List<Label>();
         private List<Button> SzamGombListegesz = new List<Button>();
+        private List<Button> SzamGombListelso = new List<Button>();
+        private List<Button> SzamGombListmasodik = new List<Button>();
         private PlayerStats playerStats = new PlayerStats();
+        /* private Label sz1;
+         private Label sz2;
+         private Label sz3;
+         private Label sz4;
+         private Label sz5;
+         private Label sz6;
+         private Label sz7;
+         private Label sz8;
+         private Label sz9;
+         private Label sz10;
+         private Label sz11;
+         private Label sz12;
+         private Label sz13;
+         private Label sz14;
+         private Label sz15;
+         private Label sz16;
+         private Label sz17;
+         private Label sz18;
+         private Label sz19;
+         private Label sz20;
+         private Label sz21;
+         private Label sz22;
+         private Label sz23;
+         private Label sz24;
+         private Label sz25;
+         private Label sz26;
+         private Label sz27;
+         private Label sz28;
+         private Label sz29;
+         private Label sz30;
+         private Label sz31;
+         private Label sz32;
+         private Label sz33;
+         private Label sz34;
+         private Label sz35;
+         private Label sz36;
+         private Label sz37;
+         private Label sz38;
+         private Label sz39;
+         private Label sz40;
+         private Label sz41;
+         private Label sz42;
+         private Label sz43;
+         private Label sz44;
+         private Label sz45;
+         private Label sz46;
+         private Label sz47;
+         private Label sz48;
+         private Label sz49;
+         private Label sz50;
+         private Label sz51;
+         private Label sz52;
+         private Label sz53;
+         private Label sz54;
+         private Label sz55;
+         private Label sz56;
+         private Label sz57;
+         private Label sz58;
+         private Label sz59;
+         private Label sz60;
+         private Label sz61;
+         private Label sz62;
+         private Label sz63;
+         private Label sz64;
+         private Label sz65;
+         private Label sz66;
+         private Label sz67;
+         private Label sz68;
+         private Label sz69;
+         private Label sz70;
+         private Label sz71;
+         private Label sz72;
+         private Label sz73;
+         private Label sz74;
+         private Label sz75;
+         private Label sz76;
+         private Label sz77;
+         private Label sz78;
+         private Label sz79;
+         private Label sz80;
+         private Label sz81;
+         private Label sz82;
+         private Label sz83;
+         private Label sz84;
+         private Label sz85;
+         private Label sz86;
+         private Label sz87;
+         private Label sz88;
+         private Label sz89;
+         private Label sz90;
+         private Label sz91;
+         private Label sz92;
+         private Label sz93;
+         private Label sz94;
+         private Label sz95;
+         private Label sz96;
+         private Label sz97;
+         private Label sz98;
+         private Label sz99;
+         private Label sz100;
+         private Label sz101;
+         private Label sz102;
+         private Label sz103;
+         private Label sz104;
+         private Label sz105;
+         private Label sz106;
+         private Label sz107;
+         private Label sz108;
+         private Label sz109;
+         private Label sz110;
+         private Label sz111;
+         private Label sz112;
+         private Label sz113;
+         private Label sz114;
+         private Label sz115;
+         private Label sz116;
+         private Label sz117;
+         private Label sz118;
+         private Label sz119;
+         private Label sz120;
+         private Label sz121;
+         private Label sz122;
+         private Label sz123;
+         private Label sz124;
+         private Label sz125;
+         private Label sz126;
+         private Label sz127;
+         private Label sz128;
+         private Label sz129;
+         private Label sz130;
+         private Label sz131;
+         private Label sz132;
+         private Label sz133;
+         private Label sz134;
+         private Label sz135;
+         private Label sz136;
+         private Label sz137;
+         private Label sz138;
+         private Label sz139;
+         private Label sz140;
+         private Label sz141;
+         private Label sz142;
+         private Label sz143;
+         private Label sz144;
+         private Label sz145;
+         private Label sz146;
+         private Label sz147;
+         private Label sz148;
+         private Label sz149;
+         private Label sz150;
+         private Label sz151;
+         private Label sz152;
+         private Label sz153;
+         private Label sz154;
+         private Label sz155;
+         private Label sz156;
+         private Label sz157;
+         private Label sz158;
+         private Label sz159;
+         private Label sz160;
+         private Label sz161;
+         private Label sz162;
+         private Label sz163;
+         private Label sz164;
+         private Label sz165;
+         private Label sz166;
+         private Label sz167;
+         private Label sz168;
+         private Label sz169;
+         private Label sz170;
+         private Label sz171;
+         private Label sz172;
+         private Label sz173;
+         private Label sz174;
+         private Label sz175;
+         private Label sz176;
+         private Label sz177;
+         private Label sz178;
+         private Label sz179;
+         private Label sz180;
+         private Label sz181;
+         private Label sz182;
+         private Label sz183;
+         private Label sz184;
+         private Label sz185;
+         private Label sz186;
+         private Label sz187;
+         private Label sz188;
+         private Label sz189;
+         private Label sz190;
+         private Label sz191;
+         private Label sz192;
+         private Label sz193;
+         private Label sz194;
+         private Label sz195;
+         private Label sz196;
+         private Label sz197;
+         private Label sz198;
+         private Label sz199;
+         private Label sz200;*/
+
 
         public Form2()
         {
@@ -43,9 +245,8 @@ namespace KalandJatek
             this.Icon = new Icon("favicon.ico");
             this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-            Image myimage = new Bitmap("bg.png");
+            Image myimage = new Bitmap("main.png");
             this.BackgroundImage = myimage;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -92,7 +293,7 @@ namespace KalandJatek
             {
                 Text = "Zsákmány",
                 Size = new Size(140, 75),
-                Location = new Point(150, 850),
+                Location = new Point(50, 850),
                 Font = new Font("Arial", 12, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
@@ -102,22 +303,9 @@ namespace KalandJatek
             inventory.Click += Pot_Click;
             Controls.Add(inventory);
 
-            italok = new Label
-            {
-                Text = "Italok:",
-                Size = new Size(160, 160),
-                Location = new Point(50, 50),
-                Font = new Font("Arial", 16),
-                BackColor = Color.Transparent,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup,
-                Visible = false
-            };
-            Controls.Add(italok);
-
             tovabb = new Button
             {
-                Text = "Tovább",
+                Text = "41",
                 Size = new Size(600, 75),
                 Location = new Point(750, 850),
                 Font = new Font("Arial", 12, FontStyle.Bold),
@@ -178,10 +366,6 @@ namespace KalandJatek
             inventory.Visible = true;
             SzovegList[0].Visible = true;
             tovabb.Visible = true;
-            italok.Visible = true;
-            Image myimage = new Bitmap("hp.png");
-            italok.Image = myimage;
-            italok.ImageAlign = ContentAlignment.TopLeft;
         }
         private void Second_Click(object sender, EventArgs e)
         {
@@ -194,10 +378,6 @@ namespace KalandJatek
             inventory.Visible = true;
             SzovegList[0].Visible = true;
             tovabb.Visible = true;
-            italok.Visible = true;
-            Image myimage = new Bitmap("luck.png");
-            italok.Image = myimage;
-            italok.ImageAlign = ContentAlignment.TopLeft;
         }
         private void Third_Click(object sender, EventArgs e)
         {
@@ -210,10 +390,6 @@ namespace KalandJatek
             inventory.Visible = true;
             SzovegList[0].Visible = true;
             tovabb.Visible = true;
-            italok.Visible = true;
-            Image myimage = new Bitmap("skill.png");
-            italok.Image = myimage;
-            italok.ImageAlign = ContentAlignment.TopLeft;
         }
 
         private void Pot_Click(object sender, EventArgs e)
@@ -232,200 +408,36 @@ namespace KalandJatek
             switch (currentIndex)
             {
                 case 0:
-                    tovabb.Text = "Tovabb";
+                    tovabb.Text = SzamGombListegesz[41].Text = "Harc";
                     SzovegList[0].Visible = false;
                     SzovegList[1].Visible = true;
                     SzovegList[1].Text = "#41\nAz alagút, bár folyamatosan jobbra-balra kanyarog, nagyjából mégis tartja az északi irányt, végül élesen oldalra kanyarodik, és ekkor majdnem belefutsz egy fekete köpenybe öltözött alakba. Tört tart a kezében, az arcán ülő tekintet rettegésről árulkodik! Rájössz, hogy nem te vagy az egyetlen, akit most próbára tesznek, és hogy mindketten ugyanazon Szobor után kutattok. A fickó rád veti magát, nyilvánvaló, hogy mielőbb végezni akar veled. Harcolnod kell!";
-                    Fight(7, 6);
                     currentIndex++;
                     break;
                 case 1:
                     tovabb.Visible = false;
                     SzovegList[1].Visible = false;
-                    
-                    tovabb.Visible = true;
-                    tovabb.Text = "Tovabb";
-                    SzovegList[87].Visible = true;
-                    SzovegList[87].Text = "#85\r\nA Tolvajnál mindössze 3 Aranytallért és egy háromszög alakú, penészes gyümölcsöt találsz. Még soha nem láttál ehhez hasonlót, de gyanítod, hogy ez lehet a Xentos, a hosszú élet gyümölcse. Ha nem lenne ilyen borzalmas állapotban, gond nélkül megkockáztatnád, hogy belekóstolj, igy azonban úgy döntesz, hogy itt hagyod és folytatod az utad észak felé. Hamarosan egy útelágazáshoz érsz. Ha továbbra is északnak tartasz, lapozz a 108-ra. Ha a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.";
-                    currentIndex++;
-
-                    int choice = GetUserChoice();
-                    if (choice == 108)
-                    {
-                        currentIndex = 108;
-                    }
-                    else if (choice == 147)
-                    {
-                        currentIndex = 147;
-                    }
-                    break;
-                case 108:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[87].Visible = false;
-                    SzovegList[108].Visible = true;
-                    SzovegList[108].Text = "#108\nÉszaki irányba követed az átjárót. Hamarosan elérsz egy keleti leágazáshoz. Hogyha egyenesen mész tovább, lapozz a 146-ra. Ha letérsz jobbra, lapozz a 79-re.";
-                    currentIndex++;
-                    int choice2 = GetUserChoice2();
-                    if (choice2 == 146)
-                    {
-                        currentIndex = 146;
-                    }
-                    else if (choice2 == 79)
-                    {
-                        currentIndex = 79;
-                    }
-                    break;
-                case 147:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[87].Visible = false;
-                    SzovegList[147].Visible = true;
-                    SzovegList[147].Text = "#147\nA járat egy ajtóban végződik. Hogyha ki szeretnéd nyitni, lapozz a 22-re. Ha visszatérnél az elágazáshoz, és észak felé folytatnád az utad, lapozz a 108-ra.";
-                    currentIndex++;
-                    int choice4 = GetUserChoice4();
-                    if (choice4 == 22)
-                    {
-                        currentIndex = 22;
-                    }
-                    else if (choice4 == 108)
-                    {
-                        currentIndex = 108;
-                        SzovegList[147].Visible = false;
-                        SzovegList[108].Visible = true;
-                        SzovegList[108].Text = "#108\nÉszaki irányba követed az átjárót. Hamarosan elérsz egy keleti leágazáshoz. Hogyha egyenesen mész tovább, lapozz a 146-ra. Ha letérsz jobbra, lapozz a 79-re.";
-                        int choice5 = GetUserChoice5();
-                        if (choice5 == 146)
-                        {
-                            currentIndex = 146;
-                        }
-                        else if (choice5 == 79)
-                        {
-                            currentIndex = 79;
-                        }
-                    }
-
-                    break;
-                case 146:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[108].Visible = false;
-                    SzovegList[146].Visible = true;
-                    SzovegList[146].Text = "#146\nHamarosan egy ajtóhoz érsz, ami a nyugati falból nyílik. Ahogy végighúzod rajta a kezed, a kilincset keresve, egy keresztet sikerül kitapintanod rajta, amit nem túl mélyen véstek bele. Ha ki akarod nyitni az ajtót, lapozz az 51-re. Ha folytatnád az utad észak felé, lapozz a 80-ra.\r\n";
-                    currentIndex++;
-                    int choice3 = GetUserChoice3();
-                    if (choice3 == 51)
-                    {
-                        currentIndex = 51;
-                    }
-                    else if (choice3 == 80)
-                    {
-                        currentIndex = 80;
-                    }
-                    break;
-                case 79:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[108].Visible = false;
-                    SzovegList[79].Visible = true;
-                    SzovegList[79].Text = "#79\nA keleti járat elég keskeny és sötét, és újabb leágazásba fut bele, ezúttal a balodon. Ha erre mennél tovább, északi irányba, lapozz a 141-re. Ha egyenesen folytatnád az utadat, lapozz a 122-re.";
+                    Fight(1, 1);
+                    /*tovabb.Text = "Tovább";
+                    SzovegList[1].Visible = false;
+                    SzovegList[2].Visible = true;
+                    SzovegList[2].Text = "#3\nAhogy óvatosan a drótok között lépkedve eléred a Szobrot, az hirtelen eltünik! A következő pillanatban vészjósló morajlás hangzik fel a fejed fölött, és ahogy arra nézel, látod, hogy hatalmas szikladarabok kezdenek feléd zuhanni. A hatalmas súly porrá örli csontjaidat. Kalandod itt véget ér.";
+                    */
                     currentIndex++;
                     break;
-                case 51:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[146].Visible = false;
-                    SzovegList[51].Visible = true;
-                    SzovegList[51].Text = "#51\n";
-                    currentIndex++;
-                    break;
-                case 80:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[146].Visible = false;
-                    SzovegList[80].Visible = true;
-                    SzovegList[80].Text = "#80\n";
-                    currentIndex++;
+                default:
+                    MessageBox.Show("A játékod itt véget ért!", "Vesztettél!", MessageBoxButtons.OK);
+                    //this.BackgroundImage = new Bitmap("gamover.png");
                     break;
             }
-        }
-
-        private int GetUserChoice()
-        {
-            DialogResult result108v147 = MessageBox.Show("Ha továbbra is északnak tartasz, lapozz a 108-ra.(IGEN)\nHa a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.(NEM)",
-                                                  "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result108v147 == DialogResult.Yes)
-            {
-                return 108;
-            }
-            else if (result108v147 == DialogResult.No)
-            {
-                return 147;
-            }
-            return 108;
-        }
-
-        private int GetUserChoice2()
-        {
-            DialogResult result146v79 = MessageBox.Show("Hogyha egyenesen mész tovább, lapozz a 146 - ra.(IGEN)\nHa folytatnád az utad észak felé, lapozz a 80-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result146v79 == DialogResult.Yes)
-            {
-                return 146;
-            }
-            else if (result146v79 == DialogResult.No)
-            {
-                return 79;
-            }
-            return 146;
-        }
-
-        private int GetUserChoice3()
-        {
-            DialogResult result51v80 = MessageBox.Show("Ha ki akarod nyitni az ajtót, lapozz az 51-re.(IGEN)\nHa letérsz jobbra, lapozz a 79-re.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result51v80 == DialogResult.Yes)
-            {
-                return 51;
-            }
-            else if (result51v80 == DialogResult.No)
-            {
-                return 80;
-            }
-            return 51;
-        }
-
-        private int GetUserChoice4()
-        {
-            DialogResult result22v108 = MessageBox.Show("Hogyha ki szeretnéd nyitni, lapozz a 22-re.(IGEN)\nHa visszatérnél az elágazáshoz, és észak felé folytatnád az utad, lapozz a 108-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result22v108 == DialogResult.Yes)
-            {
-                return 22;
-            }
-            else if (result22v108 == DialogResult.No)
-            {
-                return 108;
-            }
-            return 22;
-        }
-
-        private int GetUserChoice5()
-        {
-            DialogResult result146v79 = MessageBox.Show("Hogyha egyenesen mész tovább, lapozz a 146 - ra.(IGEN)\nHa folytatnád az utad észak felé, lapozz a 79-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result146v79 == DialogResult.Yes)
-            {
-                return 146;
-            }
-            else if (result146v79 == DialogResult.No)
-            {
-                return 79;
-            }
-            return 146;
         }
         private void ShowGameOver()
         {
             this.Controls.Clear();
-            this.BackgroundImage = null;
             this.BackgroundImage = Image.FromFile("gameover.png");
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
+
 
         private void Fight(int enemySkill, int enemyStamina)
         {

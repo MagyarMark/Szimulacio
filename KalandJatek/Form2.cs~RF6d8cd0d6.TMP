@@ -236,15 +236,13 @@ namespace KalandJatek
                     SzovegList[0].Visible = false;
                     SzovegList[1].Visible = true;
                     SzovegList[1].Text = "#41\nAz alagút, bár folyamatosan jobbra-balra kanyarog, nagyjából mégis tartja az északi irányt, végül élesen oldalra kanyarodik, és ekkor majdnem belefutsz egy fekete köpenybe öltözött alakba. Tört tart a kezében, az arcán ülő tekintet rettegésről árulkodik! Rájössz, hogy nem te vagy az egyetlen, akit most próbára tesznek, és hogy mindketten ugyanazon Szobor után kutattok. A fickó rád veti magát, nyilvánvaló, hogy mielőbb végezni akar veled. Harcolnod kell!";
-                    Fight(7, 6);
                     currentIndex++;
                     break;
                 case 1:
-                    tovabb.Visible = false;
-                    SzovegList[1].Visible = false;
-                    
-                    tovabb.Visible = true;
                     tovabb.Text = "Tovabb";
+                    SzovegList[1].Visible = false;
+                    Fight(7, 6);
+                    tovabb.Visible = true;
                     SzovegList[87].Visible = true;
                     SzovegList[87].Text = "#85\r\nA Tolvajnál mindössze 3 Aranytallért és egy háromszög alakú, penészes gyümölcsöt találsz. Még soha nem láttál ehhez hasonlót, de gyanítod, hogy ez lehet a Xentos, a hosszú élet gyümölcse. Ha nem lenne ilyen borzalmas állapotban, gond nélkül megkockáztatnád, hogy belekóstolj, igy azonban úgy döntesz, hogy itt hagyod és folytatod az utad észak felé. Hamarosan egy útelágazáshoz érsz. Ha továbbra is északnak tartasz, lapozz a 108-ra. Ha a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.";
                     currentIndex++;
@@ -265,6 +263,7 @@ namespace KalandJatek
                     SzovegList[108].Visible = true;
                     SzovegList[108].Text = "#108\nÉszaki irányba követed az átjárót. Hamarosan elérsz egy keleti leágazáshoz. Hogyha egyenesen mész tovább, lapozz a 146-ra. Ha letérsz jobbra, lapozz a 79-re.";
                     currentIndex++;
+
                     int choice2 = GetUserChoice2();
                     if (choice2 == 146)
                     {
@@ -281,73 +280,24 @@ namespace KalandJatek
                     SzovegList[147].Visible = true;
                     SzovegList[147].Text = "#147\nA járat egy ajtóban végződik. Hogyha ki szeretnéd nyitni, lapozz a 22-re. Ha visszatérnél az elágazáshoz, és észak felé folytatnád az utad, lapozz a 108-ra.";
                     currentIndex++;
-                    int choice4 = GetUserChoice4();
-                    if (choice4 == 22)
-                    {
-                        currentIndex = 22;
-                    }
-                    else if (choice4 == 108)
-                    {
-                        currentIndex = 108;
-                        SzovegList[147].Visible = false;
-                        SzovegList[108].Visible = true;
-                        SzovegList[108].Text = "#108\nÉszaki irányba követed az átjárót. Hamarosan elérsz egy keleti leágazáshoz. Hogyha egyenesen mész tovább, lapozz a 146-ra. Ha letérsz jobbra, lapozz a 79-re.";
-                        int choice5 = GetUserChoice5();
-                        if (choice5 == 146)
-                        {
-                            currentIndex = 146;
-                        }
-                        else if (choice5 == 79)
-                        {
-                            currentIndex = 79;
-                        }
-                    }
-
                     break;
                 case 146:
                     tovabb.Text = "Tovabb";
-                    SzovegList[108].Visible = false;
                     SzovegList[146].Visible = true;
-                    SzovegList[146].Text = "#146\nHamarosan egy ajtóhoz érsz, ami a nyugati falból nyílik. Ahogy végighúzod rajta a kezed, a kilincset keresve, egy keresztet sikerül kitapintanod rajta, amit nem túl mélyen véstek bele. Ha ki akarod nyitni az ajtót, lapozz az 51-re. Ha folytatnád az utad észak felé, lapozz a 80-ra.\r\n";
-                    currentIndex++;
-                    int choice3 = GetUserChoice3();
-                    if (choice3 == 51)
-                    {
-                        currentIndex = 51;
-                    }
-                    else if (choice3 == 80)
-                    {
-                        currentIndex = 80;
-                    }
+                    SzovegList[146].Text = "#146\n";
                     break;
                 case 79:
                     tovabb.Text = "Tovabb";
-                    SzovegList[108].Visible = false;
                     SzovegList[79].Visible = true;
-                    SzovegList[79].Text = "#79\nA keleti járat elég keskeny és sötét, és újabb leágazásba fut bele, ezúttal a balodon. Ha erre mennél tovább, északi irányba, lapozz a 141-re. Ha egyenesen folytatnád az utadat, lapozz a 122-re.";
-                    currentIndex++;
-                    break;
-                case 51:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[146].Visible = false;
-                    SzovegList[51].Visible = true;
-                    SzovegList[51].Text = "#51\n";
-                    currentIndex++;
-                    break;
-                case 80:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[146].Visible = false;
-                    SzovegList[80].Visible = true;
-                    SzovegList[80].Text = "#80\n";
-                    currentIndex++;
+                    SzovegList[79].Text = "#79\n";
                     break;
             }
         }
 
         private int GetUserChoice()
         {
-            DialogResult result108v147 = MessageBox.Show("Ha továbbra is északnak tartasz, lapozz a 108-ra.(IGEN)\nHa a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.(NEM)",
-                                                  "Válassz egy irányt!", MessageBoxButtons.YesNo);
+            DialogResult result108v147 = MessageBox.Show("Ha továbbra is északnak tartasz, lapozz a 108-ra.(IGEN)\nHa a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.",
+                                                  "Válassz egy irányt!(NEM)", MessageBoxButtons.YesNo);
 
             if (result108v147 == DialogResult.Yes)
             {
@@ -362,52 +312,7 @@ namespace KalandJatek
 
         private int GetUserChoice2()
         {
-            DialogResult result146v79 = MessageBox.Show("Hogyha egyenesen mész tovább, lapozz a 146 - ra.(IGEN)\nHa folytatnád az utad észak felé, lapozz a 80-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result146v79 == DialogResult.Yes)
-            {
-                return 146;
-            }
-            else if (result146v79 == DialogResult.No)
-            {
-                return 79;
-            }
-            return 146;
-        }
-
-        private int GetUserChoice3()
-        {
-            DialogResult result51v80 = MessageBox.Show("Ha ki akarod nyitni az ajtót, lapozz az 51-re.(IGEN)\nHa letérsz jobbra, lapozz a 79-re.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result51v80 == DialogResult.Yes)
-            {
-                return 51;
-            }
-            else if (result51v80 == DialogResult.No)
-            {
-                return 80;
-            }
-            return 51;
-        }
-
-        private int GetUserChoice4()
-        {
-            DialogResult result22v108 = MessageBox.Show("Hogyha ki szeretnéd nyitni, lapozz a 22-re.(IGEN)\nHa visszatérnél az elágazáshoz, és észak felé folytatnád az utad, lapozz a 108-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result22v108 == DialogResult.Yes)
-            {
-                return 22;
-            }
-            else if (result22v108 == DialogResult.No)
-            {
-                return 108;
-            }
-            return 22;
-        }
-
-        private int GetUserChoice5()
-        {
-            DialogResult result146v79 = MessageBox.Show("Hogyha egyenesen mész tovább, lapozz a 146 - ra.(IGEN)\nHa folytatnád az utad észak felé, lapozz a 79-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
+            DialogResult result146v79 = MessageBox.Show("Hogyha egyenesen mész tovább, lapozz a 146 - ra.(IGEN)\n Ha letérsz jobbra, lapozz a 79-re.(NEM)",MessageBoxButtons.YesNo);
 
             if (result146v79 == DialogResult.Yes)
             {
