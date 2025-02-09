@@ -240,12 +240,13 @@ namespace KalandJatek
                     SzovegList[0].Visible = false;
                     SzovegList[1].Visible = true;
                     SzovegList[1].Text = "#41\nAz alagút, bár folyamatosan jobbra-balra kanyarog, nagyjából mégis tartja az északi irányt, végül élesen oldalra kanyarodik, és ekkor majdnem belefutsz egy fekete köpenybe öltözött alakba. Tört tart a kezében, az arcán ülő tekintet rettegésről árulkodik! Rájössz, hogy nem te vagy az egyetlen, akit most próbára tesznek, és hogy mindketten ugyanazon Szobor után kutattok. A fickó rád veti magát, nyilvánvaló, hogy mielőbb végezni akar veled. Harcolnod kell!";
+                    Fight(7, 6);
                     currentIndex++;
                     break;
                 case 1:
                     tovabb.Visible = false;
                     SzovegList[1].Visible = false;
-                    Fight(7, 6);
+                    
                     tovabb.Visible = true;
                     tovabb.Text = "Tovabb";
                     SzovegList[87].Visible = true;
@@ -432,6 +433,8 @@ namespace KalandJatek
 
         private void Fight(int enemySkill, int enemyStamina)
         {
+            this.Controls.Clear();
+            this.BackgroundImage = null;
             Player = new PictureBox()
             {
                 Image = Image.FromFile("Player.png"),
@@ -480,6 +483,7 @@ namespace KalandJatek
             };
             Controls.Add(enemyhp);
             this.BackgroundImage = Image.FromFile("fightscene.png");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
 
             Random rand = new Random();
             int playerStamina = playerStats.Stamina;
@@ -505,20 +509,7 @@ namespace KalandJatek
                 }
                 else if (enemyStamina <= 0)
                 {
-                    inventory.Visible = false;
-                    SzovegList[1].Visible = false;
-                    tovabb.Visible = false;
-                    italok.Visible = false;
                     MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
-                    this.BackgroundImage = Image.FromFile("bg.png");
-                    Enemy.Visible = false;
-                    Player.Visible = false;
-                    playerhp.Visible = false;
-                    enemyhp.Visible = false;
-                    inventory.Visible = true;
-                    SzovegList[87].Visible = true;
-                    tovabb.Visible = true;
-                    italok.Visible = true;
                     return;
                 }
             }
