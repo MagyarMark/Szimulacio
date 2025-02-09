@@ -36,9 +36,9 @@ namespace KalandJatek
             Exit = new Button
             {
                 Text = "KILÉPÉS",
-                Size = new Size(100, 50),
+                Size = new Size(150, 100),
                 Location = new Point(800,550),
-                Font = new Font("Arial", 12, FontStyle.Bold),
+                Font = new Font("Courier New", 20, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
@@ -49,9 +49,9 @@ namespace KalandJatek
             Start = new Button
             {
                 Text = "JÁTEK",
-                Size = new Size(100, 50),
-                Location = new Point(950, 550),
-                Font = new Font("Arial", 12, FontStyle.Bold),
+                Size = new Size(150, 100),
+                Location = new Point(1000, 550),
+                Font = new Font("Courier New", 20, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
@@ -63,8 +63,8 @@ namespace KalandJatek
             {
                 Text = ">",
                 Size = new Size(30,25),
-                Location = new Point(570, 750),
-                Font = new Font("Arial", 11, FontStyle.Bold),
+                Location = new Point(570, 770),
+                Font = new Font("Courier New", 11, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
@@ -76,8 +76,8 @@ namespace KalandJatek
             {
                 Text = "<",
                 Size = new Size(30, 25),
-                Location = new Point(570, 750),
-                Font = new Font("Arial", 11, FontStyle.Bold),
+                Location = new Point(570, 770),
+                Font = new Font("Courier New", 11, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup,
@@ -88,10 +88,10 @@ namespace KalandJatek
 
             Kszoveg = new Label
             {
-                Text = "Az Osztriga-öböltől délre, nagyjából nyolcvan kilométerre terül el a Koponyák Sivataga. Forró, veszedelmes és mindent egybevetve igen kellemetlen hely, ám te kénytelen vagy átkelni rajta, hisz déli felén terül el a drágakőbányáiról messze földön híres és gazdag Zafirváros. Vonz a hatalmas vagyon, mely minden harcos számára elérhető, aki hajlandó akár a köveket, akár a pénzt kísérni egyik településből a másikba. A munka azonban nem veszélytelen.\r\nAhogy a sivatag felé közeledsz, segélykiáltásokat hallasz az utat szegélyező bozótos túloldaláról. Mikor közelebb lépsz, még épp látod, ahogy egy ocsmány Goblin tört márt egy igen fontosnak látszó Elf férfi szívébe, aki azonnal a földre roskad.\r\nEgyből előre rontasz, hogy elkapd a gyilkost, ám pechedre megbotlasz, az aljas teremtmény pedig észrevesz téged, és eltűnik az aljnövényzetben.\r\nCsak állsz, és a halott Elf tetemét bámulod. Amennyire meg tudod állapítani, az egyik helyi törzs vezetője lehetett. Kezében egy nagy, kék színű gyémántot szorongat. Hirtelen megrezzennek körülötted a bokrok! Arra gondolsz, talán a Goblin tért vissza, így előhúzod kardodat. Legnagyobb meglepetésedre azonban húsz vagy harminc Elf gyűrűjében találod magadat, akik megfeszített íjakkal vesznek körbe. Egyikük előre lép, és komoran megszólít.\r\n",
-                Size = new Size(550, 400),
+                Text = "Az Osztriga-öböltől délre, nagyjából nyolcvan kilométerre terül el a Koponyák Sivataga. Forró, veszedelmes és mindent egybevetve igen kellemetlen hely, ám te kénytelen vagy átkelni rajta, hisz déli felén terül el a drágakőbányáiról messze földön híres és gazdag Zafirváros. Vonz a hatalmas vagyon, mely minden harcos számára elérhető, aki hajlandó akár a köveket, akár a pénzt kísérni egyik településből a másikba. A munka azonban nem veszélytelen.\r\nAhogy a sivatag felé közeledsz, segélykiáltásokat hallasz az utat szegélyező bozótos túloldaláról. Mikor közelebb lépsz, még épp látod, ahogy egy ocsmány Goblin tört márt egy igen fontosnak látszó Elf férfi szívébe, aki azonnal a földre roskad.\r\nEgyből előre rontasz, hogy elkapd a gyilkost, ám pechedre megbotlasz, az aljas teremtmény pedig észrevesz téged, és eltűnik az aljnövényzetben.Csak állsz, és a halott Elf tetemét bámulod. Amennyire meg tudod állapítani, az egyik helyi törzs vezetője lehetett. Kezében egy nagy, kék színű gyémántot szorongat. Hirtelen megrezzennek körülötted a bokrok! Arra gondolsz, talán a Goblin tért vissza, így előhúzod kardodat. Legnagyobb meglepetésedre azonban húsz vagy harminc Elf gyűrűjében találod magadat, akik megfeszített íjakkal vesznek körbe. Egyikük előre lép, és komoran megszólít.\r\n",
+                Size = new Size(550, 420),
                 Location = new Point(50, 375),
-                Font = new Font("Arial", 12, FontStyle.Bold),
+                Font = new Font("Courier New", 11, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
@@ -103,7 +103,7 @@ namespace KalandJatek
                 Text = "HÁTTÉRTÖRTÉNET",
                 Size = new Size(230, 25),
                 Location = new Point(180, 330),
-                Font = new Font("Arial", 16, FontStyle.Bold),
+                Font = new Font("Courier New", 16, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
@@ -135,7 +135,7 @@ namespace KalandJatek
 
         private void Bal_Click(object sender, EventArgs e)
         {
-            Kszoveg.Text = "Az Osztriga-öböltől délre, nagyjából nyolcvan kilométerre terül el a Koponyák Sivataga. Forró, veszedelmes és mindent egybevetve igen kellemetlen hely, ám te kénytelen vagy átkelni rajta, hisz déli felén terül el a drágakőbányáiról messze földön híres és gazdag Zafirváros. Vonz a hatalmas vagyon, mely minden harcos számára elérhető, aki hajlandó akár a köveket, akár a pénzt kísérni egyik településből a másikba. A munka azonban nem veszélytelen.\r\nAhogy a sivatag felé közeledsz, segélykiáltásokat hallasz az utat szegélyező bozótos túloldaláról. Mikor közelebb lépsz, még épp látod, ahogy egy ocsmány Goblin tört márt egy igen fontosnak látszó Elf férfi szívébe, aki azonnal a földre roskad.\r\nEgyből előre rontasz, hogy elkapd a gyilkost, ám pechedre megbotlasz, az aljas teremtmény pedig észrevesz téged, és eltűnik az aljnövényzetben.\r\nCsak állsz, és a halott Elf tetemét bámulod. Amennyire meg tudod állapítani, az egyik helyi törzs vezetője lehetett. Kezében egy nagy, kék színű gyémántot szorongat. Hirtelen megrezzennek körülötted a bokrok! Arra gondolsz, talán a Goblin tért vissza, így előhúzod kardodat. Legnagyobb meglepetésedre azonban húsz vagy harminc Elf gyűrűjében találod magadat, akik megfeszített íjakkal vesznek körbe. Egyikük előre lép, és komoran megszólít.\r\n";
+            Kszoveg.Text = "Az Osztriga-öböltől délre, nagyjából nyolcvan kilométerre terül el a Koponyák Sivataga. Forró, veszedelmes és mindent egybevetve igen kellemetlen hely, ám te kénytelen vagy átkelni rajta, hisz déli felén terül el a drágakőbányáiról messze földön híres és gazdag Zafirváros. Vonz a hatalmas vagyon, mely minden harcos számára elérhető, aki hajlandó akár a köveket, akár a pénzt kísérni egyik településből a másikba. A munka azonban nem veszélytelen.\r\nAhogy a sivatag felé közeledsz, segélykiáltásokat hallasz az utat szegélyező bozótos túloldaláról. Mikor közelebb lépsz, még épp látod, ahogy egy ocsmány Goblin tört márt egy igen fontosnak látszó Elf férfi szívébe, aki azonnal a földre roskad.\r\nEgyből előre rontasz, hogy elkapd a gyilkost, ám pechedre megbotlasz, az aljas teremtmény pedig észrevesz téged, és eltűnik az aljnövényzetben.Csak állsz, és a halott Elf tetemét bámulod. Amennyire meg tudod állapítani, az egyik helyi törzs vezetője lehetett. Kezében egy nagy, kék színű gyémántot szorongat. Hirtelen megrezzennek körülötted a bokrok! Arra gondolsz, talán a Goblin tért vissza, így előhúzod kardodat. Legnagyobb meglepetésedre azonban húsz vagy harminc Elf gyűrűjében találod magadat, akik megfeszített íjakkal vesznek körbe. Egyikük előre lép, és komoran megszólít.\r\n";
             bal.Visible= false;
             jobb.Visible= true;
         }

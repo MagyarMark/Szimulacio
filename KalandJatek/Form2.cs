@@ -10,6 +10,7 @@ namespace KalandJatek
         public int Skill { get; set; }
         public int Stamina { get; set; }
         public int Luck { get; set; }
+        public int Hp { get; set; }
 
         private Random rand = new Random();
 
@@ -18,6 +19,7 @@ namespace KalandJatek
             Skill = rand.Next(1, 7) + 6;
             Stamina = (rand.Next(1, 7) + rand.Next(1, 7)) + 12;
             Luck = rand.Next(1, 7) + 6;
+            Hp = rand.Next(1, 7) + 6;
         }
     }
     public partial class Form2 : Form
@@ -31,6 +33,9 @@ namespace KalandJatek
         private Button tovabb;
         private Button inventory;
         private Label italok;
+        private Label hp;
+        private Label stamina;
+        private Label luck;
         private Label enemyhp;
         private Label playerhp;
         private List<string> invlist = new List<string>();
@@ -58,7 +63,7 @@ namespace KalandJatek
                 Text = "Kiválasztás",
                 Size = new Size(140, 75),
                 Location = new Point(810, 850),
-                Font = new Font("Arial", 12, FontStyle.Bold),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
@@ -71,7 +76,7 @@ namespace KalandJatek
                 Text = "Kiválasztás",
                 Size = new Size(150, 75),
                 Location = new Point(975, 850),
-                Font = new Font("Arial", 12, FontStyle.Bold),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
@@ -84,7 +89,7 @@ namespace KalandJatek
                 Text = "Kiválasztás",
                 Size = new Size(140, 75),
                 Location = new Point(1150, 850),
-                Font = new Font("Arial", 12, FontStyle.Bold),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup
@@ -97,7 +102,7 @@ namespace KalandJatek
                 Text = "Zsákmány",
                 Size = new Size(140, 75),
                 Location = new Point(150, 850),
-                Font = new Font("Arial", 12, FontStyle.Bold),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup,
@@ -109,9 +114,9 @@ namespace KalandJatek
             italok = new Label
             {
                 Text = "Italok:",
-                Size = new Size(160, 160),
-                Location = new Point(50, 50),
-                Font = new Font("Arial", 16),
+                Size = new Size(160, 140),
+                Location = new Point(50, 350),
+                Font = new Font("Courier New", 16),
                 BackColor = Color.Transparent,
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup,
@@ -119,12 +124,51 @@ namespace KalandJatek
             };
             Controls.Add(italok);
 
+            hp = new Label
+            {
+                Text = $"HP: {playerStats.Hp}\n",
+                Size = new Size(160, 160),
+                Location = new Point(50, 50),
+                Font = new Font("Courier New", 16),
+                BackColor = Color.Transparent,
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            Controls.Add(hp);
+
+            stamina = new Label
+            {
+                Text = $"Stamina: {playerStats.Stamina}\n",
+                Size = new Size(160, 160),
+                Location = new Point(220, 50),
+                Font = new Font("Courier New", 16),
+                BackColor = Color.Transparent,
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            Controls.Add(stamina);
+            
+            luck = new Label
+            {
+                Text = $"Luck: {playerStats.Luck}\n",
+                Size = new Size(160, 160),
+                Location = new Point(390, 50),
+                Font = new Font("Courier New", 16),
+                BackColor = Color.Transparent,
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            Controls.Add(luck);
+
             tovabb = new Button
             {
                 Text = "Tovább",
                 Size = new Size(600, 75),
                 Location = new Point(750, 850),
-                Font = new Font("Arial", 12, FontStyle.Bold),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup,
@@ -139,7 +183,7 @@ namespace KalandJatek
                 btn.Size = new Size(600, 75);
                 btn.Text = i.ToString();
                 btn.Location = new Point(750, 850);
-                btn.Font = new Font("Arial", 12, FontStyle.Bold);
+                btn.Font = new Font("Courier New", 12, FontStyle.Bold);
                 btn.BackColor = ColorTranslator.FromHtml("#a17e51");
                 btn.ForeColor = Color.White;
                 btn.Visible = false;
@@ -153,8 +197,8 @@ namespace KalandJatek
                 lbl.Size = new Size(600, 250);
                 lbl.Text = "#1\nBelöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. Lapozz a 41-re.";
                 lbl.Location = new Point(750, 600);
-                lbl.Font = new Font("Arial", 12, FontStyle.Bold);
-                lbl.BackColor = ColorTranslator.FromHtml("#a17e51");
+                lbl.Font = new Font("Courier New", 14, FontStyle.Bold);
+                lbl.BackColor = Color.Transparent;
                 lbl.ForeColor = Color.White;
                 lbl.Visible = false;
                 SzovegList.Add(lbl);
@@ -186,6 +230,18 @@ namespace KalandJatek
             Image myimage = new Bitmap("hp.png");
             italok.Image = myimage;
             italok.ImageAlign = ContentAlignment.TopLeft;
+            hp.Visible = true;
+            Image hpstat = new Bitmap("hpstat.png");
+            hp.Image = hpstat;
+            hp.ImageAlign = ContentAlignment.MiddleLeft;
+            stamina.Visible = true;
+            Image staminastat = new Bitmap("staminastat.png");
+            stamina.Image = staminastat;
+            stamina.ImageAlign = ContentAlignment.MiddleLeft;
+            luck.Visible = true;
+            Image luckstat = new Bitmap("luckstat.png");
+            luck.Image = luckstat;
+            luck.ImageAlign = ContentAlignment.MiddleLeft;
         }
         private void Second_Click(object sender, EventArgs e)
         {
@@ -202,6 +258,18 @@ namespace KalandJatek
             Image myimage = new Bitmap("luck.png");
             italok.Image = myimage;
             italok.ImageAlign = ContentAlignment.TopLeft;
+            hp.Visible = true;
+            Image hpstat = new Bitmap("hpstat.png");
+            hp.Image = hpstat;
+            hp.ImageAlign = ContentAlignment.MiddleLeft;
+            stamina.Visible = true;
+            Image staminastat = new Bitmap("staminastat.png");
+            stamina.Image = staminastat;
+            stamina.ImageAlign = ContentAlignment.MiddleLeft;
+            luck.Visible = true;
+            Image luckstat = new Bitmap("luckstat.png");
+            luck.Image = luckstat;
+            luck.ImageAlign = ContentAlignment.MiddleLeft;
         }
         private void Third_Click(object sender, EventArgs e)
         {
@@ -218,6 +286,18 @@ namespace KalandJatek
             Image myimage = new Bitmap("skill.png");
             italok.Image = myimage;
             italok.ImageAlign = ContentAlignment.TopLeft;
+            hp.Visible = true;
+            Image hpstat = new Bitmap("hpstat.png");
+            hp.Image = hpstat;
+            hp.ImageAlign = ContentAlignment.MiddleLeft;
+            stamina.Visible = true;
+            Image staminastat = new Bitmap("staminastat.png");
+            stamina.Image = staminastat;
+            stamina.ImageAlign = ContentAlignment.MiddleLeft;
+            luck.Visible = true;
+            Image luckstat = new Bitmap("luckstat.png");
+            luck.Image = luckstat;
+            luck.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
         private void Pot_Click(object sender, EventArgs e)
@@ -454,7 +534,7 @@ namespace KalandJatek
 
             playerhp = new Label()
             {
-                Text = "Hp: "+ playerStats.Stamina.ToString(),
+                Text = "Hp: "+ playerStats.Hp.ToString(),
                 Font = new Font("Arial", 20, FontStyle.Bold),
                 BackColor = Color.Transparent,
                 ForeColor = Color.White,
@@ -482,7 +562,7 @@ namespace KalandJatek
             this.BackgroundImage = Image.FromFile("fightscene.png");
 
             Random rand = new Random();
-            int playerStamina = playerStats.Stamina;
+            int playerStamina = playerStats.Hp;
 
             while (enemyStamina > 0 && playerStamina > 0)
             {
@@ -501,7 +581,7 @@ namespace KalandJatek
                 if (playerStamina <= 0)
                 {
                     ShowGameOver();
-                    return;
+                    Environment.Exit(0);
                 }
                 else if (enemyStamina <= 0)
                 {
@@ -509,6 +589,9 @@ namespace KalandJatek
                     SzovegList[1].Visible = false;
                     tovabb.Visible = false;
                     italok.Visible = false;
+                    hp.Visible = false;
+                    stamina.Visible = false;
+                    luck.Visible = false;
                     MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                     this.BackgroundImage = Image.FromFile("bg.png");
                     Enemy.Visible = false;
@@ -519,6 +602,9 @@ namespace KalandJatek
                     SzovegList[87].Visible = true;
                     tovabb.Visible = true;
                     italok.Visible = true;
+                    hp.Visible = true;
+                    stamina.Visible = true;
+                    luck.Visible = true;
                     return;
                 }
             }
