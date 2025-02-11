@@ -34,7 +34,7 @@ namespace KalandJatek
         private Button szerencse;
         private Button ugyesseg;
         private Button tovabb;
-        private Button Exit;
+        private Button inventory;
         private Label italok;
         private Label hp;
         private Label stamina;
@@ -42,12 +42,10 @@ namespace KalandJatek
         private Label enemyhp;
         private Label playerhp;
         private Label Coins;
-        private Label Nyeremeny;
         private List<string> invlist = new List<string>();
         private List<Label> SzovegList = new List<Label>();
         private List<Button> SzamGombListegesz = new List<Button>();
         private PlayerStats playerStats = new PlayerStats();
-        private int currentIndex = 0;
 
         public Form2()
         {
@@ -64,19 +62,6 @@ namespace KalandJatek
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            Exit = new Button
-            {
-                Text = "KILÉPÉS",
-                Size = new Size(150, 100),
-                Location = new Point(1750, 850),
-                Font = new Font("Courier New", 20, FontStyle.Bold),
-                BackColor = ColorTranslator.FromHtml("#a17e51"),
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup
-            };
-            Exit.Click += exit_Click;
-            Controls.Add(Exit);
-
             eletero = new Button
             {
                 Text = "Kiválasztás",
@@ -116,11 +101,25 @@ namespace KalandJatek
             ugyesseg.Click += Third_Click;
             Controls.Add(ugyesseg);
 
+            inventory = new Button
+            {
+                Text = "Zsákmány",
+                Size = new Size(140, 75),
+                Location = new Point(150, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            inventory.Click += Pot_Click;
+            Controls.Add(inventory);
+
             italok = new Label
             {
                 Text = "Italok:",
                 Size = new Size(160, 140),
-                Location = new Point(50, 850),
+                Location = new Point(50, 350),
                 Font = new Font("Courier New", 16),
                 BackColor = Color.Transparent,
                 ForeColor = Color.White,
@@ -181,18 +180,6 @@ namespace KalandJatek
             };
             Controls.Add(Coins);
 
-            Nyeremeny = new Label
-            {
-                Size = new Size(350, 50),
-                Location = new Point(800,250),
-                Font = new Font("Courier New", 16, FontStyle.Bold),
-                BackColor = ColorTranslator.FromHtml("#a17e51"),
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup,
-                Visible = false
-            };
-            Controls.Add(Nyeremeny);
-
             tovabb = new Button
             {
                 Text = "Tovább",
@@ -227,7 +214,7 @@ namespace KalandJatek
                 lbl.Size = new Size(600, 250);
                 lbl.Text = "#1\nBelöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. Lapozz a 41-re.";
                 lbl.Location = new Point(750, 600);
-                lbl.Font = new Font("Courier New", 12.7f, FontStyle.Bold);
+                lbl.Font = new Font("Courier New", 14, FontStyle.Bold);
                 lbl.BackColor = Color.Transparent;
                 lbl.ForeColor = Color.White;
                 lbl.Visible = false;
@@ -245,11 +232,6 @@ namespace KalandJatek
             Controls.Add(potionselect);
         }
 
-        private void exit_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
         private void First_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Jó választás utazó!\n" + "Választásod: Életerő ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -258,6 +240,7 @@ namespace KalandJatek
             eletero.Visible = false;
             szerencse.Visible = false;
             ugyesseg.Visible = false;
+            inventory.Visible = true;
             SzovegList[0].Visible = true;
             tovabb.Visible = true;
             italok.Visible = true;
@@ -289,6 +272,7 @@ namespace KalandJatek
             eletero.Visible = false;
             szerencse.Visible = false;
             ugyesseg.Visible = false;
+            inventory.Visible = true;
             SzovegList[0].Visible = true;
             tovabb.Visible = true;
             italok.Visible = true;
@@ -320,6 +304,7 @@ namespace KalandJatek
             eletero.Visible = false;
             szerencse.Visible = false;
             ugyesseg.Visible = false;
+            inventory.Visible = true;
             SzovegList[0].Visible = true;
             tovabb.Visible = true;
             italok.Visible = true;
@@ -343,6 +328,18 @@ namespace KalandJatek
             Coins.ImageAlign = ContentAlignment.MiddleLeft;
             Coins.Visible = true;
         }
+
+        private void Pot_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < invlist.Count; i++)
+            {
+                string invstr = string.Join(", ", invlist);
+                MessageBox.Show(invstr + "->" + $" {invlist.Count}db" + "\n", "Zsákmányod!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private int currentIndex = 0;
+
         private void Tovabb_Click(object sender, EventArgs e)
         {
             switch (currentIndex)
@@ -378,7 +375,6 @@ namespace KalandJatek
                     tovabb.Text = "Tovabb";
                     SzovegList[87].Visible = false;
                     SzovegList[108].Visible = true;
-                    Nyeremeny.Visible = false;
                     SzovegList[108].Text = "#108\nÉszaki irányba követed az átjárót. Hamarosan elérsz egy keleti leágazáshoz. Hogyha egyenesen mész tovább, lapozz a 146-ra. Ha letérsz jobbra, lapozz a 79-re.";
                     currentIndex++;
                     int choice2 = GetUserChoice2();
@@ -395,7 +391,6 @@ namespace KalandJatek
                     tovabb.Text = "Tovabb";
                     SzovegList[87].Visible = false;
                     SzovegList[147].Visible = true;
-                    Nyeremeny.Visible = false;
                     SzovegList[147].Text = "#147\nA járat egy ajtóban végződik. Hogyha ki szeretnéd nyitni, lapozz a 22-re. Ha visszatérnél az elágazáshoz, és észak felé folytatnád az utad, lapozz a 108-ra.";
                     currentIndex++;
                     int choice4 = GetUserChoice4();
@@ -443,69 +438,6 @@ namespace KalandJatek
                     SzovegList[79].Visible = true;
                     SzovegList[79].Text = "#79\nA keleti járat elég keskeny és sötét, és újabb leágazásba fut bele, ezúttal a balodon. Ha erre mennél tovább, északi irányba, lapozz a 141-re. Ha egyenesen folytatnád az utadat, lapozz a 122-re.";
                     currentIndex++;
-                    int choice6 = GetUserChoice6();
-                    if (choice6 == 141)
-                    {
-                        currentIndex = 141;
-                    }
-                    else if (choice6 == 122)
-                    {
-                        currentIndex = 122;
-                    }
-                    break;
-                case 122:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[79].Visible = false;
-                    SzovegList[122].Visible = true;
-                    SzovegList[122].Text = "#122\nAz alagút egy ideig kelet felé folytatódik. végül északra fordul. Ahogy a kanyar felé közeledsz, a szemben lévő falon egy lüktető fényfoltot veszel észre. Óvatosan nézel be balra. Lapozz a 144-re.\r\n";
-                    currentIndex++;
-                    int choice8 = GetUserChoice8();
-                    if (choice8 == 144)
-                    {
-                        currentIndex = 144;
-                    }
-                    break;
-                case 144:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[122].Visible = false;
-                    SzovegList[144].Visible = true;
-                    SzovegList[144].Text = "#144\nMikor már félúton jársz a fényfolt felé, a talaj megnyílik alattad, de még az előtt sikerül visszalépned, hogy te is beleesnél, korábbi óvatosságod meghozta gyümölcsét. Ahogy közelebbről is megvizsgálod, megállapítod, hogy egy kis, kör alakú verem az a padló kellős közepén. Rozoga létra fut lefelé végig az oldalán. de vagy túl sötét van, vagy túl mély lyuk, mert nem látod az alját. Ha szét akarsz nézni benne, lapozz a 7-re. Ha inkább átugornád és kiderítenéd, mi a fényfolt forrása, lapozz a 96-ra.";
-                    currentIndex++;
-                    int choice10 = GetUserChoice10();
-                    if (choice10 == 7)
-                    {
-                        currentIndex = 7;
-                    }
-                    else if (choice10 == 96)
-                    {
-                        currentIndex = 96;
-                    }
-                    break;
-                case 141:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[79].Visible = false;
-                    SzovegList[141].Visible = true;
-                    SzovegList[141].Text = "#141\nA járat hamarosan egy ajtóban ér véget. Ha ki szeretnéd nyitni és belépnél rajta, lapozz a 107-re. Ha nem akarod tudni, mi vár rád odabenn és inkább visszamennél az elágazáshoz, hogy kelet felé folytasd az utad, lapozz a 122-re.";
-                    currentIndex++;
-                    int choice7 = GetUserChoice7();
-                    if (choice7 == 107)
-                    {
-                        currentIndex = 107;
-                    }
-                    else if (choice7 == 122)
-                    {
-                        
-                        currentIndex = 122;
-                        SzovegList[0].Visible = false;
-                        SzovegList[141].Visible = false;
-                        SzovegList[122].Visible = true;
-                        SzovegList[122].Text = "#122\nAz alagút egy ideig kelet felé folytatódik. végül északra fordul. Ahogy a kanyar felé közeledsz, a szemben lévő falon egy lüktető fényfoltot veszel észre. Óvatosan nézel be balra. Lapozz a 144-re.\r\n";
-                        int choice9 = GetUserChoice9();
-                        if (choice9 == 144)
-                        {
-                            currentIndex = 144;
-                        }
-                    }
                     break;
                 case 51:
                     tovabb.Text = "Tovabb";
@@ -539,9 +471,10 @@ namespace KalandJatek
             }
             return 108;
         }
+
         private int GetUserChoice2()
         {
-            DialogResult result146v79 = MessageBox.Show("Hogyha egyenesen mész tovább, lapozz a 146 - ra.(IGEN)\n Ha letérsz jobbra, lapozz a 79-re.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
+            DialogResult result146v79 = MessageBox.Show("Hogyha egyenesen mész tovább, lapozz a 146 - ra.(IGEN)\nHa folytatnád az utad észak felé, lapozz a 80-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
 
             if (result146v79 == DialogResult.Yes)
             {
@@ -553,6 +486,7 @@ namespace KalandJatek
             }
             return 146;
         }
+
         private int GetUserChoice3()
         {
             DialogResult result51v80 = MessageBox.Show("Ha ki akarod nyitni az ajtót, lapozz az 51-re.(IGEN)\nHa letérsz jobbra, lapozz a 79-re.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
@@ -567,6 +501,7 @@ namespace KalandJatek
             }
             return 51;
         }
+
         private int GetUserChoice4()
         {
             DialogResult result22v108 = MessageBox.Show("Hogyha ki szeretnéd nyitni, lapozz a 22-re.(IGEN)\nHa visszatérnél az elágazáshoz, és észak felé folytatnád az utad, lapozz a 108-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
@@ -581,9 +516,10 @@ namespace KalandJatek
             }
             return 22;
         }
+
         private int GetUserChoice5()
         {
-            DialogResult result146v79 = MessageBox.Show("Hogyha egyenesen mész tovább, lapozz a 146 - ra.(IGEN)\n Ha letérsz jobbra, lapozz a 79-re.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
+            DialogResult result146v79 = MessageBox.Show("Hogyha egyenesen mész tovább, lapozz a 146 - ra.(IGEN)\nHa folytatnád az utad észak felé, lapozz a 79-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
 
             if (result146v79 == DialogResult.Yes)
             {
@@ -594,67 +530,6 @@ namespace KalandJatek
                 return 79;
             }
             return 146;
-        }
-        private int GetUserChoice6()
-        {
-            DialogResult result141v122 = MessageBox.Show("Ha erre mennél tovább, északi irányba, lapozz a 141-re.(IGEN)\nHa egyenesen folytatnád az utadat, lapozz a 122-re.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result141v122 == DialogResult.Yes)
-            {
-                return 141;
-            }
-            else if (result141v122 == DialogResult.No)
-            {
-                return 122;
-            }
-            return 141;
-        }
-        private int GetUserChoice7()
-        {
-            DialogResult result107v122 = MessageBox.Show("Ha ki szeretnéd nyitni és belépnél rajta, lapozz a 107-re.(IGEN)\nHa egyenesen folytatnád az utadat, lapozz a 122-re.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result107v122 == DialogResult.Yes)
-            {
-                return 107;
-            }
-            else if (result107v122 == DialogResult.No)
-            {
-                return 122;
-            }
-            return 107;
-        }
-        private int GetUserChoice8()
-        {
-            DialogResult result144 = MessageBox.Show("Tovább mersz haladni a 144-es mezőre?", "Válaszolj!", MessageBoxButtons.YesNo);
-
-            if (result144 == DialogResult.Yes)
-            {
-                return 144;
-            }
-            return 144;
-        }
-        private int GetUserChoice9()
-        {
-            DialogResult result144 = MessageBox.Show("Tovább mersz haladni a 144-es mezőre?", "Válaszolj!", MessageBoxButtons.YesNo);
-
-            if (result144 == DialogResult.Yes)
-            {
-                return 144;
-            }
-            return 144;
-        }
-        private int GetUserChoice10()
-        {
-            DialogResult result7v96 = MessageBox.Show("Ha szét akarsz nézni benne, lapozz a 7-re.(IGEN)\nHa inkább átugornád és kiderítenéd, mi a fényfolt forrása, lapozz a 96-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            if (result7v96 == DialogResult.Yes)
-            {
-                return 7;
-            }else if (result7v96 == DialogResult.No)
-            {
-                return 96;
-            }
-            return 7;
         }
         private void ShowGameOver()
         {
@@ -739,6 +614,7 @@ namespace KalandJatek
                 }
                 else if (enemyStamina <= 0)
                 {
+                    inventory.Visible = false;
                     SzovegList[1].Visible = false;
                     tovabb.Visible = false;
                     italok.Visible = false;
@@ -752,6 +628,7 @@ namespace KalandJatek
                     Player.Visible = false;
                     playerhp.Visible = false;
                     enemyhp.Visible = false;
+                    inventory.Visible = true;
                     SzovegList[87].Visible = true;
                     tovabb.Visible = true;
                     italok.Visible = true;
@@ -759,10 +636,7 @@ namespace KalandJatek
                     stamina.Visible = true;
                     luck.Visible = true;
                     Coins.Visible = true;
-                    Coins.Text =$"Coins:{playerStats.Coins+3}";
-                    Nyeremeny.Visible = true;
-                    Nyeremeny.Text = $"3 Coint kaptál";
-                    playerhp.Text =$"Hp:{playerStats.Hp}";
+                    Coins.Text = Coins.Text+"3";
                     return;
                 }
             }
