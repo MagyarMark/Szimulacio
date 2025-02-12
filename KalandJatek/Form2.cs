@@ -22,7 +22,7 @@ namespace KalandJatek
             Stamina = (rand.Next(1, 7) + rand.Next(1, 7)) + 12;
             Luck = rand.Next(1, 7) + 6;
             Hp = rand.Next(1, 7) + 6;
-            Coins = rand.Next(1, 7) + 6;
+            Coins = 20;
         }
     }
     public partial class Form2 : Form
