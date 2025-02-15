@@ -249,6 +249,7 @@ namespace KalandJatek
         {
             Environment.Exit(0);
         }
+
         private void First_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Jó választás utazó!\n" + "Választásod: Életerő ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -356,11 +357,11 @@ namespace KalandJatek
                 case 1:
                     tovabb.Visible = false;
                     SzovegList[1].Visible = false;
-                    Tolvaj(7, 6);
+                    Fight(7, 6);
                     tovabb.Visible = true;
                     tovabb.Text = "Tovabb";
                     SzovegList[87].Visible = true;
-                    SzovegList[87].Text = "#85\nA Tolvajnál mindössze 3 Aranytallért és egy háromszög alakú, penészes gyümölcsöt találsz. Még soha nem láttál ehhez hasonlót, de gyanítod, hogy ez lehet a Xentos, a hosszú élet gyümölcse. Ha nem lenne ilyen borzalmas állapotban, gond nélkül megkockáztatnád, hogy belekóstolj, igy azonban úgy döntesz, hogy itt hagyod és folytatod az utad észak felé. Hamarosan egy útelágazáshoz érsz. Ha továbbra is északnak tartasz, lapozz a 108-ra. Ha a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.";
+                    SzovegList[87].Text = "#85\r\nA Tolvajnál mindössze 3 Aranytallért és egy háromszög alakú, penészes gyümölcsöt találsz. Még soha nem láttál ehhez hasonlót, de gyanítod, hogy ez lehet a Xentos, a hosszú élet gyümölcse. Ha nem lenne ilyen borzalmas állapotban, gond nélkül megkockáztatnád, hogy belekóstolj, igy azonban úgy döntesz, hogy itt hagyod és folytatod az utad észak felé. Hamarosan egy útelágazáshoz érsz. Ha továbbra is északnak tartasz, lapozz a 108-ra. Ha a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.";
                     currentIndex++;
 
                     int choice = GetUserChoice();
@@ -544,55 +545,6 @@ namespace KalandJatek
                         currentIndex = 89;
                     }
                     break;
-                case 89:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[80].Visible = false;
-                    SzovegList[89].Visible = true;
-                    SzovegList[89].Text = "#89\nA járat meredeken emelkedik, te pedig gyorsan fáradni kezdesz. Figyelmed ellankad, és nem veszed észre a padlóban lévő, meglazult kõdarabot. Megbotlasz és elesel, közben pajzsod a fal egyik repedésébe ékelődik. Miközben próbálod kiszabadítani, elferdül. Sérült pajzsod miatt a soron következő csatákban 2-vel csökkentened kell majd Támadóerődet. Morogva mész tovább. míg végül egy újabb elágazáshoz nem érsz. Hogyha a nyugati ágon folytatnád az utad, lapozz a 95-re. Ha egyenesen mész tovább, lapozz a 127-re.";
-                    currentIndex++;
-                    int choice14 = GetUserChoice14();
-                    if (choice14 == 95)
-                    {
-                        currentIndex = 95;
-                    }
-                    else if (choice14 == 127)
-                    {
-                        currentIndex = 127;
-                    }
-                    break;
-                case 95:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[89].Visible = false;
-                    SzovegList[95].Visible = true;
-                    SzovegList[95].Text = "#95\nNyugati irányba mész, le egy lejtős járaton, míg el nem érsz egy újabb elágazást. Úgy gondolod, a déli út visszafelé vezetne, így észak felé indulsz. Lapozz a 153-ra.";
-                    currentIndex++;
-                    int choice15 = GetUserChoice15();
-                    if (choice15 == 153)
-                    {
-                        currentIndex = 153;
-                    }
-                    break;
-                case 153:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[95].Visible = false;
-                    SzovegList[153].Visible = true;
-                    SzovegList[153].Text = "#153\nA járat szélesedni kezd, repedések és hasadékok jelennek meg a falakon. Zörgö hang szűrődik ki valahonnan, és az egyik lyukból két különös teremtmény ugrik elő. Az egyértelműen látszik, hogy az alvilág lakója, mivel bőre teljesen fehér, vad szemei pedig rózsaszínűek. Feje a farkáig ér, veszedelmes tüskék borítják hátát, melyek járás közben jobbra-balra inganak. A lény hátat fordít neked, és már kezdesz megörülni, hogy megijedt tőled és elmenekül. Mekkorát tévedtél! Ez egy mérges Sündisznó, és épp arra készül, hogy halálos tüskéit beléd löje. A harc indul!";
-                    Suni(7, 5);
-                    playerStats.Hp -= 3;
-                    playerhp.Text = $"Hp:{playerStats.Hp}";
-                    currentIndex++;
-                    int choice16 = GetUserChoice16();
-                    if (choice16 == 42)
-                    {
-                        currentIndex = 42;
-                    }
-                    break;
-                case 42:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[153].Visible = false;
-                    SzovegList[42].Visible = true;
-                    SzovegList[42].Text = "#42\nA járat tovább szélesedik, végül egy hatalmas barlangüregben találod magad. Mindkét oldaladnál sztalagmitok és sztalaktitok meredeznek. Néhányuk hatalmas köoszloppá nőtt össze az idők folyamán, melyek mögött kimondhatatlan borzalmak lapulhatnak. Érzed, hogy a barlangban folyamatosan mozog a levegő, és rájössz, hogy ennek oka egy gyors folyású, igen veszedelmesnek tűnő folyó. Feltekintve szemeid követik a cseppköoszlopok vonalait, egészen addig, míg el nem tűnnek a plafont elrejtő végtelen sötétségben. Valahol a folyó mentén egy kis, nem túl bizalomgerjesztő híd körvonalát sikerül kivenni. Lapozz a 27-re.";
-                    break;
             }
         }
 
@@ -627,7 +579,7 @@ namespace KalandJatek
         }
         private int GetUserChoice3()
         {
-            DialogResult result51v80 = MessageBox.Show("Ha ki akarod nyitni az ajtót, lapozz az 51-re.(IGEN)\nHa letérsz jobbra, lapozz a 80-ra.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
+            DialogResult result51v80 = MessageBox.Show("Ha ki akarod nyitni az ajtót, lapozz az 51-re.(IGEN)\nHa letérsz jobbra, lapozz a 79-re.(NEM)", "Válassz egy irányt!", MessageBoxButtons.YesNo);
 
             if (result51v80 == DialogResult.Yes)
             {
@@ -761,39 +713,6 @@ namespace KalandJatek
             }
             return 89;
         }
-        private int GetUserChoice14()
-        {
-            DialogResult result95v127 = MessageBox.Show("Hogyha a nyugati ágon folytatnád az utad, lapozz a 95-re.(IGEN)\nHa egyenesen mész tovább, lapozz a 127-re.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
-
-            if (result95v127 == DialogResult.Yes)
-            {
-                return 95;
-            }else if (result95v127 == DialogResult.No)
-            {
-                return 127;
-            }
-            return 95;
-        }
-        private int GetUserChoice15()
-        {
-            DialogResult result153 = MessageBox.Show("Indulás a 153-as mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
-
-            if (result153 == DialogResult.Yes)
-            {
-                return 153;
-            }
-            return 153;
-        }
-        private int GetUserChoice16()
-        {
-            DialogResult result42 = MessageBox.Show("Indulás a 42-as mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
-
-            if (result42 == DialogResult.Yes)
-            {
-                return 42;
-            }
-            return 42;
-        }
         private void ShowGameOver()
         {
             this.Controls.Clear();
@@ -802,7 +721,7 @@ namespace KalandJatek
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
-        private void Tolvaj(int enemySkill, int enemyStamina)
+        private void Fight(int enemySkill, int enemyStamina)
         {
             Player = new PictureBox()
             {
@@ -901,107 +820,6 @@ namespace KalandJatek
                     Nyeremeny.Visible = true;
                     Nyeremeny.Text = $"3 Coint kaptál";
                     playerhp.Text =$"Hp:{playerStats.Hp}";
-                    return;
-                }
-            }
-        }
-        private void Suni(int enemySkill, int enemyStamina)
-        {
-            SzovegList[153].Visible = false;
-            Player = new PictureBox()
-            {
-                Image = Image.FromFile("Player.png"),
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                BackColor = Color.Transparent,
-                Size = new Size(200, 350),
-                Location = new Point(885, 650),
-            };
-            Controls.Add(Player);
-
-            Enemy = new PictureBox()
-            {
-                Image = Image.FromFile("Suni.png"),
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                BackColor = Color.Transparent,
-                Size = new Size(200, 350),
-                Location = new Point(885, 65),
-            };
-            Controls.Add(Enemy);
-
-            playerhp = new Label()
-            {
-                Text = "Hp: " + playerStats.Hp.ToString(),
-                Font = new Font("Arial", 20, FontStyle.Bold),
-                BackColor = Color.Transparent,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup,
-                Size = new Size(250, 250),
-                Location = new Point(910, 620),
-                Visible = true
-
-            };
-            Controls.Add(playerhp);
-
-            enemyhp = new Label()
-            {
-                Text = "Hp: " + enemyStamina.ToString(),
-                Font = new Font("Arial", 20, FontStyle.Bold),
-                BackColor = Color.Transparent,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup,
-                Size = new Size(250, 250),
-                Location = new Point(910, 430),
-                Visible = true
-
-            };
-            Controls.Add(enemyhp);
-            this.BackgroundImage = Image.FromFile("fightscene.png");
-
-            Random rand = new Random();
-            int playerStamina = playerStats.Hp;
-
-            while (enemyStamina > 0 && playerStamina > 0)
-            {
-                int enemyAttack = enemySkill + rand.Next(1, 7) + rand.Next(1, 7);
-                int playerAttack = playerStats.Skill + rand.Next(1, 7) + rand.Next(1, 7);
-
-                if (playerAttack > enemyAttack)
-                {
-                    enemyStamina -= 2;
-                }
-                else if (enemyAttack > playerAttack)
-                {
-                    playerStamina -= 2;
-                }
-
-                if (playerStamina <= 0)
-                {
-                    ShowGameOver();
-                    Environment.Exit(0);
-                }
-                else if (enemyStamina <= 0)
-                {
-                    SzovegList[1].Visible = false;
-                    tovabb.Visible = false;
-                    italok.Visible = false;
-                    hp.Visible = false;
-                    stamina.Visible = false;
-                    luck.Visible = false;
-                    Coins.Visible = false;
-                    MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
-                    this.BackgroundImage = Image.FromFile("bg.png");
-                    Enemy.Visible = false;
-                    Player.Visible = false;
-                    playerhp.Visible = false;
-                    enemyhp.Visible = false;
-                    SzovegList[153].Visible = true;
-                    SzovegList[153].Text = "#153\nMivel a tüskék nagyon mérgezőek, valahányszor beléd áll valamelyik, a szokásos 2 helyett 3 ÉLETERŐ pontot kell levonnod magadtól. Lapozz a 42-re.";
-                    tovabb.Visible = true;
-                    italok.Visible = true;
-                    hp.Visible = true;
-                    stamina.Visible = true;
-                    luck.Visible = true;
-                    Coins.Visible = true;
                     return;
                 }
             }

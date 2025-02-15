@@ -249,6 +249,7 @@ namespace KalandJatek
         {
             Environment.Exit(0);
         }
+
         private void First_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Jó választás utazó!\n" + "Választásod: Életerő ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -576,22 +577,8 @@ namespace KalandJatek
                     tovabb.Text = "Tovabb";
                     SzovegList[95].Visible = false;
                     SzovegList[153].Visible = true;
-                    SzovegList[153].Text = "#153\nA járat szélesedni kezd, repedések és hasadékok jelennek meg a falakon. Zörgö hang szűrődik ki valahonnan, és az egyik lyukból két különös teremtmény ugrik elő. Az egyértelműen látszik, hogy az alvilág lakója, mivel bőre teljesen fehér, vad szemei pedig rózsaszínűek. Feje a farkáig ér, veszedelmes tüskék borítják hátát, melyek járás közben jobbra-balra inganak. A lény hátat fordít neked, és már kezdesz megörülni, hogy megijedt tőled és elmenekül. Mekkorát tévedtél! Ez egy mérges Sündisznó, és épp arra készül, hogy halálos tüskéit beléd löje. A harc indul!";
-                    Suni(7, 5);
-                    playerStats.Hp -= 3;
-                    playerhp.Text = $"Hp:{playerStats.Hp}";
-                    currentIndex++;
-                    int choice16 = GetUserChoice16();
-                    if (choice16 == 42)
-                    {
-                        currentIndex = 42;
-                    }
-                    break;
-                case 42:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[153].Visible = false;
-                    SzovegList[42].Visible = true;
-                    SzovegList[42].Text = "#42\nA járat tovább szélesedik, végül egy hatalmas barlangüregben találod magad. Mindkét oldaladnál sztalagmitok és sztalaktitok meredeznek. Néhányuk hatalmas köoszloppá nőtt össze az idők folyamán, melyek mögött kimondhatatlan borzalmak lapulhatnak. Érzed, hogy a barlangban folyamatosan mozog a levegő, és rájössz, hogy ennek oka egy gyors folyású, igen veszedelmesnek tűnő folyó. Feltekintve szemeid követik a cseppköoszlopok vonalait, egészen addig, míg el nem tűnnek a plafont elrejtő végtelen sötétségben. Valahol a folyó mentén egy kis, nem túl bizalomgerjesztő híd körvonalát sikerül kivenni. Lapozz a 27-re.";
+                    SzovegList[153].Text = "#153\nA járat szélesedni kezd, repedések és hasadékok jelennek meg a falakon. Zörgö hang szűrődik ki valahonnan, és az egyik lyukból két különös teremtmény ugrik elő. Az egyértelműen látszik, hogy az alvilág lakói, mivel bőrük teljesen fehér, vad szemeik pedig rózsaszínűek. Fejüktől a farkukig hosszú, veszedelmes tüskék borítják hátukat, melyek járás közben jobbra-balra inganak. A lények hátat fordítanak neked, és már kezdesz megörülni, hogy megijedtek tőled és elmenekülnek. Mekkorát tévedtél! Ezek mérges Sündisznók, és épp arra készülnek, hogy halálos tüskéiket beléd löjék. Egymás után küzdj meg velük.Mivel a tüskék nagyon mérgezőek, valahányszor beléd áll valamelyik, a szokásos 2 helyett 3 ÉLETERŐ pontot kell levonnod magadtól. Lapozz a 42-re.";
+                    
                     break;
             }
         }
@@ -784,16 +771,6 @@ namespace KalandJatek
             }
             return 153;
         }
-        private int GetUserChoice16()
-        {
-            DialogResult result42 = MessageBox.Show("Indulás a 42-as mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
-
-            if (result42 == DialogResult.Yes)
-            {
-                return 42;
-            }
-            return 42;
-        }
         private void ShowGameOver()
         {
             this.Controls.Clear();
@@ -905,9 +882,9 @@ namespace KalandJatek
                 }
             }
         }
-        private void Suni(int enemySkill, int enemyStamina)
+
+        private void Suni1(int enemySkill, int enemyStamina)
         {
-            SzovegList[153].Visible = false;
             Player = new PictureBox()
             {
                 Image = Image.FromFile("Player.png"),
@@ -920,7 +897,7 @@ namespace KalandJatek
 
             Enemy = new PictureBox()
             {
-                Image = Image.FromFile("Suni.png"),
+                Image = Image.FromFile("Tolvaj.png"),
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 BackColor = Color.Transparent,
                 Size = new Size(200, 350),
@@ -994,14 +971,17 @@ namespace KalandJatek
                     Player.Visible = false;
                     playerhp.Visible = false;
                     enemyhp.Visible = false;
-                    SzovegList[153].Visible = true;
-                    SzovegList[153].Text = "#153\nMivel a tüskék nagyon mérgezőek, valahányszor beléd áll valamelyik, a szokásos 2 helyett 3 ÉLETERŐ pontot kell levonnod magadtól. Lapozz a 42-re.";
+                    SzovegList[87].Visible = true;
                     tovabb.Visible = true;
                     italok.Visible = true;
                     hp.Visible = true;
                     stamina.Visible = true;
                     luck.Visible = true;
                     Coins.Visible = true;
+                    Coins.Text = $"Coins:{playerStats.Coins + 3}";
+                    Nyeremeny.Visible = true;
+                    Nyeremeny.Text = $"3 Coint kaptál";
+                    playerhp.Text = $"Hp:{playerStats.Hp}";
                     return;
                 }
             }

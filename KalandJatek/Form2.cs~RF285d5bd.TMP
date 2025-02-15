@@ -578,8 +578,6 @@ namespace KalandJatek
                     SzovegList[153].Visible = true;
                     SzovegList[153].Text = "#153\nA járat szélesedni kezd, repedések és hasadékok jelennek meg a falakon. Zörgö hang szűrődik ki valahonnan, és az egyik lyukból két különös teremtmény ugrik elő. Az egyértelműen látszik, hogy az alvilág lakója, mivel bőre teljesen fehér, vad szemei pedig rózsaszínűek. Feje a farkáig ér, veszedelmes tüskék borítják hátát, melyek járás közben jobbra-balra inganak. A lény hátat fordít neked, és már kezdesz megörülni, hogy megijedt tőled és elmenekül. Mekkorát tévedtél! Ez egy mérges Sündisznó, és épp arra készül, hogy halálos tüskéit beléd löje. A harc indul!";
                     Suni(7, 5);
-                    playerStats.Hp -= 3;
-                    playerhp.Text = $"Hp:{playerStats.Hp}";
                     currentIndex++;
                     int choice16 = GetUserChoice16();
                     if (choice16 == 42)
@@ -591,7 +589,7 @@ namespace KalandJatek
                     tovabb.Text = "Tovabb";
                     SzovegList[153].Visible = false;
                     SzovegList[42].Visible = true;
-                    SzovegList[42].Text = "#42\nA járat tovább szélesedik, végül egy hatalmas barlangüregben találod magad. Mindkét oldaladnál sztalagmitok és sztalaktitok meredeznek. Néhányuk hatalmas köoszloppá nőtt össze az idők folyamán, melyek mögött kimondhatatlan borzalmak lapulhatnak. Érzed, hogy a barlangban folyamatosan mozog a levegő, és rájössz, hogy ennek oka egy gyors folyású, igen veszedelmesnek tűnő folyó. Feltekintve szemeid követik a cseppköoszlopok vonalait, egészen addig, míg el nem tűnnek a plafont elrejtő végtelen sötétségben. Valahol a folyó mentén egy kis, nem túl bizalomgerjesztő híd körvonalát sikerül kivenni. Lapozz a 27-re.";
+                    SzovegList[42].Text = "#42\n";
                     break;
             }
         }
@@ -1002,6 +1000,8 @@ namespace KalandJatek
                     stamina.Visible = true;
                     luck.Visible = true;
                     Coins.Visible = true;
+                    playerStats.Hp -= 3;
+                    playerhp.Text = $"Hp:{playerStats.Hp}";
                     return;
                 }
             }
