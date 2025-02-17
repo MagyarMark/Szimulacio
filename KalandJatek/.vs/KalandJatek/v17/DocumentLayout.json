@@ -48,22 +48,9 @@
               "RelativeDocumentMoniker": "Form2.cs",
               "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form2.cs",
               "RelativeToolTip": "Form2.cs",
-              "ViewState": "AQIAADgCAAAAAAAAAAAiwFECAACTAgAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAiwFIDAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T11:23:01Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.Designer.cs",
-              "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T11:07:57.812Z",
               "EditorCaption": ""
             },
             {
@@ -77,6 +64,19 @@
               "ViewState": "AQIAAIAAAAAAAAAAAAAqwC4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T10:20:36.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\KalandJatek\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T11:07:57.812Z",
               "EditorCaption": ""
             },
             {

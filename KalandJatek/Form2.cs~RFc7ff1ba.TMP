@@ -46,8 +46,6 @@ namespace KalandJatek
         private Label enemyhp;
         private Label playerhp;
         private Label Coins;
-        private Label felszereles;
-        private Label felszereles2;
         private Label Nyeremeny;
         private List<string> invlist = new List<string>();
         private List<Label> SzovegList = new List<Label>();
@@ -147,34 +145,6 @@ namespace KalandJatek
                 Visible = false
             };
             Controls.Add(hp);
-
-            
-
-            felszereles = new Label
-            {
-                Text = $"Felszerelés:\n",
-                Size = new Size(200, 200),
-                Location = new Point(50, 250),
-                Font = new Font("Courier New", 16),
-                BackColor = Color.Transparent,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup,
-                Visible = false
-            };
-            Controls.Add(felszereles);
-
-            felszereles2 = new Label
-            {
-                Size = new Size(180,200),
-                Location = new Point(250, 250),
-                Font = new Font("Courier New", 16),
-                BackColor = Color.Transparent,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup,
-                Visible = false
-            };
-            Controls.Add(felszereles2);
-            
 
             stamina = new Label
             {
@@ -370,14 +340,6 @@ namespace KalandJatek
             Coins.Image = Coinsstat;
             Coins.ImageAlign = ContentAlignment.MiddleLeft;
             Coins.Visible = true;
-            Image Kardstat = new Bitmap("Kard.png");
-            felszereles.Image = Kardstat;
-            felszereles.ImageAlign = ContentAlignment.TopLeft;
-            felszereles.Visible = true;
-            Image vertstat = new Bitmap("Bőrvért.png");
-            felszereles2.Image = vertstat;
-            felszereles2.ImageAlign = ContentAlignment.TopLeft;
-            felszereles2.Visible = true;
         }
         private void Second_Click(object sender, EventArgs e)
         {
@@ -409,14 +371,6 @@ namespace KalandJatek
             Coins.Image = Coinsstat;
             Coins.ImageAlign = ContentAlignment.MiddleLeft;
             Coins.Visible = true;
-            Image Kardstat = new Bitmap("Kard.png");
-            felszereles.Image = Kardstat;
-            felszereles.ImageAlign = ContentAlignment.TopLeft;
-            felszereles.Visible = true;
-            Image vertstat = new Bitmap("Bőrvért.png");
-            felszereles2.Image = vertstat;
-            felszereles2.ImageAlign = ContentAlignment.TopLeft;
-            felszereles2.Visible = true;
         }
         private void Third_Click(object sender, EventArgs e)
         {
@@ -448,14 +402,6 @@ namespace KalandJatek
             Coins.Image = Coinsstat;
             Coins.ImageAlign = ContentAlignment.MiddleLeft;
             Coins.Visible = true;
-            Image Kardstat = new Bitmap("Kard.png");
-            felszereles.Image = Kardstat;
-            felszereles.ImageAlign = ContentAlignment.TopLeft;
-            felszereles.Visible = true;
-            Image vertstat = new Bitmap("Bőrvért.png");
-            felszereles2.Image = vertstat;
-            felszereles2.ImageAlign = ContentAlignment.TopLeft;
-            felszereles2.Visible = true;
         }
         private void Tovabb_Click(object sender, EventArgs e)
         {
@@ -781,74 +727,46 @@ namespace KalandJatek
             if (choice21 == 13)
             {
                 currentIndex = 13;
-                SzovegList[121].Visible = false;
-                SzovegList[87].Visible = false;
-                SzovegList[13].Visible = true;
-                SzovegList[13].Text = "#13\nA zárba helyezed a kulcsot, de az sajnos nem illik bele, így nincs más választásod, minthogy megpróbáld betörni. Lapozz a 196-ra.";
-                currentIndex++;
-                int choice22 = GetUserChoice22();
-                if (choice22 == 196)
-                {
-                    currentIndex = 196;
-                    SzovegList[121].Visible = false;
-                    SzovegList[13].Visible = false;
-                    SzovegList[196].Visible = true;
-                    SzovegList[196].Text = "#196\nAmennyire csak tudod, puha ruhadarabokkal béleled ki a vállad, behúzod a nyakad és az ajtónak rontasz. Dobj egy kockával. Ha az eredmény 1-4. megsérültél és vesztesz 2 ÉLETERŐ pontot. Ha azonban 5-öt vagy 6-ot dobtál, sikerült betörnöd az ajtót lapozz a 158-ra. Egészen addig kell próbálkoznod. míg ez nem sikerül.\r\n";
-                    currentIndex++;
-                    BetorAjto();
-                    SzovegList[121].Visible = false;
-                    SzovegList[196].Visible = false;
-                    SzovegList[158].Visible = true;
-                    SzovegList[158].Text = "#158\nAz ajtó becsapódik, te pedig végre felfedezed a füttyszerű sóhajok és susogások forrását. Előtted, a padlón guggolva megpillantod a Galont, a Madárembert. Börszárnyai két oldalt széttárva állnak, kezének éles karmai feléd mutatnak. Azonnal felismered zöldes bőrét, és tudod, hogy izmos karjaival és hatalmas szárnyaival megpróbál majd megfullasztani. Előhúzod kardodat, melynek látványára ellenfeled azonnal örjöngeni kezd, hiszen éhsége kielégíthetetlen. Ez a harc lesz az egyik legnehezebb, amit meg kell itt vívnod.\r\n";
-                    currentIndex++;
-                    Galon(12, 8);
-                    int choice23 = GetUserChoice23();
-                    if (choice23 == 61)
-                    {
-                        currentIndex = 61;
-                        SzovegList[121].Visible = false;
-                        SzovegList[158].Visible = false;
-                        SzovegList[61].Visible = true;
-                        SzovegList[61].Text = "#61\nA hatalmas Galon tetemét melynek madárszerű karmai még mindig megfeszülnek és elernyednek, mintha még holtukban is szét akarnának tépni téged megkerülve kiutat keresel a helyiségből. E közben szépen lassan az oszlás büze tölti be a levegőt. A Madárember teste felé fordulsz, és még éppen megpillantod, amint bőrszárnyai eltünnek egy csapat vonagló lárva alatt. Néhány másodperccel később már csak a lerágott csontok maradnak meg egykori ellenfeledből. Amint elfogy élelmük, a férgek feled indulnak, te pedig ráébredsz, hogy halálos veszélyben vagy. Mivel a fura teremtmények közted és a bejárat között állnak, egy másik kiutat kell találnod. Tedd próbára SZERENCSED! Ha szerencséd van, lapozz a 109-re. Hogyha nincs szerencséd, lapozz a 175-re.\r\n";
-                        currentIndex++;
-                    }
-
-                }
             }else if (choice21 == 121)
             {
                 currentIndex = 121;
-                SzovegList[87].Visible = false;
-                SzovegList[121].Visible = true;
-                SzovegList[121].Text = "#121\nNincs más választásod, minthogy a válladdal ronts neki az ajtónak. Nem lesz egy egyszerű feladat, mivel a szegecsek igen hosszúak és hegyesek. Lapozz a 196-ra.";
-                currentIndex++;
-                int choice22 = GetUserChoice22();
-                if (choice22 == 196)
-                {
-                    currentIndex = 196;
-                    SzovegList[121].Visible = false;
-                    SzovegList[196].Visible = true;
-                    SzovegList[196].Text = "#196\nAmennyire csak tudod, puha ruhadarabokkal béleled ki a vállad, behúzod a nyakad és az ajtónak rontasz. Dobj egy kockával. Ha az eredmény 1-4. megsérültél és vesztesz 2 ÉLETERŐ pontot. Ha azonban 5-öt vagy 6-ot dobtál, sikerült betörnöd az ajtót lapozz a 158-ra. Egészen addig kell próbálkoznod. míg ez nem sikerül.\r\n";
-                    currentIndex++;
-                    BetorAjto();
-                    SzovegList[196].Visible = false;
-                    SzovegList[158].Visible = true;
-                    SzovegList[158].Text = "#158\nAz ajtó becsapódik, te pedig végre felfedezed a füttyszerű sóhajok és susogások forrását. Előtted, a padlón guggolva megpillantod a Galont, a Madárembert. Börszárnyai két oldalt széttárva állnak, kezének éles karmai feléd mutatnak. Azonnal felismered zöldes bőrét, és tudod, hogy izmos karjaival és hatalmas szárnyaival megpróbál majd megfullasztani. Előhúzod kardodat, melynek látványára ellenfeled azonnal örjöngeni kezd, hiszen éhsége kielégíthetetlen. Ez a harc lesz az egyik legnehezebb, amit meg kell itt vívnod.\r\n";
-                    currentIndex++;
-                    Galon(12, 8);
-                    int choice23 = GetUserChoice23();
-                    if (choice23 == 61)
-                    {
-                        currentIndex = 61;
-                        SzovegList[121].Visible = false;
-                        SzovegList[158].Visible = false;
-                        SzovegList[61].Visible = true;
-                        SzovegList[61].Text = "#61\nA hatalmas Galon tetemét melynek madárszerű karmai még mindig megfeszülnek és elernyednek, mintha még holtukban is szét akarnának tépni téged megkerülve kiutat keresel a helyiségből. E közben szépen lassan az oszlás büze tölti be a levegőt. A Madárember teste felé fordulsz, és még éppen megpillantod, amint bőrszárnyai eltünnek egy csapat vonagló lárva alatt. Néhány másodperccel később már csak a lerágott csontok maradnak meg egykori ellenfeledből. Amint elfogy élelmük, a férgek feled indulnak, te pedig ráébredsz, hogy halálos veszélyben vagy. Mivel a fura teremtmények közted és a bejárat között állnak, egy másik kiutat kell találnod. Tedd próbára SZERENCSED! Ha szerencséd van, lapozz a 109-re. Hogyha nincs szerencséd, lapozz a 175-re.\r\n";
-                        currentIndex++;
-                    }
-                }
             }
-            
-        }//Kész a játékos vesztett
+
+            SzovegList[87].Visible = false;
+            SzovegList[13].Visible = true;
+            SzovegList[13].Text = "#13\nA zárba helyezed a kulcsot, de az sajnos nem illik bele, így nincs más választásod, minthogy megpróbáld betörni. Lapozz a 196-ra.";
+            currentIndex++;
+            int choice22 = GetUserChoice22();
+            if (choice22 == 196)
+            {
+                currentIndex = 196;
+            }
+
+            SzovegList[13].Visible = false;
+            SzovegList[196].Visible = true;
+            SzovegList[196].Text = "#196\nAmennyire csak tudod, puha ruhadarabokkal béleled ki a vállad, behúzod a nyakad és az ajtónak rontasz. Dobj egy kockával. Ha az eredmény 1-4. megsérültél és vesztesz 2 ÉLETERŐ pontot. Ha azonban 5-öt vagy 6-ot dobtál, sikerült betörnöd az ajtót lapozz a 158-ra. Egészen addig kell próbálkoznod. míg ez nem sikerül.\r\n";
+            currentIndex++;
+            BetorAjto();
+
+            SzovegList[196].Visible = false;
+            SzovegList[158].Visible = true;
+            SzovegList[158].Text = "#158\nAz ajtó becsapódik, te pedig végre felfedezed a füttyszerű sóhajok és susogások forrását. Előtted, a padlón guggolva megpillantod a Galont, a Madárembert. Börszárnyai két oldalt széttárva állnak, kezének éles karmai feléd mutatnak. Azonnal felismered zöldes bőrét, és tudod, hogy izmos karjaival és hatalmas szárnyaival megpróbál majd megfullasztani. Előhúzod kardodat, melynek látványára ellenfeled azonnal örjöngeni kezd, hiszen éhsége kielégíthetetlen. Ez a harc lesz az egyik legnehezebb, amit meg kell itt vívnod.\r\n";
+            currentIndex++;
+            Galon(12, 8);
+            int choice23 = GetUserChoice23();
+            if (choice23 == 61)
+            {
+                currentIndex = 61;
+            }
+
+            SzovegList[158].Visible = false;
+            SzovegList[61].Visible = true;
+            SzovegList[61].Text = "#61\nA hatalmas Galon tetemét melynek madárszerű karmai még mindig megfeszülnek és elernyednek, mintha még holtukban is szét akarnának tépni téged megkerülve kiutat keresel a helyiségből. E közben szépen lassan az oszlás büze tölti be a levegőt. A Madárember teste felé fordulsz, és még éppen megpillantod, amint bőrszárnyai eltünnek egy csapat vonagló lárva alatt. Néhány másodperccel később már csak a lerágott csontok maradnak meg egykori ellenfeledből. Amint elfogy élelmük, a férgek feled indulnak, te pedig ráébredsz, hogy halálos veszélyben vagy. Mivel a fura teremtmények közted és a bejárat között állnak, egy másik kiutat kell találnod. Tedd próbára SZERENCSED! Ha szerencséd van, lapozz a 109-re. Hogyha nincs szerencséd, lapozz a 175-re.\r\n";
+            currentIndex++;
+
+
+
+        }
         private void Tovabb3_Click(object sender, EventArgs e)
         {
             tovabb3.Text = "Tovabb";
@@ -858,26 +776,7 @@ namespace KalandJatek
             tovabb5.Visible = false;
             SzovegList[76].Visible = false;
             SzovegList[6].Visible = true;
-            SzovegList[6].Text = "#6\nAz ajtó egy nyugat felé haladó alagútba nyílik. Követed, míg egy elágazáshoz nem érsz. Ha észak felé akarsz fordulni, lapozz a 172-re. Ha nem akarsz letérni ebből a járatból. lapozz a 168-ra.";
-            currentIndex++;
-            int choice = GetUserChoice24();
-            if (choice == 172)
-            {
-                currentIndex = 172;
-                SzovegList[6].Visible = false;
-                SzovegList[168].Visible = false;
-                SzovegList[172].Visible = true;
-                SzovegList[172].Text = "#172\nA folyosó gyorsan szélesedik, végül egy kisebb szoba méreteit ölti magára. Nem messze töled ismét összeszűkül, és újra egyszerű járatként folytatja életét. A padló közepén egy sekély aknát látsz. Ha gyorsan átgázolsz rajta, hogy a túloldalon folytathasd az utad, lapozz a 163-ra. Ha bele akarsz ugrani, lapozz a 185-rc. Ha visszatérnél az előző elágazáshoz, és ott nyugati irányba mennél tovább, lapozz a 168-ra.";
-                currentIndex++;
-
-            }else if (choice == 168)
-            {
-                currentIndex = 168;
-                SzovegList[6].Visible = false;
-                SzovegList[168].Visible = true;
-                SzovegList[168].Text = "#168\nEgy újabb elágazáshoz érkezel. Ha észak felé mennél, lapozz a 161-re. Ha továbbra is nyugati irányba haladnál, lapozz a 73-ra.";
-
-            }
+            SzovegList[6].Text = "#6\n";
         }
         private void Tovabb4_Click(object sender, EventArgs e)
         {
@@ -1181,20 +1080,6 @@ namespace KalandJatek
             }
             return 61;
         }
-        private int GetUserChoice24()
-        {
-            DialogResult result172v168 = MessageBox.Show("Ha észak felé akarsz fordulni, lapozz a 172-re.(IGEN)\nHa nem akarsz letérni ebből a járatból. lapozz a 168-ra.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
-
-            if (result172v168 == DialogResult.Yes)
-            {
-                return 172;
-            }
-            else if (result172v168 == DialogResult.No)
-            {
-                return 168;
-            }
-            return 172;
-        }
         private void BetorAjto()
         {
             Random rand = new Random();
@@ -1296,7 +1181,7 @@ namespace KalandJatek
 
                 if (playerStamina <= 0)
                 {
-                    continue;
+                    ShowGameOver();
                 }
                 else if (enemyStamina <= 0)
                 {
@@ -1307,8 +1192,6 @@ namespace KalandJatek
                     stamina.Visible = false;
                     luck.Visible = false;
                     Coins.Visible = false;
-                    felszereles.Visible = false;
-                    felszereles2.Visible = false;
                     MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                     this.BackgroundImage = Image.FromFile("bg.png");
                     Enemy.Visible = false;
@@ -1321,8 +1204,6 @@ namespace KalandJatek
                     hp.Visible = true;
                     stamina.Visible = true;
                     luck.Visible = true;
-                    felszereles.Visible = true;
-                    felszereles2.Visible = true;
                     Coins.Visible = true;
                     Coins.Text =$"Coins:{playerStats.Coins+3}";
                     Nyeremeny.Visible = true;
@@ -1403,7 +1284,7 @@ namespace KalandJatek
 
                 if (playerStamina <= 0)
                 {
-                    continue;
+                    ShowGameOver();
                 }
                 else if (enemyStamina <= 0)
                 {
@@ -1413,8 +1294,6 @@ namespace KalandJatek
                     hp.Visible = false;
                     stamina.Visible = false;
                     luck.Visible = false;
-                    felszereles.Visible = false;
-                    felszereles2.Visible = false;
                     Coins.Visible = false;
                     MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                     this.BackgroundImage = Image.FromFile("bg.png");
@@ -1426,8 +1305,6 @@ namespace KalandJatek
                     SzovegList[153].Text = "#153\nMivel a tüskék nagyon mérgezőek, valahányszor beléd áll valamelyik, a szokásos 2 helyett 3 ÉLETERŐ pontot kell levonnod magadtól. Lapozz a 42-re.";
                     tovabb.Visible = true;
                     italok.Visible = true;
-                    felszereles.Visible = true;
-                    felszereles2.Visible = true;
                     hp.Visible = true;
                     stamina.Visible = true;
                     luck.Visible = true;
@@ -1518,8 +1395,6 @@ namespace KalandJatek
                     hp.Visible = false;
                     stamina.Visible = false;
                     luck.Visible = false;
-                    felszereles.Visible = false;
-                    felszereles2.Visible = false;
                     Coins.Visible = false;
                     MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                     this.BackgroundImage = Image.FromFile("bg.png");
@@ -1531,8 +1406,6 @@ namespace KalandJatek
                     SzovegList[158].Text = "#153\nHa nyertél, lapozz a 61-re.";
                     tovabb.Visible = true;
                     italok.Visible = true;
-                    felszereles.Visible=true;
-                    felszereles2.Visible=true;
                     hp.Visible = true;
                     stamina.Visible = true;
                     luck.Visible = true;
@@ -1541,7 +1414,6 @@ namespace KalandJatek
                     return;
                 }
             }
-            ShowGameOver();
         }
     }
 }
