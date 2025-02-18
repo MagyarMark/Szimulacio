@@ -38,6 +38,9 @@ namespace KalandJatek
         private Button tovabb3;
         private Button tovabb4;
         private Button tovabb5;
+        private Button tovabb6;
+        private Button tovabb7;
+        private Button tovabb8;
         private Button Exit;
         private Label italok;
         private Label hp;
@@ -148,8 +151,6 @@ namespace KalandJatek
             };
             Controls.Add(hp);
 
-            
-
             felszereles = new Label
             {
                 Text = $"Felszerelés:\n",
@@ -174,7 +175,6 @@ namespace KalandJatek
                 Visible = false
             };
             Controls.Add(felszereles2);
-            
 
             stamina = new Label
             {
@@ -282,6 +282,48 @@ namespace KalandJatek
             };
             tovabb5.Click += Tovabb5_Click;
             Controls.Add(tovabb5);
+            
+            tovabb6 = new Button
+            {
+                Text = "163",
+                Size = new Size(150, 75),
+                Location = new Point(750, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb6.Click += Tovabb6_Click;
+            Controls.Add(tovabb6);
+            
+            tovabb7 = new Button
+            {
+                Text = "185",
+                Size = new Size(150, 75),
+                Location = new Point(970, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb7.Click += Tovabb7_Click;
+            Controls.Add(tovabb7);
+            
+            tovabb8 = new Button
+            {
+                Text = "168",
+                Size = new Size(150, 75),
+                Location = new Point(1200, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb8.Click += Tovabb8_Click;
+            Controls.Add(tovabb8);
 
             tovabb = new Button
             {
@@ -297,7 +339,6 @@ namespace KalandJatek
             tovabb.Click += Tovabb_Click;
             Controls.Add(tovabb);
 
-            
 
             for (int i = 0; i < 200; i++)
             {
@@ -853,6 +894,7 @@ namespace KalandJatek
         {
             tovabb3.Text = "Tovabb";
             tovabb3.Size = new Size(600, 75);
+            tovabb3.Location = new Point(750, 850);
             tovabb2.Visible = false;
             tovabb4.Visible = false;
             tovabb5.Visible = false;
@@ -860,17 +902,23 @@ namespace KalandJatek
             SzovegList[6].Visible = true;
             SzovegList[6].Text = "#6\nAz ajtó egy nyugat felé haladó alagútba nyílik. Követed, míg egy elágazáshoz nem érsz. Ha észak felé akarsz fordulni, lapozz a 172-re. Ha nem akarsz letérni ebből a járatból. lapozz a 168-ra.";
             currentIndex++;
-            int choice = GetUserChoice24();
-            if (choice == 172)
+            int choice24 = GetUserChoice24();
+            if (choice24 == 172)
             {
                 currentIndex = 172;
+                tovabb3.Visible = false;
+                tovabb6.Visible = true;
+                tovabb7.Visible = true;
+                tovabb8.Visible = true;
                 SzovegList[6].Visible = false;
                 SzovegList[168].Visible = false;
                 SzovegList[172].Visible = true;
                 SzovegList[172].Text = "#172\nA folyosó gyorsan szélesedik, végül egy kisebb szoba méreteit ölti magára. Nem messze töled ismét összeszűkül, és újra egyszerű járatként folytatja életét. A padló közepén egy sekély aknát látsz. Ha gyorsan átgázolsz rajta, hogy a túloldalon folytathasd az utad, lapozz a 163-ra. Ha bele akarsz ugrani, lapozz a 185-rc. Ha visszatérnél az előző elágazáshoz, és ott nyugati irányba mennél tovább, lapozz a 168-ra.";
                 currentIndex++;
+                
 
-            }else if (choice == 168)
+            }
+            else if (choice24 == 168)
             {
                 currentIndex = 168;
                 SzovegList[6].Visible = false;
@@ -900,6 +948,185 @@ namespace KalandJatek
             SzovegList[76].Visible = false;
             SzovegList[53].Visible = true;
             SzovegList[53].Text = "#53\n";
+        }
+        private void Tovabb6_Click(object sender, EventArgs e)
+        {
+            tovabb6.Text = "Tovabb";
+            tovabb6.Size = new Size(600, 75);
+            tovabb7.Visible = false;
+            tovabb8.Visible = false;
+            tovabb3.Visible = false;
+            tovabb2.Visible = false;
+            SzovegList[172].Visible = false;
+            SzovegList[163].Visible = true;
+            SzovegList[163].Text = "#163\nAz alagút egy tágas, vízzel telt szobába vezet. A falakat misztikus minták borítják. Megmártózol a hűs vízben, de kijövet egy víz alatti kijáratot veszel észre. Nem tudod kinyitni, így végül visszaöltözöl és távozol. Visszatérsz a vermes ajtóhoz. Ha leugrasz, lapozz a 185-re. Ha inkább nyugat felé mész, lapozz a 168-ra.";
+            currentIndex++;
+            int choice25 = GetUserChoice25();
+            if (choice25 == 185)
+            {
+                currentIndex = 185;
+                SzovegList[163].Visible = false;
+                SzovegList[169].Visible = false;
+                SzovegList[185].Visible = true;
+                SzovegList[185].Text = "#185\nLeugrasz a verembe, miután meggyözödtél róla, hogy ki fogsz tudni belőle mászni, ha ez szükségesnek bizonyulna. Mikor körbenézel, egy alacsony bejáratra bukkansz az egyik kinyúló szikladarab alatt. Szinte négykézlábra kell leereszkedned, hogy be tudj kukkantani rajta. Ha alaposabban is szét akarsz odabenn nézni, úgy lapozz a 178-ra. Ha inkább visszatérnél a szobába, lapozz a 172-re és válassz valami mást.";
+                currentIndex++;
+                int choice26 = GetUserChoice26();
+                if (choice26 == 178)
+                {
+                    currentIndex = 178;
+                    SzovegList[185].Visible = false;
+                    SzovegList[169].Visible = false;
+                    SzovegList[178].Visible = true;
+                    SzovegList[178].Text = "#178\nAz alagút egyre alacsonyabbá és szűkebbé válik, így nehéz nem észrevenni az itt heverő kis, kék folyadékot tartalmazó üvegcsét. Lapozz a 34-re.";
+                    currentIndex++;
+                    int choice27 = GetUserChoice27();
+                    if (choice27 == 34)
+                    {
+                        currentIndex = 34;
+                        SzovegList[178].Visible = false;
+                        SzovegList[169].Visible = false;
+                        SzovegList[34].Visible = true;
+                        SzovegList[34].Text = "#34\nA fiola erős mentaillatot áraszt magából. Ha meg akarod inni, lapozz a 102-re. Ha inkább hagyod, ahol van, lapozz a 169-re.";
+                        currentIndex++;
+                        int choice28 = GetUserChoice28();
+                        if (choice28 == 102)
+                        {
+                            currentIndex = 102;
+                            SzovegList[34].Visible = false;
+                            SzovegList[169].Visible = false;
+                            SzovegList[102].Visible = true;
+                            SzovegList[102].Text = "#102\nMiután felhajtod az üvegcsében lévő italt, megdöbbenve tapasztalod, mennyivel jobban érzed most magad. Az üvegben a Szerencse Italának egy adagja volt. Növeld meg 1-el Kezdeti SZERENCSÉDET, majd állítsd vissza jelenlegi pontjaidat erre az új értékre. Folytatod a kúszást észak felé. Lapozz a 169-re.";
+                            currentIndex++;
+                            int choice29 = GetUserChoice29();
+                            if (choice29 == 169)
+                            {
+                                currentIndex = 169;
+                                SzovegList[102].Visible = false;
+                                SzovegList[169].Visible = false;
+                                SzovegList[169].Visible = true;
+                                SzovegList[169].Text = "#169\nA folyosó végén egy kicsiny ajtót találsz. Ahogy figyelsz, különös, csobogó hangot hallasz átszűrődni rajta. Érintésedre különösen hűvösnek tűnik az anyaga. Ha ki akarod nyitni, lapozz a 164-re. Ha inkább\r\nhagyod, ahol van, lapozz vissza a 172-re és válassz valami mást.";
+                                currentIndex++;
+                                int choice30 = GetUserChoice30();
+                                if (choice30 == 164)
+                                {
+                                    currentIndex = 164;
+                                    SzovegList[169].Visible = false;
+                                    SzovegList[164].Visible = true;
+                                    SzovegList[164].Text = "#164\nAhogy lenyomod a kilincset, az ajtó kicsapódik, mintha valami hatalmas súly nyomná ki a túloldalon. Azonnal rájössz, hogy nagy hibát vétettél, mikor vízsugarak kezdenek el kispriccelni az apró réseken. Kétségbeesetten próbálod újra bezárni a kitörni készülő víztömeget ám hamar rájössz, hogy erre semmi esélyed, így más választásod nem lévén menekülni próbálsz. Az ajtó kicsapódik, a szűk járatban pedig esélyed sincs rá, hogy túléld a dolgot. A víz teljes tömege rád zúdul, te pedig azon nyomban megfulladsz. Kalandod itt véget ér.";
+                                    currentIndex++;
+                                    ShowGameOver();
+                                }else if (choice30 == 172)
+                                {
+                                    currentIndex = 172;
+                                    tovabb6.Text = "163";
+                                    tovabb6.Size = new Size(150, 75);
+                                    tovabb6.Location = new Point(750, 850);
+                                    tovabb6.Visible = true;
+                                    tovabb7.Visible = true;
+                                    tovabb8.Visible = true;
+                                    SzovegList[169].Visible = false;
+                                    SzovegList[172].Visible = true;
+                                    SzovegList[172].Text = "#172\nA folyosó gyorsan szélesedik, végül egy kisebb szoba méreteit ölti magára. Nem messze töled ismét összeszűkül, és újra egyszerű járatként folytatja életét. A padló közepén egy sekély aknát látsz. Ha gyorsan átgázolsz rajta, hogy a túloldalon folytathasd az utad, lapozz a 163-ra. Ha bele akarsz ugrani, lapozz a 185-rc. Ha visszatérnél az előző elágazáshoz, és ott nyugati irányba mennél tovább, lapozz a 168-ra.";
+                                    currentIndex++;
+                                }
+                            }
+                        }else if (choice28 == 169)
+                        {
+                            currentIndex = 169;
+                            SzovegList[34].Visible = false;
+                            SzovegList[169].Visible = true;
+                            SzovegList[169].Text = "#169\nA folyosó végén egy kicsiny ajtót találsz. Ahogy figyelsz, különös, csobogó hangot hallasz átszűrődni rajta. Érintésedre különösen hűvösnek tűnik az anyaga. Ha ki akarod nyitni, lapozz a 164-re. Ha inkább\r\nhagyod, ahol van, lapozz vissza a 172-re és válassz valami mást.";
+                            currentIndex++;
+                            int choice30 = GetUserChoice30();
+                            if (choice30 == 164)
+                            {
+                                currentIndex = 164;
+                                SzovegList[169].Visible = false;
+                                SzovegList[164].Visible = true;
+                                SzovegList[164].Text = "#164\nAhogy lenyomod a kilincset, az ajtó kicsapódik, mintha valami hatalmas súly nyomná ki a túloldalon. Azonnal rájössz, hogy nagy hibát vétettél, mikor vízsugarak kezdenek el kispriccelni az apró réseken. Kétségbeesetten próbálod újra bezárni a kitörni készülő víztömeget ám hamar rájössz, hogy erre semmi esélyed, így más választásod nem lévén menekülni próbálsz. Az ajtó kicsapódik, a szűk járatban pedig esélyed sincs rá, hogy túléld a dolgot. A víz teljes tömege rád zúdul, te pedig azon nyomban megfulladsz. Kalandod itt véget ér.";
+                                currentIndex++;
+                                ShowGameOver();
+                            }
+                            else if (choice30 == 172)
+                            {
+                                currentIndex = 172;
+                                tovabb6.Text = "163";
+                                tovabb6.Size = new Size(150, 75);
+                                tovabb6.Location = new Point(750, 850);
+                                tovabb6.Visible = true;
+                                tovabb7.Visible = true;
+                                tovabb8.Visible = true;
+                                SzovegList[169].Visible = false;
+                                SzovegList[172].Visible = true;
+                                SzovegList[172].Text = "#172\nA folyosó gyorsan szélesedik, végül egy kisebb szoba méreteit ölti magára. Nem messze töled ismét összeszűkül, és újra egyszerű járatként folytatja életét. A padló közepén egy sekély aknát látsz. Ha gyorsan átgázolsz rajta, hogy a túloldalon folytathasd az utad, lapozz a 163-ra. Ha bele akarsz ugrani, lapozz a 185-rc. Ha visszatérnél az előző elágazáshoz, és ott nyugati irányba mennél tovább, lapozz a 168-ra.";
+                                currentIndex++;
+                            }
+                        }
+                    }
+                }else if (choice26 == 172)
+                {
+                    currentIndex = 172;
+                    tovabb6.Text = "163";
+                    tovabb6.Size = new Size(150, 75);
+                    tovabb6.Location = new Point(750, 850);
+                    tovabb6.Visible = true;
+                    tovabb7.Visible = true;
+                    tovabb8.Visible = true;
+                    SzovegList[185].Visible = false;
+                    SzovegList[172].Visible = true;
+                    SzovegList[172].Text = "#172\nA folyosó gyorsan szélesedik, végül egy kisebb szoba méreteit ölti magára. Nem messze töled ismét összeszűkül, és újra egyszerű járatként folytatja életét. A padló közepén egy sekély aknát látsz. Ha gyorsan átgázolsz rajta, hogy a túloldalon folytathasd az utad, lapozz a 163-ra. Ha bele akarsz ugrani, lapozz a 185-rc. Ha visszatérnél az előző elágazáshoz, és ott nyugati irányba mennél tovább, lapozz a 168-ra.";
+                    currentIndex++;
+                }
+            
+            }else if (choice25 == 168)
+            {
+                currentIndex = 168;
+                SzovegList[163].Visible = false;
+                SzovegList[168].Visible = true;
+                SzovegList[168].Text = "#168\nEgy újabb elágazáshoz érkezel. Ha észak felé mennél, lapozz a 161-re. Ha továbbra is nyugati irányba haladnál, lapozz a 73-ra.";
+                currentIndex++;
+                int choice31 = GetUserChoice31();
+                if (choice31 == 161)
+                {
+                    currentIndex = 161;
+                    SzovegList[73].Visible = false;
+                    SzovegList[168].Visible = false;
+                    SzovegList[161].Visible = true;
+                    SzovegList[161].Text = "#161\nA járat egy négyzet alakú szobában ér véget, melyet a rothadó hús szaga tölt meg. A padló nagy részét két óriási, bugyborékoló sármedence teszi ki. Egy keskeny kifutó mely nem sokkal szélesebb, mint a lábfejed halad középen, a terem széleit pedig hasonlóan keskeny szegélyek futják körbe. Mindhárom út egy nyilásban fut össze az északi falon. Ha a jobboldalin haladnál végig. lapozz a 181-re. Ha a baloldalin, lapozz a 193-ra. Amennyiben a középső utat választanád, lapozz a 171-re.";
+                    currentIndex++;
+                }else if (choice31 == 73)
+                {
+                    currentIndex = 73;
+                    SzovegList[168].Visible = false;
+                    SzovegList[73].Visible = true;
+                    SzovegList[73].Text = "#73\nTovábbra is nyugati irányba haladva észreveszed, hogy a járat egy kisebb sziklahalomban ér véget. Csákány és ásó nélkül itt esélyed sem lenne átjutni. Ahogy megfordulsz, hogy visszatérj az előző elágazáshoz, egy sötétebb folt egy újabb észak felé vezető alagút jelenlétét árulja el. Úgy döntesz, erre mész tovább. Lapozz a 174-re.";
+                    currentIndex++;
+                }
+            }
+        }
+        private void Tovabb7_Click(object sender, EventArgs e)
+        {
+            tovabb7.Text = "Tovabb";
+            tovabb7.Size = new Size(600, 75);
+            tovabb6.Visible = false;
+            tovabb8.Visible = false;
+            tovabb3.Visible = false;
+            tovabb2.Visible = false;
+            SzovegList[172].Visible = false;
+            SzovegList[163].Visible = true;
+            SzovegList[185].Text = "#185\n";
+        }
+        private void Tovabb8_Click(object sender, EventArgs e)
+        {
+            tovabb8.Text = "Tovabb";
+            tovabb8.Size = new Size(600, 75);
+            tovabb6.Visible = false;
+            tovabb7.Visible = false;
+            tovabb3.Visible = false;
+            tovabb2.Visible = false;
+            SzovegList[172].Visible = false;
+            SzovegList[163].Visible = true;
+            SzovegList[168].Text = "#168\n";
         }
         private int GetUserChoice()
         {
@@ -1194,6 +1421,91 @@ namespace KalandJatek
                 return 168;
             }
             return 172;
+        }
+        private int GetUserChoice25()
+        {
+            DialogResult result185v168 = MessageBox.Show("Ha most le akarsz itt ugrani, lapozz a 185-re.(IGEN)\n Ha inkább visszatérnél a korábban látott elágazáshoz és nyugat felé folytatnád az utad, lapozz a 168-ra.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result185v168 == DialogResult.Yes)
+            {
+                return 185;
+            }else if (result185v168 == DialogResult.No)
+            {
+                return 168;
+            }
+            return 185;
+        }
+        private int GetUserChoice26()
+        {
+            DialogResult result178v172 = MessageBox.Show("Ha alaposabban is szét akarsz odabenn nézni, úgy lapozz a 178-ra.(IGEN)\nHa inkább visszatérnél a szobába, lapozz a 172-re és válassz valami mást.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result178v172 == DialogResult.Yes)
+            {
+                return 178;
+            }else if (result178v172 == DialogResult.No)
+            {
+                return 172;
+            }
+            return 178;
+        }
+        private int GetUserChoice27()
+        {
+            DialogResult result34 = MessageBox.Show("Indulás a 34-es mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result34 == DialogResult.Yes)
+            {
+                return 34;
+            }
+            return 34;
+        }
+        private int GetUserChoice28()
+        {
+            DialogResult result102v169 = MessageBox.Show("Ha meg akarod inni, lapozz a 102-re.(IGEN)\nHa inkább hagyod, ahol van, lapozz a 169-re.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result102v169 == DialogResult.Yes)
+            {
+                return 102;
+            }else if (result102v169 == DialogResult.No)
+            {
+                return 169;
+            }
+            return 102;
+        }
+        private int GetUserChoice29()
+        {
+            DialogResult result169 = MessageBox.Show("Indulás a 169-es mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result169 == DialogResult.Yes)
+            {
+                return 169;
+            }
+            return 169;
+        }
+        private int GetUserChoice30()
+        {
+            DialogResult result164v172 = MessageBox.Show("Ha ki akarod nyitni, lapozz a 164-re.(IGEN)\nHa inkább hagyod, ahol van, lapozz vissza a 172-re és válassz valami mást.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result164v172 == DialogResult.Yes)
+            {
+                return 164;
+            }else if (result164v172 == DialogResult.No)
+            {
+                return 172;
+            }
+            return 164;
+        }
+        private int GetUserChoice31()
+        {
+            DialogResult result161v73 = MessageBox.Show("Ha észak felé mennél, lapozz a 161-re.(IGEN)\nHa továbbra is nyugati irányba haladnál, lapozz a 73-ra.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result161v73 == DialogResult.Yes)
+            {
+                return 161;
+            }else if (result161v73 == DialogResult.No)
+            {
+                return 73;
+            }
+            return 161;
         }
         private void BetorAjto()
         {
