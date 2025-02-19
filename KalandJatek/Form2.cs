@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -41,6 +42,12 @@ namespace KalandJatek
         private Button tovabb6;
         private Button tovabb7;
         private Button tovabb8;
+        private Button tovabb9;
+        private Button tovabb10;
+        private Button tovabb11;
+        private Button tovabb12;
+        private Button tovabb13;
+        private Button tovabb14;
         private Button Exit;
         private Label italok;
         private Label hp;
@@ -324,6 +331,90 @@ namespace KalandJatek
             };
             tovabb8.Click += Tovabb8_Click;
             Controls.Add(tovabb8);
+            
+            tovabb9 = new Button
+            {
+                Text = "181",
+                Size = new Size(150, 75),
+                Location = new Point(750, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb9.Click += Tovabb9_Click;
+            Controls.Add(tovabb9);
+            
+            tovabb10 = new Button
+            {
+                Text = "193",
+                Size = new Size(150, 75),
+                Location = new Point(970, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb10.Click += Tovabb10_Click;
+            Controls.Add(tovabb10);
+            
+            tovabb11 = new Button
+            {
+                Text = "171",
+                Size = new Size(150, 75),
+                Location = new Point(1200, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb11.Click += Tovabb11_Click;
+            Controls.Add(tovabb11);
+
+            tovabb12 = new Button
+            {
+                Text = "91",
+                Size = new Size(150, 75),
+                Location = new Point(750, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb12.Click += Tovabb12_Click;
+            Controls.Add(tovabb12);
+
+            tovabb13 = new Button
+            {
+                Text = "131",
+                Size = new Size(150, 75),
+                Location = new Point(970, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb13.Click += Tovabb13_Click;
+            Controls.Add(tovabb13);
+
+            tovabb14 = new Button
+            {
+                Text = "77",
+                Size = new Size(150, 75),
+                Location = new Point(1200, 850),
+                Font = new Font("Courier New", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb14.Click += Tovabb14_Click;
+            Controls.Add(tovabb14);
 
             tovabb = new Button
             {
@@ -1089,6 +1180,10 @@ namespace KalandJatek
                 if (choice31 == 161)
                 {
                     currentIndex = 161;
+                    tovabb6.Visible = false;
+                    tovabb9.Visible = true;
+                    tovabb10.Visible = true;
+                    tovabb11.Visible = true;
                     SzovegList[73].Visible = false;
                     SzovegList[168].Visible = false;
                     SzovegList[161].Visible = true;
@@ -1127,6 +1222,173 @@ namespace KalandJatek
             SzovegList[172].Visible = false;
             SzovegList[163].Visible = true;
             SzovegList[168].Text = "#168\n";
+        }
+
+        private void Tovabb9_Click(object sender, EventArgs e)
+        {
+            tovabb9.Text = "Tovabb";
+            tovabb9.Size = new Size(600,75);
+            tovabb10.Visible = false;
+            tovabb11.Visible = false;
+            SzovegList[161].Visible = false;
+            SzovegList[181].Visible = false;
+            SzovegList[181].Text = "#181\nAhogy megkerülöd a medencét, látod, amint a sár bugyogni kezd. Hatalmas gázbuborékok emelkednek ki belőle és robbannak fel, rothadó hús szagával töltve be a levegőt. Tedd próbára SZERENCSED! Ha szerencsés vagy, lapozz a 192-re. Ha nincs szerencséd. lapozz a 188-ra.";
+            currentIndex++;
+            int choice32 = GetUserChoice32();
+            if (choice32 == 192)
+            {
+                currentIndex = 192;
+                SzovegList[188].Visible = false;
+                SzovegList[181].Visible = false;
+                SzovegList[192].Visible = true;
+                SzovegList[192].Text = "#192\nSikerül gond nélkül elérned a túloldalt, majd sietve távozol az északi nyíláson át. Lapozz az 52-re.";
+                currentIndex++;
+                int choice33 = GetUserChoice33();
+                if (choice33 == 52)
+                {
+                    currentIndex = 52;
+                    SzovegList[192].Visible = false;
+                    SzovegList[52].Visible = true;
+                    SzovegList[52].Text = "#52\nA járat élesen keletre fordul, és végül egy ajtóba torkollik. Lapozz a 45-re.";
+                    currentIndex++;
+                    int choice34 = GetUserChoice34();
+                    if (choice34 == 45)
+                    {
+                        currentIndex = 45;
+                        SzovegList[52].Visible = false;
+                        SzovegList[45].Visible = true;
+                        SzovegList[45].Text = "#45\nHa be akarsz nyitni az ajtón, lapozz a 90-re. Ha tovább mennél keleti irányba, lapozz a 16-ra.";
+                        currentIndex++;
+                        int choice35 = GetUserChoice35();
+                        if (choice35 == 90)
+                        {
+                            currentIndex = 90;
+                            SzovegList[45].Visible = false;
+                            SzovegList[90].Visible = true;
+                            SzovegList[90].Text = "#90\nAz ajtón benyitva vaksötét fogad. Ha szeretnél végigtapogatózni a sötétben, lapozz a 167-re. Ha inkább távoznál innen, lapozz a 154-re.";
+                            currentIndex++;
+                            int choice36 = GetUserChoice36();
+                            if (choice36 == 167)
+                            {
+                                currentIndex = 167;
+                                SzovegList[90].Visible = false;
+                                SzovegList[167].Visible = true;
+                                SzovegList[167].Text = "#167\nRajtad van az Ügyesség Gyürüje? Ha igen, lapozz a 134-re. Ha nincs, lapozz az 58-ra.";
+                                currentIndex++;
+                                int choice37 = GetUserChoice37();
+                                if (choice37 == 134)
+                                {
+                                    currentIndex = 134;
+                                    SzovegList[167].Visible = false;
+                                    SzovegList[134].Visible = true;
+                                    SzovegList[134].Text = "#134\nValamennyi mágia még van a Gyürüdben, ami figyelmeztet, hogy a szoba átkutatása előtt próbálj meg meggyőződni arról, hogy nincs-e benne csapda. Sikerül kitapogatnod egy alig észrevehető, hajszálvékony rést a köpadlóban, ezért úgy döntesz, nem kockáztatod meg, hogy belépj. Lapozz a 154-re.";
+                                    currentIndex++;
+                                    int choice38 = GetUserChoice38();
+                                    if (choice38 == 154)
+                                    {
+                                        currentIndex = 154;
+                                        SzovegList[134].Visible = false;
+                                        SzovegList[154].Visible = true;
+                                        SzovegList[154].Text = "#154\nBezárod magad mögött az ajtót és tovább mész kelet felé. Lapozz a 16-ra.";
+                                        currentIndex++;
+                                        int choice39 = GetUserChoice39();
+                                        if (choice39 == 16)
+                                        {
+                                            currentIndex = 16;
+                                            SzovegList[154].Visible = false;
+                                            SzovegList[16].Visible = true;
+                                            SzovegList[16].Text = "#16\nAhogy előre haladsz, elkerüli figyelmedet egy medvecsapda. Belelépsz, fogai mélyen a lábadba marnak. Vesztesz. 2 ÉLETERŐ pontot. Valamivel később egy elágazáshoz érkezel. Úgy döntesz, a három lehetséges irány közül észak felé indulsz. Lapozz a 195-re.";
+                                            currentIndex++;
+                                            int choice40 = GetUserChoice40();
+                                            if (choice40 == 195)
+                                            {
+                                                currentIndex = 195;
+                                                SzovegList[16].Visible = false;
+                                                SzovegList[195].Visible = true;
+                                                SzovegList[195].Text = "#195\nA járatot egy hatalmas tölgyfa ajtó zárja el, melyen gyönyörűen megmunkált csuklópántok és egy hatalmas, sodort fémkilincs van. Két oldalán fáklyák égnek, melyek táncoló fénybe borítják az alagút ezen részét. Egy pergamenlapot látsz az ajtóra szögezve, amin több nyelven is egy szöveg olvasható. Gyorsan keresel egy olyat, amit te is megértesz. A szöveg a következő:\r\nHa idáig eljutottál igen båtor lehetsz. Bátorságod most vagy életet hoz rád, vagy halált. Kopogj és lépj be.\r\nBekopogsz az ajtón, és elfordítod a kilincset. Lapozz a 39-re.";
+                                                currentIndex++;
+                                                int choice41 = GetUserChoice41();
+                                                if (choice41 == 39)
+                                                {
+                                                    currentIndex = 39;
+                                                    SzovegList[195].Visible = false;
+                                                    SzovegList[39].Visible = true;
+                                                    SzovegList[39].Text = "#39\nA szobába belépve az eddig látott legcivilizáltabb teremben találod magad. A falakat fa burkolólapok borítják, fáklyák helyett itt egy lágy fényt árasztó gömb biztosítja a világítást, mely a szoba közepén álló asztal felett lebeg. E mellett egy férfi görnyedt alakját veszed észre. Miközben becsukod magad mögött az ajtót, az öregember felemelkedik, és üdvözlően feléd nyújtja mindkét karját. Hangja vékony és remegő, és csak ekkor jössz rá, mennyire vén is lehet. Megtaláltad a Szobrot? kérdezi tőled. Ha nálad van a tárgy, lapozz a 91-re. Ha nincs nálad, lapozz a 131-re. Ha nem bizol meg benne és rá akarsz támadni, lapozz a 77-re.";
+                                                    currentIndex++;
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                }else if (choice37 == 58)
+                                {
+                                    currentIndex = 58;
+                                    SzovegList[167].Visible = false;
+                                    SzovegList[58].Visible = true;
+                                    SzovegList[58].Text = "#58\n";
+                                    currentIndex++;
+                                }
+                            }else if (choice36 == 154)
+                            {
+                                currentIndex = 154;
+                                SzovegList[90].Visible = false;
+                                SzovegList[154].Visible = true;
+                                SzovegList[154].Text = "#154\n";
+                                currentIndex++;
+                            }
+                        }else if (choice35 == 16)
+                        {
+                            currentIndex = 16;
+                            SzovegList[45].Visible = false;
+                            SzovegList[16].Visible = true;
+                            SzovegList[16].Text = "#16\n";
+                            currentIndex++;
+                        }
+                    }
+                }
+            }else if (choice32 == 188)
+            {
+                currentIndex = 188;
+                SzovegList[181].Visible = false;
+                SzovegList[188].Visible = true;
+                SzovegList[188].Text ="#188\n";
+                currentIndex++;
+            }
+        }
+        private void Tovabb10_Click(object sender, EventArgs e)
+        {
+            tovabb10.Text = "Tovabb";
+            tovabb10.Size = new Size(600, 75);
+            tovabb9.Visible = false;
+            tovabb11.Visible = false;
+            SzovegList[161].Visible = false;
+            SzovegList[181].Visible = false;
+            SzovegList[193].Text = "#193\n";
+            currentIndex++;
+        }
+        private void Tovabb11_Click(object sender, EventArgs e)
+        {
+            tovabb11.Text = "Tovabb";
+            tovabb11.Size = new Size(600, 75);
+            tovabb10.Visible = false;
+            tovabb9.Visible = false;
+            SzovegList[161].Visible = false;
+            SzovegList[181].Visible = false;
+            SzovegList[171].Text = "#171\n";
+            currentIndex++;
+        }
+
+        private void Tovabb12_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Tovabb13_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Tovabb14_Click(object sender, EventArgs e)
+        {
+
         }
         private int GetUserChoice()
         {
@@ -1506,6 +1768,112 @@ namespace KalandJatek
                 return 73;
             }
             return 161;
+        }
+        private int GetUserChoice32() 
+        {
+            DialogResult result192v188 = MessageBox.Show("Ha szerencsés vagy, lapozz a 192-re.(IGEN)\nHa nincs szerencséd. lapozz a 188-ra.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result192v188 == DialogResult.Yes)
+            {
+                return 192;
+            }else if(result192v188 == DialogResult.No)
+            {
+                return 188;
+            }
+            return 192;
+        }
+        private int GetUserChoice33() 
+        {
+            DialogResult result52 = MessageBox.Show("Indulás a 52-es mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result52 == DialogResult.Yes)
+            {
+                return 52;
+            }
+            return 52;
+        }
+        private int GetUserChoice34() 
+        {
+            DialogResult result45 = MessageBox.Show("Indulás a 45-ös mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result45 == DialogResult.Yes)
+            {
+                return 45;
+            }
+            return 45;
+        }
+        private int GetUserChoice35()
+        { 
+            DialogResult result90v16 = MessageBox.Show("Ha be akarsz nyitni az ajtón, lapozz a 90-re.(IGEN)\nHa tovább mennél keleti irányba, lapozz a 16-ra.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if(result90v16 == DialogResult.Yes)
+            {
+                return 90;
+            }else if(result90v16 == DialogResult.No)
+            {
+                return 16;
+            }
+            return 90;
+        }
+        private int GetUserChoice36()
+        { 
+            DialogResult result167v154 = MessageBox.Show("Ha szeretnél végigtapogatózni a sötétben, lapozz a 167-re.(IGEN)\nHa inkább távoznál innen, lapozz a 154-re(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+            if (result167v154 == DialogResult.Yes)
+            {
+                return 167;
+            }else if (result167v154 == DialogResult.No)
+            {
+                return 154;
+            }
+            return 167;
+        }
+        private int GetUserChoice37()
+        {
+            DialogResult result134v58 = MessageBox.Show("Ha igen, lapozz a 134-re.(IGEN)\nHa nincs, lapozz az 58-ra.(NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+
+            if (result134v58 == DialogResult.Yes)
+            {
+                return 134;
+            }else if (result134v58 == DialogResult.No){
+                return 58;
+            }
+            return 134;
+        }
+        private int GetUserChoice38()
+        { 
+            DialogResult result154 = MessageBox.Show("Indulás a 154-es mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+            if (result154 == DialogResult.Yes)
+            {
+                return 154;
+            }
+            return 154;
+        }
+        private int GetUserChoice39()
+        {
+            DialogResult result16 = MessageBox.Show("Indulás a 16-os mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+            if (result16 == DialogResult.Yes)
+            {
+                return 16;
+            }
+            return 16;
+        }
+        private int GetUserChoice40()
+        { 
+            DialogResult result195 = MessageBox.Show("Indulás a 195-ös mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+            if (result195 == DialogResult.Yes)
+            {
+                return 195;
+            }
+            return 195;
+        }
+        private int GetUserChoice41()
+        { 
+            DialogResult result39 = MessageBox.Show("Indulás a 39-es mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
+            if (result39 == DialogResult.Yes) 
+            {
+                return 39;
+            }
+            return 39;
         }
         private void BetorAjto()
         {
