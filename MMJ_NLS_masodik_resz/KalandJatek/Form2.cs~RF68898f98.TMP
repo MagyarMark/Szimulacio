@@ -1,0 +1,1495 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace KalandJatek
+{
+    public partial class Form2 : Form
+    {
+        private PictureBox potionselect;
+        private Button eletero;
+        private Button szerencse;
+        private Button ugyesseg;
+        private Button tovabb;
+        private Button inventory;
+        private List<string> invlist = new List<string>();
+        private Label sz1;
+        private Label sz2;
+        private Label sz3;
+        private Label sz4;
+        private Label sz5;
+        private Label sz6;
+        private Label sz7;
+        private Label sz8;
+        private Label sz9;
+        private Label sz10;
+        private Label sz11;
+        private Label sz12;
+        private Label sz13;
+        private Label sz14;
+        private Label sz15;
+        private Label sz16;
+        private Label sz17;
+        private Label sz18;
+        private Label sz19;
+        private Label sz20;
+        private Label sz21;
+        private Label sz22;
+        private Label sz23;
+        private Label sz24;
+        private Label sz25;
+        private Label sz26;
+        private Label sz27;
+        private Label sz28;
+        private Label sz29;
+        private Label sz30;
+        private Label sz31;
+        private Label sz32;
+        private Label sz33;
+        private Label sz34;
+        private Label sz35;
+        private Label sz36;
+        private Label sz37;
+        private Label sz38;
+        private Label sz39;
+        private Label sz40;
+        private Label sz41;
+        private Label sz42;
+        private Label sz43;
+        private Label sz44;
+        private Label sz45;
+        private Label sz46;
+        private Label sz47;
+        private Label sz48;
+        private Label sz49;
+        private Label sz50;
+        private Label sz51;
+        private Label sz52;
+        private Label sz53;
+        private Label sz54;
+        private Label sz55;
+        private Label sz56;
+        private Label sz57;
+        private Label sz58;
+        private Label sz59;
+        private Label sz60;
+        private Label sz61;
+        private Label sz62;
+        private Label sz63;
+        private Label sz64;
+        private Label sz65;
+        private Label sz66;
+        private Label sz67;
+        private Label sz68;
+        private Label sz69;
+        private Label sz70;
+        private Label sz71;
+        private Label sz72;
+        private Label sz73;
+        private Label sz74;
+        private Label sz75;
+        private Label sz76;
+        private Label sz77;
+        private Label sz78;
+        private Label sz79;
+        private Label sz80;
+        private Label sz81;
+        private Label sz82;
+        private Label sz83;
+        private Label sz84;
+        private Label sz85;
+        private Label sz86;
+        private Label sz87;
+        private Label sz88;
+        private Label sz89;
+        private Label sz90;
+        private Label sz91;
+        private Label sz92;
+        private Label sz93;
+        private Label sz94;
+        private Label sz95;
+        private Label sz96;
+        private Label sz97;
+        private Label sz98;
+        private Label sz99;
+        private Label sz100;
+        private Label sz101;
+        private Label sz102;
+        private Label sz103;
+        private Label sz104;
+        private Label sz105;
+        private Label sz106;
+        private Label sz107;
+        private Label sz108;
+        private Label sz109;
+        private Label sz110;
+        private Label sz111;
+        private Label sz112;
+        private Label sz113;
+        private Label sz114;
+        private Label sz115;
+        private Label sz116;
+        private Label sz117;
+        private Label sz118;
+        private Label sz119;
+        private Label sz120;
+        private Label sz121;
+        private Label sz122;
+        private Label sz123;
+        private Label sz124;
+        private Label sz125;
+        private Label sz126;
+        private Label sz127;
+        private Label sz128;
+        private Label sz129;
+        private Label sz130;
+        private Label sz131;
+        private Label sz132;
+        private Label sz133;
+        private Label sz134;
+        private Label sz135;
+        private Label sz136;
+        private Label sz137;
+        private Label sz138;
+        private Label sz139;
+        private Label sz140;
+        private Label sz141;
+        private Label sz142;
+        private Label sz143;
+        private Label sz144;
+        private Label sz145;
+        private Label sz146;
+        private Label sz147;
+        private Label sz148;
+        private Label sz149;
+        private Label sz150;
+        private Label sz151;
+        private Label sz152;
+        private Label sz153;
+        private Label sz154;
+        private Label sz155;
+        private Label sz156;
+        private Label sz157;
+        private Label sz158;
+        private Label sz159;
+        private Label sz160;
+        private Label sz161;
+        private Label sz162;
+        private Label sz163;
+        private Label sz164;
+        private Label sz165;
+        private Label sz166;
+        private Label sz167;
+        private Label sz168;
+        private Label sz169;
+        private Label sz170;
+        private Label sz171;
+        private Label sz172;
+        private Label sz173;
+        private Label sz174;
+        private Label sz175;
+        private Label sz176;
+        private Label sz177;
+        private Label sz178;
+        private Label sz179;
+        private Label sz180;
+        private Label sz181;
+        private Label sz182;
+        private Label sz183;
+        private Label sz184;
+        private Label sz185;
+        private Label sz186;
+        private Label sz187;
+        private Label sz188;
+        private Label sz189;
+        private Label sz190;
+        private Label sz191;
+        private Label sz192;
+        private Label sz193;
+        private Label sz194;
+        private Label sz195;
+        private Label sz196;
+        private Label sz197;
+        private Label sz198;
+        private Label sz199;
+        private Label sz200;
+
+
+        public Form2()
+        {
+            Form2_Load(sender: null, e: null);
+
+            this.MaximizeBox = false;
+            this.MinimizeBox = true;
+            this.Icon = new Icon("favicon.ico");
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            Image myimage = new Bitmap("main.png");
+            this.BackgroundImage = myimage;
+        }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            eletero = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(140, 75),
+                Location = new Point(810, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            eletero.Click += First_Click;
+            Controls.Add(eletero);
+
+            szerencse = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(150, 75),
+                Location = new Point(975, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            szerencse.Click += Second_Click;
+            Controls.Add(szerencse);
+
+            ugyesseg = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(140, 75),
+                Location = new Point(1150, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            ugyesseg.Click += Third_Click;
+            Controls.Add(ugyesseg);
+
+            inventory = new Button
+            {
+                Text = "Zsákmány",
+                Size = new Size(140, 75),
+                Location = new Point(50, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            inventory.Click += Pot_Click;
+            Controls.Add(inventory);
+
+            tovabb = new Button
+            {
+                Text = "Tovább",
+                Size = new Size(600, 75),
+                Location = new Point(750, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible= false
+            };
+            tovabb.Click += Tovabb_Click;
+            Controls.Add(tovabb);
+
+            sz1 = new Label
+            {
+                Text = "#1\nBelöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. Lapozz a 41-re.",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz1);
+
+            sz2 = new Label
+            {
+                Text = "#2\nA vízbe ugrasz, az áramlat azonban nagyon eros. Megpróbálsz a felszínen maradni, de ez nem könnyű. Lapozz a 148-ra.",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz2);
+
+            sz3 = new Label
+            {
+                Text = "#3\nAhogy óvatosan a drótok között lépkedve eléred a Szobrot, az hirtelen eltünik! A következő pillanatban vészjósló morajlás hangzik fel a fejed fölött, és ahogy arra nézel, látod, hogy hatalmas szikladarabok kezdenek feléd zuhanni. A hatalmas súly porrá örli csontjaidat. Kalandod itt véget ér.\r\n",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz3);
+
+            sz4 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz4);
+
+            sz5 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz5);
+
+            sz6 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz6);
+
+            sz7 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz7);
+
+            sz8 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz8);
+
+            sz9 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz9);
+
+            sz10 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz10);
+
+            sz11 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz11);
+
+            sz12 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz12);
+
+            sz13 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz13);
+
+            sz14 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz14);
+
+            sz15 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz15);
+
+            sz16 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz16);
+
+            sz17 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz17);
+
+            sz18 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz18);
+
+            sz19 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz19);
+
+            sz20 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz20);
+
+            sz21 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz21);
+
+            sz22 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz22);
+
+            sz23 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz23);
+
+            sz24 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz24);
+
+            sz25 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz25);
+
+            sz26 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz26);
+
+            sz27 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz27);
+
+            sz28 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz28);
+            
+            sz29 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz29);
+
+            sz30 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz30);
+
+            sz31 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz31);
+
+            sz32 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz32);
+
+            sz33 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz33);
+
+            sz34 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz34);
+
+            sz35 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz35);
+
+            sz36 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz36);
+
+            sz37 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz37);
+
+            sz38 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz38);
+
+            sz39 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz39);
+
+            sz40 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz40);
+
+            sz41 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz41);
+
+            sz42 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz42);
+
+            sz43 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz43);
+
+            sz44 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz44);
+
+            sz45 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz45);
+
+            sz46 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz46);
+
+            sz47 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz47);
+
+            sz48 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz48);
+
+            sz49 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz49);
+
+            sz50 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz50);
+
+            sz51 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz51);
+
+            sz52 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz52);
+
+            sz53 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz53);
+
+            sz54 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz54);
+
+            sz55 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz55);
+
+            sz56 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz56);
+
+            sz57 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz57);
+
+            sz58 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz58);
+
+            sz59 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz59);
+
+            sz60 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz60);
+
+            sz61 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz61);
+
+            sz62 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz62);
+
+            sz63 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz63);
+
+            sz64 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz64);
+
+            sz65 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz65);
+
+            sz66 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz66);
+
+            sz67 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz67);
+
+            sz68 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz68);
+
+            sz69 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz69);
+
+            sz70 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz70);
+
+            sz71 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz71);
+
+            sz72 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz72);
+
+            sz73 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz73);
+
+            sz74 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz74);
+
+            sz75 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz75);
+
+            sz76 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz76);
+
+            sz77 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz77);
+
+            sz78 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz78);
+
+            sz79 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz79);
+
+            sz80 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz80);
+
+            sz81 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz81);
+
+            sz82 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz82);
+
+            sz83 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz83);
+
+            sz84 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz84);
+
+            sz85 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz85);
+
+            sz85 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz85);
+
+            sz86 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz86);
+
+            sz87 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz87);
+
+            sz88 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz88);
+
+            sz89 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz89);
+
+            sz90 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz90);
+
+            sz91 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz91);
+
+            sz92 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz92);
+
+            sz93 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz93);
+
+            sz94 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz94);
+
+            sz95 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz95);
+
+            sz96 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz96);
+
+            sz97 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz97);
+
+            sz98 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz98);
+
+            sz99 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz99);
+
+            sz100 = new Label
+            {
+                Text = "",
+                Size = new Size(600, 250),
+                Location = new Point(750, 600),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                Visible = false
+            };
+            Controls.Add(sz100);
+
+            potionselect = new PictureBox()
+            {
+                Image = Image.FromFile("Italvalasztas.png"),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Size = new Size(800, 400),
+                Location = new Point(650, 550)
+            };
+            Controls.Add(potionselect);
+        }
+
+        private void First_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jó választás utazó!\n"+"Választásod: Életerő ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            invlist.Add("Életerő ital");
+            potionselect.Visible = false;
+            eletero.Visible = false;
+            szerencse.Visible = false;
+            ugyesseg.Visible = false;
+            inventory.Visible = true;
+            sz1.Visible = true;
+            tovabb.Visible = true;
+        }
+        private void Second_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jó választás utazó!\n" + "Választásod: Szerencse ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            invlist.Add("Szerencse ital");
+            potionselect.Visible = false;
+            eletero.Visible = false;
+            szerencse.Visible = false;
+            ugyesseg.Visible = false;
+            inventory.Visible = true;
+            sz1.Visible = true;
+            tovabb.Visible = true;
+        }
+        private void Third_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jó választás utazó!\n" + "Választásod: Ügyesség ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            invlist.Add("Ügyesség ital");
+            potionselect.Visible = false;
+            eletero.Visible = false;
+            szerencse.Visible = false;
+            ugyesseg.Visible = false;
+            inventory.Visible = true;
+            sz1.Visible = true;
+            tovabb.Visible = true;
+        }
+
+        private void Pot_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < invlist.Count; i++)
+            {
+                string invstr = string.Join(", ", invlist);
+                MessageBox.Show(invstr+"->"+$" {invlist.Count}db"+"\n", "Zsákmányod!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Tovabb_Click(object sender, EventArgs e)
+        {
+            sz1.Visible = false;
+            sz2.Visible = true;
+        }
+    }
+}

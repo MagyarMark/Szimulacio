@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body id="bg">
+    <script src="script.js"></script>
+
+    <div id="title">
+        <div id="startBtn" onclick="start()">
+            <p>Kezdés</p>
+        </div>
+    </div>
+    <div id="intro">
+        <p id="text"></p>
+    </div>
+
+    <div id="nextBtn" onclick="next()">
+        <p>Tovább -></p>
+    </div>
+
+    <div id="potionSelectionScreen">
+        <p id="titleTexttt">Válassz egy italt!</p>
+        <div id="italkepek">
+            <img src="/assets/sprites/items/hpP.png" alt="">
+            <img src="/assets/luck.png" alt="">
+            <img src="/assets/sprites/items/jP.png" alt="">
+        </div>
+        <div id="italnevek">
+            <span>Életerő Itala - Szerencse Itala - Ügyesség Itala</span>
+        </div>
+        <div id="italbuttonok">
+            <div class="selectPotionButton" onclick="selectedPotion('hp')">
+                <p>Kiválasztás</p>
+            </div>
+            <div class="selectPotionButton2" onclick="selectedPotion('luck')">
+                <p>Kiválasztás</p>
+            </div>
+            <div class="selectPotionButton3" onclick="selectedPotion('skill')">
+                <p>Kiválasztás</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="mainGame">
+        <div id="stats">
+            <div id="statsText">
+                <p style="left: 20px; top:15px;">HP:</p>
+                <p style="left: 120px; top:150px;" id="hpNum">99</p>
+
+                <p style="left: 180px; top:15px;">Ügyesség:</p>
+                <p style="left: 280px; top:150px;" id="skillNum">99</p>
+
+                <p style="left: 340px; top:15px;">Szerencse:</p>
+                <p style="left: 480px; top:150px;" id="luckNum">99</p>
+
+                <p style="left: 600px; top:140px;" id="coinamt">99</p>
+
+                <p style="left: 20px; top:200px;">Tárgyak:</p>
+
+                <p style="left: 20px; top:532px;">Élelmiszer:</p>
+                
+                <p style="left: 20px; top:720px;">Ékkövek:</p>
+
+                <p style="left: 20px; top:900px;">Italok:</p>
+            </div>
+            <div id="statsImage">
+                
+                <img src="/assets/sprites/stats/hp100.png" alt="" style="left: 30px; top: 77px; width: 125px; height: 125px;" id="hpPic">
+                <img src="/assets/sprites/stats/dex.png" alt="" style="left: 195px; top: 77px;  width: 125px; height: 125px;" id="skillPic">
+                <img src="/assets/sprites/stats/luck.png" alt="" style="left: 360px; top: 77px;  width: 125px; height: 125px;" id="luckPic">
+
+                <img src="/assets/shittile.png" alt="" style="left: 30px; top: 275px;" id="itemInventoryPic1">
+                <img src="/assets/shittile.png" alt="" style="left: 195px; top: 275px;" id="itemInventoryPic2">
+                <img src="/assets/shittile.png" alt="" style="left: 360px; top: 275px;" id="itemInventoryPic3">
+
+                <img src="/assets/shittile.png" alt="" style="left: 30px; top: 420px;" id="itemInventoryPic4">
+                <img src="/assets/shittile.png" alt="" style="left: 195px; top: 420px;" id="itemInventoryPic5">
+                <img src="/assets/shittile.png" alt="" style="left: 360px; top: 420px;" id="itemInventoryPic6">
+
+                <img src="/assets/shittile.png" alt="" style="left: 30px; top: 600px;" id="foodPic1">
+                <img src="/assets/shittile.png" alt="" style="left: 195px; top: 600px;" id="foodPic2">
+                <img src="/assets/shittile.png" alt="" style="left: 360px; top: 600px;" id="foodPic3">
+
+                <img src="/assets/shittile.png" alt="" style="left: 30px; top: 800px;" id="gemstonePic1">
+                <img src="/assets/shittile.png" alt="" style="left: 195px; top: 800px;" id="gemstonePic2">
+                <img src="/assets/shittile.png" alt="" style="left: 360px; top: 800px;" id="gemstonePic3">
+
+                <img src="/assets/shittile.png" alt="" style="left: 30px; top: 950px;" id="drinkPic1">
+                <img src="/assets/shittile.png" alt="" style="left: 195px; top: 950px;" id="drinkPic2">
+                <img src="/assets/shittile.png" alt="" style="left: 360px; top: 950px;" id="drinkPic3">
+
+                <img src="/assets/coin.png" alt="" style="left: 530px; top: 70px;" id="coin">
+            </div>
+        </div>
+        <div id="gametext">
+        </div>
+        <div id="nextBtns">
+            <div id="nextBtn0" onclick="nextTile(-1)">
+                <p>Lapozás</p>
+            </div>
+            <div id="nextBtn1">
+                
+            </div>
+            <div id="nextBtn2">
+                
+            </div>
+            <div id="nextBtn3">
+                
+            </div>
+            <div id="nextBtn4">
+                
+            </div>
+        </div>
+        <div id="gamenotifs">
+        </div>
+    </div>
+    <div id="fight">
+        <p id="fightDecider"></p>
+        <div id="lucksect">
+            <p id="xdssad">Szeretnél szerencsét probálni?</p>
+            <div id="luckY"><p>Igen</p></div>
+            <div id="luckN"><p>Nem</p></div>
+        </div>
+        <img src="/assets/player.png" alt="" style="position: absolute; left: 850px; top: 600px;">
+        <img src="" alt="" id="enemyPic" style="position: absolute; left: 850px;">
+        <div id="yourStatsFight">
+            <p id="yourHp" style="position: absolute; top: 550px; left: 930px;">HP:</p>
+        </div>
+        <div id="enemyStatsFight">
+            <p id="enemyHp"  style="position: absolute; top: 395px; left: 950px;">HP: </p>
+        </div>
+    </div>
+</body>
+</html>

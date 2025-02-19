@@ -1,0 +1,278 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace KalandJatek
+{
+    class PlayerStats
+    {
+        public int Skill { get; set; }
+        public int Stamina { get; set; }
+        public int Luck { get; set; }
+
+        private Random rand = new Random();
+
+        public PlayerStats()
+        {
+            Skill = rand.Next(1, 7) + 6;
+            Stamina = (rand.Next(1, 7) + rand.Next(1, 7)) + 12;
+            Luck = rand.Next(1, 7) + 6;
+        }
+    }
+    public partial class Form2 : Form
+    {
+        private PictureBox potionselect;
+        private Button eletero;
+        private Button szerencse;
+        private Button ugyesseg;
+        private Button tovabb;
+        private Button inventory;
+        private List<string> invlist = new List<string>();
+        private List<Label> SzovegList = new List<Label>();
+        private List<Button> SzamGombListegesz = new List<Button>();
+        private List<Button> SzamGombListelso = new List<Button>();
+        private List<Button> SzamGombListmasodik = new List<Button>();
+        private PlayerStats playerStats = new PlayerStats();
+
+
+        public Form2()
+        {
+            Form2_Load(sender: null, e: null);
+
+            this.MaximizeBox = false;
+            this.MinimizeBox = true;
+            this.Icon = new Icon("favicon.ico");
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            Image myimage = new Bitmap("main.png");
+            this.BackgroundImage = myimage;
+        }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            eletero = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(140, 75),
+                Location = new Point(810, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            eletero.Click += First_Click;
+            Controls.Add(eletero);
+
+            szerencse = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(150, 75),
+                Location = new Point(975, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            szerencse.Click += Second_Click;
+            Controls.Add(szerencse);
+
+            ugyesseg = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(140, 75),
+                Location = new Point(1150, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            ugyesseg.Click += Third_Click;
+            Controls.Add(ugyesseg);
+
+            inventory = new Button
+            {
+                Text = "Zsákmány",
+                Size = new Size(140, 75),
+                Location = new Point(50, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            inventory.Click += Pot_Click;
+            Controls.Add(inventory);
+
+            tovabb = new Button
+            {
+                Text = "41",
+                Size = new Size(600, 75),
+                Location = new Point(750, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb.Click += Tovabb_Click;
+            Controls.Add(tovabb);
+
+            for (int i = 0; i < 200; i++)
+            {
+                Button btn = new Button();
+                btn.Size = new Size(600, 75);
+                btn.Text = i.ToString();
+                btn.Location = new Point(750, 850);
+                btn.Font = new Font("Arial", 12, FontStyle.Bold);
+                btn.BackColor = ColorTranslator.FromHtml("#a17e51");
+                btn.ForeColor = Color.White;
+                btn.Visible = false;
+                SzamGombListegesz.Add(btn);
+                Controls.Add(btn);
+            }
+
+            for (int i = 0; i < 200; i++)
+            {
+                Label lbl = new Label();
+                lbl.Size = new Size(600, 250);
+                lbl.Text = "#1\nBelöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. Lapozz a 41-re.";
+                lbl.Location = new Point(750, 600);
+                lbl.Font = new Font("Arial", 12, FontStyle.Bold);
+                lbl.BackColor = ColorTranslator.FromHtml("#a17e51");
+                lbl.ForeColor = Color.White;
+                lbl.Visible = false;
+                SzovegList.Add(lbl);
+                Controls.Add(lbl);
+            }
+
+            potionselect = new PictureBox()
+            {
+                Image = Image.FromFile("Italvalasztas.png"),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Size = new Size(800, 400),
+                Location = new Point(650, 550)
+            };
+            Controls.Add(potionselect);
+        }
+
+        private void First_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jó választás utazó!\n" + "Választásod: Életerő ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            invlist.Add("Életerő ital");
+            potionselect.Visible = false;
+            eletero.Visible = false;
+            szerencse.Visible = false;
+            ugyesseg.Visible = false;
+            inventory.Visible = true;
+            SzovegList[0].Visible = true;
+            tovabb.Visible = true;
+        }
+        private void Second_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jó választás utazó!\n" + "Választásod: Szerencse ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            invlist.Add("Szerencse ital");
+            potionselect.Visible = false;
+            eletero.Visible = false;
+            szerencse.Visible = false;
+            ugyesseg.Visible = false;
+            inventory.Visible = true;
+            SzovegList[0].Visible = true;
+            tovabb.Visible = true;
+        }
+        private void Third_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jó választás utazó!\n" + "Választásod: Ügyesség ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            invlist.Add("Ügyesség ital");
+            potionselect.Visible = false;
+            eletero.Visible = false;
+            szerencse.Visible = false;
+            ugyesseg.Visible = false;
+            inventory.Visible = true;
+            SzovegList[0].Visible = true;
+            tovabb.Visible = true;
+        }
+
+        private void Pot_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < invlist.Count; i++)
+            {
+                string invstr = string.Join(", ", invlist);
+                MessageBox.Show(invstr + "->" + $" {invlist.Count}db" + "\n", "Zsákmányod!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private int currentIndex = 0;
+
+        private void Tovabb_Click(object sender, EventArgs e)
+        {
+            switch (currentIndex)
+            {
+                case 0:
+                    tovabb.Text = SzamGombListegesz[41].Text = "Harc";
+                    SzovegList[0].Visible = false;
+                    SzovegList[1].Visible = true;
+                    SzovegList[1].Text = "#41\nAz alagút, bár folyamatosan jobbra-balra kanyarog, nagyjából mégis tartja az északi irányt, végül élesen oldalra kanyarodik, és ekkor majdnem belefutsz egy fekete köpenybe öltözött alakba. Tört tart a kezében, az arcán ülő tekintet rettegésről árulkodik! Rájössz, hogy nem te vagy az egyetlen, akit most próbára tesznek, és hogy mindketten ugyanazon Szobor után kutattok. A fickó rád veti magát, nyilvánvaló, hogy mielőbb végezni akar veled. Harcolnod kell!";
+                    currentIndex++;
+                    break;
+                case 1:
+                    tovabb.Visible = false;
+                    SzovegList[1].Visible = false;
+                    Fight(7, 6);
+                    tovabb.Visible = true;
+                    SzovegList[87].Visible = true;
+                    SzovegList[87].Text = "#85\r\nA Tolvajnál mindössze 3 Aranytallért és egy háromszög alakú, penészes gyümölcsöt találsz. Még soha nem láttál ehhez hasonlót, de gyanítod, hogy ez lehet a Xentos, a hosszú élet gyümölcse. Ha nem lenne ilyen borzalmas állapotban, gond nélkül megkockáztatnád, hogy belekóstolj, igy azonban úgy döntesz, hogy itt hagyod és folytatod az utad észak felé. Hamarosan egy útelágazáshoz érsz. Ha továbbra is északnak tartasz, lapozz a 108-ra. Ha a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.";
+                    currentIndex++;
+                    break;
+                case 2:
+                    tovabb.Visible = true;
+                    SzovegList[87].Visible = true;
+                    SzovegList[87].Text = "#85\r\nA Tolvajnál mindössze 3 Aranytallért és egy háromszög alakú, penészes gyümölcsöt találsz. Még soha nem láttál ehhez hasonlót, de gyanítod, hogy ez lehet a Xentos, a hosszú élet gyümölcse. Ha nem lenne ilyen borzalmas állapotban, gond nélkül megkockáztatnád, hogy belekóstolj, igy azonban úgy döntesz, hogy itt hagyod és folytatod az utad észak felé. Hamarosan egy útelágazáshoz érsz. Ha továbbra is északnak tartasz, lapozz a 108-ra. Ha a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.";
+                    currentIndex++;
+                    break;
+                default:
+                    MessageBox.Show("A játékod itt véget ért!", "Vesztettél!", MessageBoxButtons.OK);
+                    //this.BackgroundImage = new Bitmap("gamover.png");
+                    break;
+            }
+        }
+        private void ShowGameOver()
+        {
+            this.Controls.Clear();
+            this.BackgroundImage = Image.FromFile("gameover.png");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+
+        private void Fight(int enemySkill, int enemyStamina)
+        {
+            Random rand = new Random();
+            int playerStamina = playerStats.Stamina;
+
+            while (enemyStamina > 0 && playerStamina > 0)
+            {
+                int enemyAttack = enemySkill + rand.Next(1, 7) + rand.Next(1, 7);
+                int playerAttack = playerStats.Skill + rand.Next(1, 7) + rand.Next(1, 7);
+
+                if (playerAttack > enemyAttack)
+                {
+                    enemyStamina -= 2;
+                }
+                else if (enemyAttack > playerAttack)
+                {
+                    playerStamina -= 2;
+                }
+
+                if (playerStamina <= 0)
+                {
+                    ShowGameOver();
+                    return;
+                }
+                else if (enemyStamina <= 0)
+                {
+                    MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,265 @@
+#bg {
+    background-image: url("/assets/bgs/test.png");
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top bottom;
+  }
+
+#startBtn{
+    position: absolute;
+    left: 1100px;
+    top: 600px;
+    background-color: #5F1516;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+#startBtn p{
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#intro{
+    display: none;
+    position: absolute;
+    left: 750px;
+    top: 600px;
+    background-color: rgba(34, 32, 32, 0.329);
+    width: 750px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+#text{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#nextBtn{
+    display: none;
+    position: absolute;
+    left: 1500px;
+    top: 850px;
+    background-color: #5F1516;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+#nextBtn p{
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#italnevek span{
+    padding-left: 160px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#titleTexttt{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#potionSelectionScreen{
+    position: absolute;
+    background-color: #5F1516;
+    left: 750px;
+    top: 600px;
+    width: 750px;
+    height: 300px;
+    display: none;
+}
+
+#italkepek{
+    padding-left: 140px;
+}
+
+#italkepek img{
+    padding-left: 25px;
+}
+
+.selectPotionButton{
+    position: absolute;
+    background-color: #cf5052;
+    left: 175px;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.selectPotionButton2{
+    position: absolute;
+    background-color: #cf5052;
+    left: 325px;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.selectPotionButton3{
+    position: absolute;
+    background-color: #cf5052;
+    left: 480px;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+
+.selectPotionButton p, .selectPotionButton3 p, .selectPotionButton2 p{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#mainGame{
+    display: none;
+}
+
+#statsText p{
+    position: absolute;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+}
+
+#statsImage img{
+    position: absolute;
+}
+
+#gametext{
+    background-color: rgba(34, 32, 32, 0.329);
+    width: 1050px;
+    height: 675px;
+    position: absolute;
+    left: 570px;
+    top: 192px;
+    
+}
+
+#gamenotifs{
+    background-color: rgba(34, 32, 32, 0.329);
+    width: 1050px;
+    height: 210px;
+    position: absolute;
+    left: 570px;
+    top: 865px;
+}
+
+.gamenotifsText{
+    color: white;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#gametext p{
+    color: white;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#nextBtns{
+    display: none;
+}
+
+#nextBtn0, #nextBtn1, #nextBtn2, #nextBtn3, #nextBtn4{
+    position: absolute;
+    background-color: #5F1516;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    display: none;
+}
+
+#nextBtn0{
+    left: 1470px;
+    top: 815px;
+}
+
+#nextBtn1{
+    left: 1200px;
+    top: 815px;
+}
+
+#nextBtn2{
+    left: 1000px;
+    top: 815px;
+}
+
+#nextBtn3{
+    left: 800px;
+    top: 815px;
+}
+
+#nextBtn4{
+    left: 600px;
+    top: 815px;
+}
+
+#nextBtn0 p, #nextBtn1 p, #nextBtn2 p, #nextBtn3 p, #nextBtn4 p{
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#fight{
+    display: none;
+}
+
+#fight p{
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#luckY, #luckN{
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(36, 39, 39);
+    border-radius: 10px;
+}
+
+#luckY{
+    left: 200px;
+    top: 500px;
+}
+
+#luckN{
+    left: 400px;
+    top: 500px;
+}
+
+#xdssad{
+    color: white;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    left: 210px;
+    top: 450px;
+}
+
+#luckY p, #luckN p{
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+}

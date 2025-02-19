@@ -1,0 +1,474 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace KalandJatek
+{
+    class PlayerStats
+    {
+        public int Skill { get; set; }
+        public int Stamina { get; set; }
+        public int Luck { get; set; }
+
+        private Random rand = new Random();
+
+        public PlayerStats()
+        {
+            Skill = rand.Next(1, 7) + 6;
+            Stamina = (rand.Next(1, 7) + rand.Next(1, 7)) + 12;
+            Luck = rand.Next(1, 7) + 6;
+        }
+    }
+    public partial class Form2 : Form
+    {
+        private PictureBox potionselect;
+        private Button eletero;
+        private Button szerencse;
+        private Button ugyesseg;
+        private Button tovabb;
+        private Button inventory;
+        private List<string> invlist = new List<string>();
+        private List<Label> SzovegList = new List<Label>();
+        private List<Button> SzamGombListegesz = new List<Button>();
+        private List<Button> SzamGombListelso = new List<Button>();
+        private List<Button> SzamGombListmasodik = new List<Button>();
+        private PlayerStats playerStats = new PlayerStats();
+        /* private Label sz1;
+         private Label sz2;
+         private Label sz3;
+         private Label sz4;
+         private Label sz5;
+         private Label sz6;
+         private Label sz7;
+         private Label sz8;
+         private Label sz9;
+         private Label sz10;
+         private Label sz11;
+         private Label sz12;
+         private Label sz13;
+         private Label sz14;
+         private Label sz15;
+         private Label sz16;
+         private Label sz17;
+         private Label sz18;
+         private Label sz19;
+         private Label sz20;
+         private Label sz21;
+         private Label sz22;
+         private Label sz23;
+         private Label sz24;
+         private Label sz25;
+         private Label sz26;
+         private Label sz27;
+         private Label sz28;
+         private Label sz29;
+         private Label sz30;
+         private Label sz31;
+         private Label sz32;
+         private Label sz33;
+         private Label sz34;
+         private Label sz35;
+         private Label sz36;
+         private Label sz37;
+         private Label sz38;
+         private Label sz39;
+         private Label sz40;
+         private Label sz41;
+         private Label sz42;
+         private Label sz43;
+         private Label sz44;
+         private Label sz45;
+         private Label sz46;
+         private Label sz47;
+         private Label sz48;
+         private Label sz49;
+         private Label sz50;
+         private Label sz51;
+         private Label sz52;
+         private Label sz53;
+         private Label sz54;
+         private Label sz55;
+         private Label sz56;
+         private Label sz57;
+         private Label sz58;
+         private Label sz59;
+         private Label sz60;
+         private Label sz61;
+         private Label sz62;
+         private Label sz63;
+         private Label sz64;
+         private Label sz65;
+         private Label sz66;
+         private Label sz67;
+         private Label sz68;
+         private Label sz69;
+         private Label sz70;
+         private Label sz71;
+         private Label sz72;
+         private Label sz73;
+         private Label sz74;
+         private Label sz75;
+         private Label sz76;
+         private Label sz77;
+         private Label sz78;
+         private Label sz79;
+         private Label sz80;
+         private Label sz81;
+         private Label sz82;
+         private Label sz83;
+         private Label sz84;
+         private Label sz85;
+         private Label sz86;
+         private Label sz87;
+         private Label sz88;
+         private Label sz89;
+         private Label sz90;
+         private Label sz91;
+         private Label sz92;
+         private Label sz93;
+         private Label sz94;
+         private Label sz95;
+         private Label sz96;
+         private Label sz97;
+         private Label sz98;
+         private Label sz99;
+         private Label sz100;
+         private Label sz101;
+         private Label sz102;
+         private Label sz103;
+         private Label sz104;
+         private Label sz105;
+         private Label sz106;
+         private Label sz107;
+         private Label sz108;
+         private Label sz109;
+         private Label sz110;
+         private Label sz111;
+         private Label sz112;
+         private Label sz113;
+         private Label sz114;
+         private Label sz115;
+         private Label sz116;
+         private Label sz117;
+         private Label sz118;
+         private Label sz119;
+         private Label sz120;
+         private Label sz121;
+         private Label sz122;
+         private Label sz123;
+         private Label sz124;
+         private Label sz125;
+         private Label sz126;
+         private Label sz127;
+         private Label sz128;
+         private Label sz129;
+         private Label sz130;
+         private Label sz131;
+         private Label sz132;
+         private Label sz133;
+         private Label sz134;
+         private Label sz135;
+         private Label sz136;
+         private Label sz137;
+         private Label sz138;
+         private Label sz139;
+         private Label sz140;
+         private Label sz141;
+         private Label sz142;
+         private Label sz143;
+         private Label sz144;
+         private Label sz145;
+         private Label sz146;
+         private Label sz147;
+         private Label sz148;
+         private Label sz149;
+         private Label sz150;
+         private Label sz151;
+         private Label sz152;
+         private Label sz153;
+         private Label sz154;
+         private Label sz155;
+         private Label sz156;
+         private Label sz157;
+         private Label sz158;
+         private Label sz159;
+         private Label sz160;
+         private Label sz161;
+         private Label sz162;
+         private Label sz163;
+         private Label sz164;
+         private Label sz165;
+         private Label sz166;
+         private Label sz167;
+         private Label sz168;
+         private Label sz169;
+         private Label sz170;
+         private Label sz171;
+         private Label sz172;
+         private Label sz173;
+         private Label sz174;
+         private Label sz175;
+         private Label sz176;
+         private Label sz177;
+         private Label sz178;
+         private Label sz179;
+         private Label sz180;
+         private Label sz181;
+         private Label sz182;
+         private Label sz183;
+         private Label sz184;
+         private Label sz185;
+         private Label sz186;
+         private Label sz187;
+         private Label sz188;
+         private Label sz189;
+         private Label sz190;
+         private Label sz191;
+         private Label sz192;
+         private Label sz193;
+         private Label sz194;
+         private Label sz195;
+         private Label sz196;
+         private Label sz197;
+         private Label sz198;
+         private Label sz199;
+         private Label sz200;*/
+
+
+        public Form2()
+        {
+            Form2_Load(sender: null, e: null);
+
+            this.MaximizeBox = false;
+            this.MinimizeBox = true;
+            this.Icon = new Icon("favicon.ico");
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            Image myimage = new Bitmap("main.png");
+            this.BackgroundImage = myimage;
+        }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            eletero = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(140, 75),
+                Location = new Point(810, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            eletero.Click += First_Click;
+            Controls.Add(eletero);
+
+            szerencse = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(150, 75),
+                Location = new Point(975, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            szerencse.Click += Second_Click;
+            Controls.Add(szerencse);
+
+            ugyesseg = new Button
+            {
+                Text = "Kiválasztás",
+                Size = new Size(140, 75),
+                Location = new Point(1150, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup
+            };
+            ugyesseg.Click += Third_Click;
+            Controls.Add(ugyesseg);
+
+            inventory = new Button
+            {
+                Text = "Zsákmány",
+                Size = new Size(140, 75),
+                Location = new Point(50, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            inventory.Click += Pot_Click;
+            Controls.Add(inventory);
+
+            tovabb = new Button
+            {
+                Text = "41",
+                Size = new Size(600, 75),
+                Location = new Point(750, 850),
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = ColorTranslator.FromHtml("#a17e51"),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Visible = false
+            };
+            tovabb.Click += Tovabb_Click;
+            Controls.Add(tovabb);
+
+            for (int i = 0; i < 200; i++)
+            {
+                Button btn = new Button();
+                btn.Size = new Size(600, 75);
+                btn.Text = i.ToString();
+                btn.Location = new Point(750, 850);
+                btn.Font = new Font("Arial", 12, FontStyle.Bold);
+                btn.BackColor = ColorTranslator.FromHtml("#a17e51");
+                btn.ForeColor = Color.White;
+                btn.Visible = false;
+                SzamGombListegesz.Add(btn);
+                Controls.Add(btn);
+            }
+
+            for (int i = 0; i < 200; i++)
+            {
+                Label lbl = new Label();
+                lbl.Size = new Size(600, 250);
+                lbl.Text = "#1\nBelöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. Lapozz a 41-re.";
+                lbl.Location = new Point(750, 600);
+                lbl.Font = new Font("Arial", 12, FontStyle.Bold);
+                lbl.BackColor = ColorTranslator.FromHtml("#a17e51");
+                lbl.ForeColor = Color.White;
+                lbl.Visible = false;
+                SzovegList.Add(lbl);
+                Controls.Add(lbl);
+            }
+
+            potionselect = new PictureBox()
+            {
+                Image = Image.FromFile("Italvalasztas.png"),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Size = new Size(800, 400),
+                Location = new Point(650, 550)
+            };
+            Controls.Add(potionselect);
+        }
+
+        private void First_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jó választás utazó!\n" + "Választásod: Életerő ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            invlist.Add("Életerő ital");
+            potionselect.Visible = false;
+            eletero.Visible = false;
+            szerencse.Visible = false;
+            ugyesseg.Visible = false;
+            inventory.Visible = true;
+            SzovegList[0].Visible = true;
+            tovabb.Visible = true;
+        }
+        private void Second_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jó választás utazó!\n" + "Választásod: Szerencse ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            invlist.Add("Szerencse ital");
+            potionselect.Visible = false;
+            eletero.Visible = false;
+            szerencse.Visible = false;
+            ugyesseg.Visible = false;
+            inventory.Visible = true;
+            SzovegList[0].Visible = true;
+            tovabb.Visible = true;
+        }
+        private void Third_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jó választás utazó!\n" + "Választásod: Ügyesség ital!", "Sikeres választás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            invlist.Add("Ügyesség ital");
+            potionselect.Visible = false;
+            eletero.Visible = false;
+            szerencse.Visible = false;
+            ugyesseg.Visible = false;
+            inventory.Visible = true;
+            SzovegList[0].Visible = true;
+            tovabb.Visible = true;
+        }
+
+        private void Pot_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < invlist.Count; i++)
+            {
+                string invstr = string.Join(", ", invlist);
+                MessageBox.Show(invstr + "->" + $" {invlist.Count}db" + "\n", "Zsákmányod!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private int currentIndex = 0;
+
+        private void Tovabb_Click(object sender, EventArgs e)
+        {
+            switch (currentIndex)
+            {
+                case 0:
+                    tovabb.Text = SzamGombListegesz[41].Text = "Harc";
+                    SzovegList[0].Visible = false;
+                    SzovegList[1].Visible = true;
+                    SzovegList[1].Text = "#41\nAz alagút, bár folyamatosan jobbra-balra kanyarog, nagyjából mégis tartja az északi irányt, végül élesen oldalra kanyarodik, és ekkor majdnem belefutsz egy fekete köpenybe öltözött alakba. Tört tart a kezében, az arcán ülő tekintet rettegésről árulkodik! Rájössz, hogy nem te vagy az egyetlen, akit most próbára tesznek, és hogy mindketten ugyanazon Szobor után kutattok. A fickó rád veti magát, nyilvánvaló, hogy mielőbb végezni akar veled. Harcolnod kell!";
+                    currentIndex++;
+                    break;
+                case 1:
+                    tovabb.Visible = false;
+                    SzovegList[1].Visible = false;
+                    Fight(1, 1);
+                    /*tovabb.Text = "Tovább";
+                    SzovegList[1].Visible = false;
+                    SzovegList[2].Visible = true;
+                    SzovegList[2].Text = "#3\nAhogy óvatosan a drótok között lépkedve eléred a Szobrot, az hirtelen eltünik! A következő pillanatban vészjósló morajlás hangzik fel a fejed fölött, és ahogy arra nézel, látod, hogy hatalmas szikladarabok kezdenek feléd zuhanni. A hatalmas súly porrá örli csontjaidat. Kalandod itt véget ér.";
+                    */
+                    currentIndex++;
+                    break;
+                default:
+                    MessageBox.Show("A játékod itt véget ért!", "Vesztettél!", MessageBoxButtons.OK);
+                    //this.BackgroundImage = new Bitmap("gamover.png");
+                    break;
+            }
+        }
+        private void ShowGameOver()
+        {
+            this.Controls.Clear();
+            this.BackgroundImage = Image.FromFile("gameover.png");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+
+        private void Fight(int enemySkill, int enemyStamina)
+        {
+            Random rand = new Random();
+            int playerStamina = playerStats.Stamina;
+
+            while (enemyStamina > 0 && playerStamina > 0)
+            {
+                int enemyAttack = enemySkill + rand.Next(1, 7) + rand.Next(1, 7);
+                int playerAttack = playerStats.Skill + rand.Next(1, 7) + rand.Next(1, 7);
+
+                if (playerAttack > enemyAttack)
+                {
+                    enemyStamina -= 2;
+                }
+                else if (enemyAttack > playerAttack)
+                {
+                    playerStamina -= 2;
+                }
+
+                if (playerStamina <= 0)
+                {
+                    ShowGameOver();
+                    return;
+                }
+                else if (enemyStamina <= 0)
+                {
+                    MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+        }
+    }
+}
