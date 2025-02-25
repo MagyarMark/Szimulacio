@@ -1155,7 +1155,6 @@ namespace KalandJatek
                     SzovegList[96].Visible = true;
                     SzovegList[96].Text = "#96\nAz alagút kanyarulata mögül túlvilági ragyogás árad. Ahogy a falra vetült játékot nézed, úgy érzed, a fény magától lüktet és változtatja a színét. Nagyon óvatosan fordulsz be a kanyarban, amin túl igen bizarr látvány fogad. Három nagyon alacsony, ezüstszínű, lebegő köpenybe öltözött alak táncol valamilyen rituális táncot a fény forrása körül. Az üreg falát itt mindenhol tükrök borítják, és a változó színek oda-vissza ugrálnak ezek közt, a lüktető ragyogástól erős szédülés tör rád. A forrás egy hatalmas kristály, mely egy magas talapzaton nyugszik, és képtelen vagy megállapítani, pontosan miféle kö is ez. Egyébként sincs idöd sokat spekulálni ezen, mivel az ezernyi tükörképnek köszönhetően az alakok felfigyelnek egy óvatlan mozdulatodra. A lények dühödten felkiáltva vetik rád magukat. Egy ellenfélként küzdj meg vele.";
                     currentIndex++;
-                    ShowGameOver();
                     break;
                 case 141:
                     tovabb.Text = "Tovabb";
@@ -1264,14 +1263,6 @@ namespace KalandJatek
                     {
                         currentIndex = 140;
                     }
-                    break;
-                case 140:
-                    tovabb.Text = "Tovabb";
-                    SzovegList[51].Visible = false;
-                    SzovegList[140].Visible = true;
-                    SzovegList[140].Text = "#140\n";
-                    currentIndex++;
-                    ShowGameOver();
                     break;
                 case 80:
                     tovabb.Text = "Tovabb";
@@ -3026,7 +3017,6 @@ namespace KalandJatek
                     felszereles.Visible = false;
                     felszereles2.Visible = false;
                     ekkovek.Visible = false;
-                    elelmiszer.Visible = false;
                     MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                     this.BackgroundImage = Image.FromFile("bg.png");
                     Enemy.Visible = false;
@@ -3042,7 +3032,6 @@ namespace KalandJatek
                     felszereles.Visible = true;
                     felszereles2.Visible = true;
                     ekkovek.Visible = true;
-                    elelmiszer.Visible = true;
                     Coins.Visible = true;
                     Coins.Text =$"Coins:{playerStats.Coins+3}";
                     Nyeremeny.Visible = true;
@@ -3142,7 +3131,6 @@ namespace KalandJatek
                     felszereles2.Visible = false;
                     Coins.Visible = false;
                     elelmiszer.Visible = false;
-                    ekkovek.Visible = false;
                     MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                     this.BackgroundImage = Image.FromFile("bg.png");
                     Enemy.Visible = false;
@@ -3156,7 +3144,6 @@ namespace KalandJatek
                     felszereles.Visible = true;
                     felszereles2.Visible = true;
                     elelmiszer.Visible = true;
-                    ekkovek.Visible = true;
                     hp.Visible = true;
                     stamina.Visible = true;
                     luck.Visible = true;
@@ -3577,8 +3564,6 @@ namespace KalandJatek
                     luck.Visible = false;
                     felszereles.Visible = false;
                     felszereles2.Visible = false;
-                    elelmiszer.Visible = false;
-                    ekkovek.Visible = false;
                     Coins.Visible = false;
                     MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                     this.BackgroundImage = Image.FromFile("bg.png");
@@ -3592,8 +3577,6 @@ namespace KalandJatek
                     italok.Visible = true;
                     felszereles.Visible = true;
                     felszereles2.Visible = true;
-                    elelmiszer.Visible = true;
-                    ekkovek.Visible = true;
                     hp.Visible = true;
                     stamina.Visible = true;
                     luck.Visible = true;
