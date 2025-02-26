@@ -48,7 +48,7 @@ namespace KalandJatek
 
             Start = new Button
             {
-                Text = "JÁTEK",
+                Text = "JÁTÉK",
                 Size = new Size(150, 100),
                 Location = new Point(1450, 550),
                 Font = new Font("Courier New", 20, FontStyle.Bold),
