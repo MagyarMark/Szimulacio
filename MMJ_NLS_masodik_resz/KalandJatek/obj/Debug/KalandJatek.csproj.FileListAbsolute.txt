@@ -38,3 +38,13 @@ C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\MMJ_NLS_masodik_resz\KalandJatek
 C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.csproj.CoreCompileInputs.cache
 C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.exe
 C:\Users\MagyarMark\Documents\GitHub\Szimul-ci-\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.pdb
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\bin\Debug\KalandJatek.exe.config
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\bin\Debug\KalandJatek.exe
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\bin\Debug\KalandJatek.pdb
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.csproj.AssemblyReference.cache
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.Form1.resources
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.Properties.Resources.resources
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.csproj.GenerateResource.cache
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.csproj.CoreCompileInputs.cache
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.exe
+C:\Users\markm\Documents\GitHub\Szimulacio\MMJ_NLS_masodik_resz\KalandJatek\obj\Debug\KalandJatek.pdb

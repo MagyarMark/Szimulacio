@@ -1521,9 +1521,9 @@ namespace KalandJatek
                 SzovegList[6].Visible = false;
                 SzovegList[168].Visible = false;
                 SzovegList[172].Visible = true;
-                SzovegList[172].Text = "#172\nA folyosó gyorsan szélesedik, végül egy kisebb szoba méreteit ölti magára. Nem messze töled ismét összeszűkül, és újra egyszerű járatként folytatja életét. Egy pillanatra megnyugszol amikor hirtelen annyit hallasz, hogy a falak elkezdenek újra össze szűkülni elkezdesz futni rohanni a kijárat felé, de nem voltál elég gyors. A játék itt számodra véget ért!";
+                SzovegList[172].Text = "#172\nA folyosó gyorsan szélesedik, végül egy kisebb szoba méreteit ölti magára. Nem messze töled ismét összeszűkül, és újra egyszerű járatként folytatja életét. A padló közepén egy sekély aknát látsz. Ha gyorsan átgázolsz rajta, hogy a túloldalon folytathasd az utad, lapozz a 163-ra. Ha bele akarsz ugrani, lapozz a 185-rc. Ha visszatérnél az előző elágazáshoz, és ott nyugati irányba mennél tovább, lapozz a 168-ra.";
                 currentIndex++;
-                ShowGameOver172();
+                
 
             }
             else if (choice24 == 168)
@@ -1531,11 +1531,10 @@ namespace KalandJatek
                 currentIndex = 168;
                 SzovegList[6].Visible = false;
                 SzovegList[168].Visible = true;
-                SzovegList[168].Text = "#168\nEgy újabb elágazáshoz érkezel. HIRTELEN a semmiből rád támad egy árnyember. Az árnyember kifosztott így semmi esélyed a túlélésre. A játékitt számodra véget ért!";
-                currentIndex++;
-                ShowGameOver168();
+                SzovegList[168].Text = "#168\nEgy újabb elágazáshoz érkezel. Ha észak felé mennél, lapozz a 161-re. Ha továbbra is nyugati irányba haladnál, lapozz a 73-ra.";
+
             }
-        }//Kész a játékos vesztett
+        }
         private void Tovabb4_Click(object sender, EventArgs e)
         {
             tovabb4.Text = "Tovabb";
@@ -1767,7 +1766,7 @@ namespace KalandJatek
                     currentIndex++;
                 }
             }
-        }//kész veszít vagy tovább jut a győzelem felé
+        }
         private void Tovabb7_Click(object sender, EventArgs e)
         {
             tovabb7.Text = "Tovabb";
@@ -1893,27 +1892,24 @@ namespace KalandJatek
                                     currentIndex = 58;
                                     SzovegList[167].Visible = false;
                                     SzovegList[58].Visible = true;
-                                    SzovegList[58].Text = "#58\nAhogy belépsz a szobába, a padlónak azon része, melyre ráléptél. Összetörik és lezuhansz. A játék itt számodra végetért!";
+                                    SzovegList[58].Text = "#58\n";
                                     currentIndex++;
-                                    ShowGameOver58();
                                 }
                             }else if (choice36 == 154)
                             {
                                 currentIndex = 154;
                                 SzovegList[90].Visible = false;
                                 SzovegList[154].Visible = true;
-                                SzovegList[154].Text = "#154\nBezáródott mögötted az ajtót és tovább haladsz amikor hallasz valami furcsa hangot, körbe nézel végül a tekinteted megakad egy zöld fénylő ponton a plafonon és bele sétálsz egy szakadékba. A játék számodra végetért!";
+                                SzovegList[154].Text = "#154\n";
                                 currentIndex++;
-                                ShowGameOver154();
                             }
                         }else if (choice35 == 16)
                         {
                             currentIndex = 16;
                             SzovegList[45].Visible = false;
                             SzovegList[16].Visible = true;
-                            SzovegList[16].Text = "#16\nAhogy előre haladsz, elkerüli figyelmedet egy medvecsapda. Belelépsz, fogai mélyen a lábadba marnak. Alig telik el pár másodperc és a vérveszteségbe belehalsz. A játék itt számodra végetért!";
+                            SzovegList[16].Text = "#16\n";
                             currentIndex++;
-                            ShowGameOver16();
                         }
                     }
                 }
@@ -1922,11 +1918,10 @@ namespace KalandJatek
                 currentIndex = 188;
                 SzovegList[181].Visible = false;
                 SzovegList[188].Visible = true;
-                SzovegList[188].Text = "#188\nA sár felszíne emelkedni kezd, és tompa pukkanás kíséretében egy óriási gázbuborék emelkedik ki belőle. Ahogy a felszín kisimulna, apró, zöld színü, cikázó fények jelennek meg rajta. A foltocskák kiemelkednek, aljukból csápok nőnek ki, melyek percről percre hosszabbodnak. Végül egy Iszapsárkány óriási feje bukkan elő félig a nyálkás folyadék mélyéből! Most már látod, hogy a zöld fények, amiket korábban láttál, valójában a lény fejéből kinövő csápok, melyek egészen addig szabadon lengeni látszanak, míg hirtelen mindegyik rád nem szegeződik. A hatalmas száj kinyilik, förtelmes szagú gáz tör elő belöle, ezután ellenfeled duzzadni kezd, ahogy levegővel szívja meg magát. Rájössz, hogy meg kell küzdenod vele.";
+                SzovegList[188].Text ="#188\n";
                 currentIndex++;
-                IszapSari(9,5);
             }
-        }//A játékos minden esetben veszít
+        }
         private void Tovabb10_Click(object sender, EventArgs e)
         {
             tovabb10.Text = "Tovabb";
@@ -2935,51 +2930,6 @@ namespace KalandJatek
             MessageBox.Show("Nincs más választásod, minthogy a válladdal ronts neki az ajtónak. Nem lesz egy egyszerű feladat, mivel a szegecsek igen hosszúak és hegyesek. Első neki futásra megsérűlsz majd a hirtelen vérvezteségbe bele halsz!", "Vesztettél!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Application.Exit();
         }
-        private void ShowGameOver58()
-        {
-            this.Controls.Clear();
-            this.BackgroundImage = null;
-            this.BackgroundImage = Image.FromFile("gameover.png");
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            MessageBox.Show("Ahogy belépsz a szobába, a padlónak azon része, melyre ráléptél. Összetörik és lezuhansz. A játék itt számodra végetért!", "Vesztettél!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Application.Exit();
-        }
-        private void ShowGameOver154()
-        {
-            this.Controls.Clear();
-            this.BackgroundImage = null;
-            this.BackgroundImage = Image.FromFile("gameover.png");
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            MessageBox.Show("Bezáródott mögötted az ajtót és tovább haladsz amikor hallasz valami furcsa hangot, körbe nézel végül a tekinteted megakad egy zöld fénylő ponton a plafonon és bele sétálsz egy szakadékba. A játék számodra végetért!", "Vesztettél!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Application.Exit();
-        }
-        private void ShowGameOver16()
-        {
-            this.Controls.Clear();
-            this.BackgroundImage = null;
-            this.BackgroundImage = Image.FromFile("gameover.png");
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            MessageBox.Show("Ahogy előre haladsz, elkerüli figyelmedet egy medvecsapda. Belelépsz, fogai mélyen a lábadba marnak. Alig telik el pár másodperc és a vérveszteségbe belehalsz. A játék itt számodra végetért!", "Vesztettél!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Application.Exit();
-        }
-        private void ShowGameOver172()
-        {
-            this.Controls.Clear();
-            this.BackgroundImage = null;
-            this.BackgroundImage = Image.FromFile("gameover.png");
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            MessageBox.Show("A folyosó gyorsan szélesedik, végül egy kisebb szoba méreteit ölti magára. Nem messze töled ismét összeszűkül, és újra egyszerű járatként folytatja életét. Egy pillanatra megnyugszol amikor hirtelen annyit hallasz, hogy a falak elkezdenek újra össze szűkülni elkezdesz futni rohanni a kijárat felé, de nem voltál elég gyors. A játék itt számodra véget ért!", "Vesztettél!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Application.Exit();
-        }
-        private void ShowGameOver168()
-        {
-            this.Controls.Clear();
-            this.BackgroundImage = null;
-            this.BackgroundImage = Image.FromFile("gameover.png");
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            MessageBox.Show("Egy újabb elágazáshoz érkezel. HIRTELEN a semmiből rád támad egy árnyember. Az árnyember kifosztott így semmi esélyed a túlélésre. A játékitt számodra véget ért!", "Vesztettél!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Application.Exit();
-        }
         private void ShowWin()
         {
             this.Controls.Clear();
@@ -3673,115 +3623,7 @@ namespace KalandJatek
             }
             datairas();
         }
-        private void IszapSari(int enemySkill, int enemyStamina)
-        {
-            SzovegList[158].Visible = false;
-            Player = new PictureBox()
-            {
-                Image = Image.FromFile("Player.png"),
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                BackColor = Color.Transparent,
-                Size = new Size(200, 350),
-                Location = new Point(885, 650),
-            };
-            Controls.Add(Player);
 
-            Enemy = new PictureBox()
-            {
-                Image = Image.FromFile("Xlaia.png"),
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                BackColor = Color.Transparent,
-                Size = new Size(200, 350),
-                Location = new Point(885, 65),
-            };
-            Controls.Add(Enemy);
-
-            playerhp = new Label()
-            {
-                Text = "Hp: " + playerStats.Hp.ToString(),
-                Font = new Font("Arial", 20, FontStyle.Bold),
-                BackColor = Color.Transparent,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup,
-                Size = new Size(250, 250),
-                Location = new Point(910, 620),
-                Visible = true
-
-            };
-            Controls.Add(playerhp);
-
-            enemyhp = new Label()
-            {
-                Text = "Hp: " + enemyStamina.ToString(),
-                Font = new Font("Arial", 20, FontStyle.Bold),
-                BackColor = Color.Transparent,
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup,
-                Size = new Size(250, 250),
-                Location = new Point(910, 430),
-                Visible = true
-
-            };
-            Controls.Add(enemyhp);
-            this.BackgroundImage = Image.FromFile("fightscene.png");
-
-            Random rand = new Random();
-            int playerStamina = playerStats.Hp;
-
-            while (enemyStamina > 0 && playerStamina > 0)
-            {
-                int enemyAttack = enemySkill + rand.Next(1, 7) + rand.Next(1, 7);
-                int playerAttack = playerStats.Skill + rand.Next(1, 7) + rand.Next(1, 7);
-
-                if (playerAttack > enemyAttack)
-                {
-                    enemyStamina -= 2;
-                }
-                else if (enemyAttack > playerAttack)
-                {
-                    playerStamina -= 2;
-                }
-
-                if (playerStamina >= 0)
-                {
-                    ShowGameOver();
-                }
-                else if (enemyStamina <= 0)
-                {
-                    SzovegList[1].Visible = false;
-                    tovabb.Visible = false;
-                    italok.Visible = false;
-                    hp.Visible = false;
-                    stamina.Visible = false;
-                    luck.Visible = false;
-                    felszereles.Visible = false;
-                    felszereles2.Visible = false;
-                    Coins.Visible = false;
-                    elelmiszer.Visible = false;
-                    ekkovek.Visible = false;
-                    MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
-                    this.BackgroundImage = Image.FromFile("bg.png");
-                    Enemy.Visible = false;
-                    Player.Visible = false;
-                    playerhp.Visible = false;
-                    enemyhp.Visible = false;
-                    tovabb.Visible = true;
-                    italok.Visible = true;
-                    felszereles.Visible = true;
-                    felszereles2.Visible = true;
-                    elelmiszer.Visible = true;
-                    ekkovek.Visible = true;
-                    hp.Visible = true;
-                    stamina.Visible = true;
-                    luck.Visible = true;
-                    Coins.Visible = true;
-                    playerhp.Text = $"Hp:{playerStats.Hp}";
-                    return;
-                }
-            }
-            datairas();
-            ShowGameOver();
-        }
-
+        
     }
 }

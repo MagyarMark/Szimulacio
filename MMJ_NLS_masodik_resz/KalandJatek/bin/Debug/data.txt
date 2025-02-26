@@ -1,8 +1,8 @@
 INVENTORY STAT
-Hp:11
-Luck: 11
-Stamina: 21
+Hp:7
+Luck: 10
+Stamina: 24
 Coins: 20
-Felszerelés: vaskard és börvért
+Felszerelés: vaskard és bőrvért
 Élelmiszer: Sündisznó sülthús
 Ékkövek: Aranyozott tolvaj kincse
