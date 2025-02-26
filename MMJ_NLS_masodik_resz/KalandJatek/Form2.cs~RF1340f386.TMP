@@ -228,7 +228,7 @@ namespace KalandJatek
 
             Nyeremeny = new Label
             {
-                Size = new Size(350, 150),
+                Size = new Size(350, 50),
                 Location = new Point(800,250),
                 Font = new Font("Courier New", 16, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#0c0b0d"),
@@ -626,7 +626,7 @@ namespace KalandJatek
             elelmiszer.Visible = true;
             ekkovek.Visible = true;
         }
-        private async void Tovabb_Click(object sender, EventArgs e)
+        private void Tovabb_Click(object sender, EventArgs e)
         {           
             int choice60 = -1;
             int choice61 = -1;
@@ -650,7 +650,7 @@ namespace KalandJatek
                     SzovegList[87].Visible = true;
                     SzovegList[87].Text = "#85\nA Tolvajnál mindössze 3 Aranytallért és egy háromszög alakú, penészes gyümölcsöt találsz. Még soha nem láttál ehhez hasonlót, de gyanítod, hogy ez lehet a Xentos, a hosszú élet gyümölcse. Ha nem lenne ilyen borzalmas állapotban, gond nélkül megkockáztatnád, hogy belekóstolj, igy azonban úgy döntesz, hogy itt hagyod és folytatod az utad észak felé. Hamarosan egy útelágazáshoz érsz. Ha továbbra is északnak tartasz, lapozz a 108-ra. Ha a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.";
                     currentIndex++;
-                    int choice = await GetUserChoice();
+                    int choice = GetUserChoice();
                     if (choice == 108)
                     {
                         currentIndex = 108;
@@ -1962,15 +1962,20 @@ namespace KalandJatek
         {
 
         }
-        private async Task<int> GetUserChoice()
+        private int GetUserChoice()
         {
-            await Task.Delay(10000);
+            DialogResult result108v147 = MessageBox.Show("Ha továbbra is északnak tartasz, lapozz a 108-ra.(IGEN)\nHa a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.(NEM)",
+                                                  "Válassz egy irányt!", MessageBoxButtons.YesNo);
 
-            DialogResult result108v147 = MessageBox.Show(
-                "Ha továbbra is északnak tartasz, lapozz a 108-ra.(IGEN)\nHa a nyugati irányba leágazó új járaton mennél tovább, lapozz a 147-re.(NEM)",
-                "Válassz egy irányt!", MessageBoxButtons.YesNo);
-
-            return result108v147 == DialogResult.Yes ? 108 : 147;
+            if (result108v147 == DialogResult.Yes)
+            {
+                return 108;
+            }
+            else if (result108v147 == DialogResult.No)
+            {
+                return 147;
+            }
+            return 108;
         }
         private int GetUserChoice2()
         {
@@ -3021,8 +3026,8 @@ namespace KalandJatek
 
         private async void Tolvaj(int enemySkill, int enemyStamina)
         {
-            SaveControlsState();
-            Controls.Clear();
+            SaveControlsState(); // Elmenti az állapotot
+            Controls.Clear();    // Törli a vezérlőket
 
             Player = new PictureBox()
             {
@@ -3099,20 +3104,12 @@ namespace KalandJatek
             if (playerStamina <= 0)
             {
                 MessageBox.Show("Vesztettél!", "Vereség", MessageBoxButtons.OK);
-                ShowGameOver();
             }
             else if (enemyStamina <= 0)
             {
                 MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                 Enemy.Visible = false;
-                Image ekko = new Bitmap("ekko.png");
-                ekkovek.Image = ekko;
-                ekkovek.ImageAlign = ContentAlignment.TopLeft;
-                Nyeremeny.Visible = true;
-                Nyeremeny.Text = $"3 Coint kaptál\n +\n egy drágakövet";
                 Coins.Text = $"Coins: {playerStats.Coins + 3}";
-                this.BackgroundImage = Image.FromFile("bg.png");
-                RestoreControlsState();
             }
         }
 
