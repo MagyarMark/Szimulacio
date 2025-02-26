@@ -792,7 +792,7 @@ namespace KalandJatek
                     SzovegList[138].Text = "#138\nKardodhoz kapsz, de elkéstél. Az állat meghallotta a zajt és felébredt. Rémülten nézed, ahogy először egy, majd két pofa emelkedik fel, hogy a levegőbe szagoljon. Ez nem egy egyszerű kutya, vagy netán farkas. Ez egy rémséges Xlaia, ami legjobb tudomásod szerint körülbelül száz éve halt ki. A falhoz ugrasz, mert tudod, hogy védened kell majd hátadat, és előhúzott karddal készülsz fel a lény támadására. A Xlaia morogva ugrik ki kosarából. Mindkét vicsorgó pofából sárga agyarak lógnak elő, melyeken még ott piroslik legutóbbi ebédjük vére. Hogy még rosszabb legyen a helyzet, a lény szájaiból hosszú, nyálkás szálakban lóg a nyál, ami azt jelenti, hogy ez a fenevad veszett! Bár lenne nálad némi víz, hogy távol tartsd magadtól, ahogy a fenti világban is tennéd. A teremtmény jobbra-balra lengeti fejeit. miközben közeledik feléd. Meg kell küzdened vele!";
                     currentIndex++;
                     Xlaia(8,7);
-                    int choice45 = await GetUserChoice45();
+                    int choice45 = GetUserChoice45();
                     if (choice45 == 100)
                     {
                         currentIndex = 100;
@@ -1324,7 +1324,7 @@ namespace KalandJatek
                     playerStats.Hp -= 3;
                     playerhp.Text = $"Hp:{playerStats.Hp}";
                     currentIndex++;
-                    int choice16 = await GetUserChoice16();
+                    int choice16 = GetUserChoice16();
                     if (choice16 == 42)
                     {
                         currentIndex = 42;
@@ -1375,12 +1375,6 @@ namespace KalandJatek
                     SzovegList[148].Text = "#148\nCsaknem megfulladsz, de kitartasz. Dobj két kockával. Ha az eredmény kevesebb vagy ugyanannyi, mint UGYESSÉG pontjaid száma, lapozz a 103-ra. Ha nagyobb, lapozz a 15-re.";
                     currentIndex++;
                     FulladasSkip();
-                    break;
-                case 15:
-                    ShowGameOver();
-                    break;
-                case 103:
-                    ShowGameOver();
                     break;
                 case 40:
                     tovabb.Text = "Tovabb";
@@ -2151,13 +2145,15 @@ namespace KalandJatek
             }
             return 153;
         }
-        private async Task<int> GetUserChoice16()
+        private int GetUserChoice16()
         {
-            await Task.Delay(10000);
-
             DialogResult result42 = MessageBox.Show("Indulás a 42-as mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
 
-            return result42 == DialogResult.Yes ? 42 : 42;
+            if (result42 == DialogResult.Yes)
+            {
+                return 42;
+            }
+            return 42;
         }
         private int GetUserChoice17()
         {
@@ -2479,15 +2475,15 @@ namespace KalandJatek
             }
             return 30;
         }
-        private async Task<int> GetUserChoice45()
+        private int GetUserChoice45()
         {
-            await Task.Delay(10000);
-
             DialogResult result100 = MessageBox.Show("Indulás a 100-as mezőre!(IGEN/NEM)", "Válaszolj!", MessageBoxButtons.YesNo);
 
-            return result100 == DialogResult.Yes ? 108 : 100;
-
-
+            if (result100 == DialogResult.Yes)
+            {
+                return 100;
+            }
+            return 100;
         }
         private int GetUserChoice46()
         {
@@ -3030,7 +3026,7 @@ namespace KalandJatek
 
             Player = new PictureBox()
             {
-                Image = Image.FromFile("player.png"),
+                Image = Image.FromFile("Player.png"),
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 BackColor = Color.Transparent,
                 Size = new Size(200, 350),
@@ -3107,7 +3103,6 @@ namespace KalandJatek
             }
             else if (enemyStamina <= 0)
             {
-                Player.Image = Image.FromFile("playerfront.png");
                 MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                 Enemy.Visible = false;
                 Image ekko = new Bitmap("ekko.png");
@@ -3117,10 +3112,9 @@ namespace KalandJatek
                 Nyeremeny.Text = $"3 Coint kaptál\n +\n egy drágakövet";
                 Coins.Text = $"Coins: {playerStats.Coins + 3}";
                 this.BackgroundImage = Image.FromFile("bg.png");
-                datairas();
                 RestoreControlsState();
             }
-        }//win
+        }
 
         private async Task AttackAnimation(PictureBox attacker, PictureBox target)
         {
@@ -3132,6 +3126,120 @@ namespace KalandJatek
             }
             attacker.Location = new Point(originalX, attacker.Location.Y);
             await Task.Delay(100);
+        }
+        private void Suni(int enemySkill, int enemyStamina)
+        {
+            SzovegList[153].Visible = false;
+            Player = new PictureBox()
+            {
+                Image = Image.FromFile("Player.png"),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BackColor = Color.Transparent,
+                Size = new Size(200, 350),
+                Location = new Point(885, 650),
+            };
+            Controls.Add(Player);
+
+            Enemy = new PictureBox()
+            {
+                Image = Image.FromFile("Suni.png"),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BackColor = Color.Transparent,
+                Size = new Size(200, 350),
+                Location = new Point(885, 65),
+            };
+            Controls.Add(Enemy);
+
+            playerhp = new Label()
+            {
+                Text = "Hp: " + playerStats.Hp.ToString(),
+                Font = new Font("Arial", 20, FontStyle.Bold),
+                BackColor = Color.Transparent,
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Size = new Size(250, 250),
+                Location = new Point(910, 620),
+                Visible = true
+
+            };
+            Controls.Add(playerhp);
+
+            enemyhp = new Label()
+            {
+                Text = "Hp: " + enemyStamina.ToString(),
+                Font = new Font("Arial", 20, FontStyle.Bold),
+                BackColor = Color.Transparent,
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Popup,
+                Size = new Size(250, 250),
+                Location = new Point(910, 430),
+                Visible = true
+
+            };
+            Controls.Add(enemyhp);
+            this.BackgroundImage = Image.FromFile("fightscene.png");
+
+            Image husi = new Bitmap("husi.png");
+            elelmiszer.Image = husi;
+            elelmiszer.ImageAlign = ContentAlignment.TopLeft;
+
+            Random rand = new Random();
+            int playerStamina = playerStats.Hp;
+
+            while (enemyStamina > 0 && playerStamina > 0)
+            {
+                int enemyAttack = enemySkill + rand.Next(1, 7) + rand.Next(1, 7);
+                int playerAttack = playerStats.Skill + rand.Next(1, 7) + rand.Next(1, 7);
+
+                if (playerAttack > enemyAttack)
+                {
+                    enemyStamina -= 2;
+                }
+                else if (enemyAttack > playerAttack)
+                {
+                    playerStamina -= 2;
+                }
+
+                if (playerStamina <= 0)
+                {
+                    continue;
+                }
+                else if (enemyStamina <= 0)
+                {
+                    SzovegList[1].Visible = false;
+                    tovabb.Visible = false;
+                    italok.Visible = false;
+                    hp.Visible = false;
+                    stamina.Visible = false;
+                    luck.Visible = false;
+                    felszereles.Visible = false;
+                    felszereles2.Visible = false;
+                    Coins.Visible = false;
+                    elelmiszer.Visible = false;
+                    ekkovek.Visible = false;
+                    MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
+                    this.BackgroundImage = Image.FromFile("bg.png");
+                    Enemy.Visible = false;
+                    Player.Visible = false;
+                    playerhp.Visible = false;
+                    enemyhp.Visible = false;
+                    SzovegList[153].Visible = true;
+                    SzovegList[153].Text = "#153\nMivel a tüskék nagyon mérgezőek, valahányszor beléd áll valamelyik, a szokásos 2 helyett 3 ÉLETERŐ pontot kell levonnod magadtól. Lapozz a 42-re.";
+                    tovabb.Visible = true;
+                    italok.Visible = true;
+                    felszereles.Visible = true;
+                    felszereles2.Visible = true;
+                    elelmiszer.Visible = true;
+                    ekkovek.Visible = true;
+                    hp.Visible = true;
+                    stamina.Visible = true;
+                    luck.Visible = true;
+                    Coins.Visible = true;
+                    playerhp.Text = $"Hp:{playerStats.Hp}";
+                    return;
+                }
+            }
+            datairas();
         }
 
         private async void Suni(int enemySkill, int enemyStamina)
@@ -3220,21 +3328,18 @@ namespace KalandJatek
             }
             else if (enemyStamina <= 0)
             {
-                Player.Image = Image.FromFile("playerfront.png");
                 MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
                 Enemy.Visible = false;
                 Image ekko = new Bitmap("ekko.png");
                 ekkovek.Image = ekko;
-                ekkovek.ImageAlign = ContentAlignment.TopLeft; 
-                SzovegList[153].Visible = true;
-                SzovegList[153].Text = "#153\nMivel a tüskék nagyon mérgezőek, valahányszor beléd áll valamelyik, a szokásos 2 helyett 3 ÉLETERŐ pontot kell levonnod magadtól. Lapozz a 42-re.";
-                playerhp.Text = $"Hp:{playerStats.Hp}";
+                ekkovek.ImageAlign = ContentAlignment.TopLeft;
+                Nyeremeny.Visible = true;
+                Nyeremeny.Text = $"3 Coint kaptál\n +\n egy drágakövet";
+                Coins.Text = $"Coins: {playerStats.Coins + 3}";
                 this.BackgroundImage = Image.FromFile("bg.png");
-                datairas();
                 RestoreControlsState();
             }
-        }//win
-
+        }
         private void Galon(int enemySkill, int enemyStamina)
         {
             SzovegList[158].Visible = false;
@@ -3345,13 +3450,10 @@ namespace KalandJatek
             }
             datairas();
             ShowGameOver();
-        }//lose
-
-        private async void Xlaia(int enemySkill, int enemyStamina)//lose v win
+        }
+        private void Xlaia(int enemySkill, int enemyStamina)
         {
             SzovegList[138].Visible = false;
-            SaveControlsState();
-            Controls.Clear();
             Player = new PictureBox()
             {
                 Image = Image.FromFile("Player.png"),
@@ -3412,39 +3514,53 @@ namespace KalandJatek
                 if (playerAttack > enemyAttack)
                 {
                     enemyStamina -= 2;
-                    await AttackAnimation(Player, Enemy);
                 }
                 else if (enemyAttack > playerAttack)
                 {
                     playerStamina -= 2;
-                    await AttackAnimation(Enemy, Player);
                 }
 
-                playerhp.Text = "Hp: " + playerStamina;
-                enemyhp.Text = "Hp: " + enemyStamina;
-
-                await Task.Delay(500);
+                if (playerStamina >= 0)
+                {
+                    ShowGameOver();
+                }
+                else if (enemyStamina <= 0)
+                {
+                    SzovegList[1].Visible = false;
+                    tovabb.Visible = false;
+                    italok.Visible = false;
+                    hp.Visible = false;
+                    stamina.Visible = false;
+                    luck.Visible = false;
+                    felszereles.Visible = false;
+                    felszereles2.Visible = false;
+                    Coins.Visible = false;
+                    elelmiszer.Visible = false;
+                    ekkovek.Visible = false;
+                    MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
+                    this.BackgroundImage = Image.FromFile("bg.png");
+                    Enemy.Visible = false;
+                    Player.Visible = false;
+                    playerhp.Visible = false;
+                    enemyhp.Visible = false;
+                    SzovegList[138].Visible = true;
+                    SzovegList[138].Text = "#138\nHa végzel vele, lapozz a 100-ra.";
+                    tovabb.Visible = true;
+                    italok.Visible = true;
+                    felszereles.Visible=true;
+                    felszereles2.Visible=true;
+                    elelmiszer.Visible = true;
+                    ekkovek.Visible = true;
+                    hp.Visible = true;
+                    stamina.Visible = true;
+                    luck.Visible = true;
+                    Coins.Visible = true;
+                    playerhp.Text = $"Hp:{playerStats.Hp}";
+                    return;
+                }
             }
-            if (playerStamina <= 0)
-            {
-                MessageBox.Show("Vesztettél!", "Vereség", MessageBoxButtons.OK);
-                ShowGameOver();
-            }
-            else if (enemyStamina <= 0)
-            {
-                Player.Image = Image.FromFile("playerfront.png");
-                MessageBox.Show("Győztél!", "Siker", MessageBoxButtons.OK);
-                Enemy.Visible = false;
-                SzovegList[138].Visible = true;
-                SzovegList[138].Text = "#138\nHa végzel vele, lapozz a 100-ra.";
-                playerhp.Text = $"Hp:{playerStats.Hp}";
-                this.BackgroundImage = Image.FromFile("bg.png");
-                datairas();
-                RestoreControlsState();
-            }
-
+            datairas();
         }
-
         private void torpe(int enemySkill, int enemyStamina)
         {
             SzovegList[66].Visible = false;
@@ -3555,7 +3671,6 @@ namespace KalandJatek
             }
             datairas();
         }
-
         private void Ork(int enemySkill, int enemyStamina)
         {
             SzovegList[107].Visible = false;
@@ -3666,7 +3781,6 @@ namespace KalandJatek
             }
             datairas();
         }
-
         private void IszapSari(int enemySkill, int enemyStamina)
         {
             SzovegList[158].Visible = false;

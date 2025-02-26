@@ -28,6 +28,7 @@ namespace KalandJatek
             this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             Image myimage = new Bitmap("hatter2.png");
+            BackgroundImageLayout = ImageLayout.Stretch;
             this.BackgroundImage = myimage;
         }
 
@@ -54,8 +55,7 @@ namespace KalandJatek
                 Font = new Font("Courier New", 20, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
-                FlatStyle = FlatStyle.Popup,
-                Visible = false
+                FlatStyle = FlatStyle.Popup
             };
             Start.Click += Start_Click;
             Controls.Add(Start);
@@ -63,11 +63,12 @@ namespace KalandJatek
             jobb = new Button
             {
                 Text = ">",
-                Size = new Size(30,25),
-                Location = new Point(650, 770),
-                Font = new Font("Courier New", 11, FontStyle.Bold),
+                Size = new Size(69,50),
+                Location = new Point(630, 750),
+                Font = new Font("Courier New", 16, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
+                TextAlign = ContentAlignment.MiddleCenter,
                 FlatStyle = FlatStyle.Popup
             };
             jobb.Click += Jobb_Click;
@@ -76,12 +77,13 @@ namespace KalandJatek
             bal = new Button
             {
                 Text = "<",
-                Size = new Size(30, 25),
-                Location = new Point(650, 770),
-                Font = new Font("Courier New", 11, FontStyle.Bold),
+                Size = new Size(69, 50),
+                Location = new Point(630, 750),
+                Font = new Font("Courier New", 16, FontStyle.Bold),
                 BackColor = ColorTranslator.FromHtml("#a17e51"),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Popup,
+                TextAlign = ContentAlignment.MiddleCenter,
                 Visible = false
             };
             bal.Click += Bal_Click;
@@ -132,7 +134,6 @@ namespace KalandJatek
             Kszoveg.Text = "Ember! kezdi.\nKarddal a kezedben, apám, a Törzsfőnökünk meggyilkolt testével a lábad előtt találtunk rád.\r\nRájössz, hogy ezek azt hiszik, te vagy a gyilkos.\nTiltakozni próbálnál, azonban az Elf egy intésére elhallgatsz.\nAz ítélet Labirintusához viszünk fejezi be mondanivalóját. Hátat fordít neked, és elsétál, te pedig kísérőid körében kénytelen vagy követni.\nMiközben az örök egymás közt vitatják meg a látottakat, megtudod, hogy a labirintus egy titkos hely, ahol a bűnösöket teszik próbára. Minden ..próba\" előtt egy kis Aranyszobrot rejtenek el annak mélyén, a próba alanyának pedig meg kell találnia azt.\nHa ez nem sikerül, bünösnek ítélik, ám ha rálel, és sikerül kijuttatnia odabentről, ártatlannak találják, és szabadon engedik.\r\nA fak ritkulni kezdenek, a menet pedig egy hatalmas fa törzsénél megtorpan.\nA Főnök fia motyog pár szót, mire a kéreg egy része kinyílik, mögötte pedig feltűnik a labirintus bejárata...\r\n";
             jobb.Visible = false;
             bal.Visible = true;
-            Start.Visible = true;
             
         }
 
@@ -141,7 +142,6 @@ namespace KalandJatek
             Kszoveg.Text = "Az Osztriga-öböltől délre, nagyjából nyolcvan kilométerre terül el a Koponyák Sivataga. Forró, veszedelmes és mindent egybevetve igen kellemetlen hely, ám te kénytelen vagy átkelni rajta, hisz déli felén terül el a drágakőbányáiról messze földön híres és gazdag Zafirváros. Vonz a hatalmas vagyon, mely minden harcos számára elérhető, aki hajlandó akár a köveket, akár a pénzt kísérni egyik településből a másikba. A munka azonban nem veszélytelen.\r\nAhogy a sivatag felé közeledsz, segélykiáltásokat hallasz az utat szegélyező bozótos túloldaláról. Mikor közelebb lépsz, még épp látod, ahogy egy ocsmány Goblin tört márt egy igen fontosnak látszó Elf férfi szívébe, aki azonnal a földre roskad.\r\nEgyből előre rontasz, hogy elkapd a gyilkost, ám pechedre megbotlasz, az aljas teremtmény pedig észrevesz téged, és eltűnik az aljnövényzetben.Csak állsz, és a halott Elf tetemét bámulod. Amennyire meg tudod állapítani, az egyik helyi törzs vezetője lehetett. Kezében egy nagy, kék színű gyémántot szorongat. Hirtelen megrezzennek körülötted a bokrok! Arra gondolsz, talán a Goblin tért vissza, így előhúzod kardodat. Legnagyobb meglepetésedre azonban húsz vagy harminc Elf gyűrűjében találod magadat, akik megfeszített íjakkal vesznek körbe. Egyikük előre lép, és komoran megszólít.\r\n";
             bal.Visible= false;
             jobb.Visible= true;
-            Start.Visible = true;
         }
     }
 }

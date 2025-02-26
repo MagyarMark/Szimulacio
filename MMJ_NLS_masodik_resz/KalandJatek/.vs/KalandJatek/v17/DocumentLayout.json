@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "Form2.cs",
               "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\MMJ_NLS_masodik_resz\\KalandJatek\\Form2.cs",
               "RelativeToolTip": "Form2.cs",
-              "ViewState": "AQIAAGMLAAAAAAAAAAA5wBkNAAAJAAAA",
+              "ViewState": "AQIAAAQMAAAAAAAAAAAYwBAMAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T11:23:01Z",
               "EditorCaption": ""
@@ -61,9 +61,10 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\MMJ_NLS_masodik_resz\\KalandJatek\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEMAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T10:20:36.751Z"
+              "WhenOpened": "2025-02-05T10:20:36.751Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -75,7 +76,8 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T11:07:57.812Z"
+              "WhenOpened": "2025-02-05T11:07:57.812Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -83,10 +85,11 @@
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\MMJ_NLS_masodik_resz\\KalandJatek\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\MagyarMark\\Documents\\GitHub\\Szimul-ci-\\MMJ_NLS_masodik_resz\\KalandJatek\\Form1.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\MagyarMark\\Documents\\GitHub\\Szimul-ci-\\MMJ_NLS_masodik_resz\\KalandJatek\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\markm\\Documents\\GitHub\\Szimulacio\\MMJ_NLS_masodik_resz\\KalandJatek\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T10:20:01.735Z"
+              "WhenOpened": "2025-02-05T10:20:01.735Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
