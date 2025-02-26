@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -2938,6 +2939,19 @@ namespace KalandJatek
             MessageBox.Show("Az ajtót kinyitva meglátsz egy pázsitot és hátra nézve össze omlik a labirintus, gyorsan átmész az ajtón és rá eszmélsz, hogy sikeresen kijutottál az ÍTÉLET LABIRINTUSÁBÓL!", "Nyertél!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             Application.Exit();
         }
+        private void datairas()
+        {
+            StreamWriter ki = new StreamWriter("data.txt");
+            ki.WriteLine($"INVENTORY STAT");
+            ki.WriteLine($"Hp:{playerStats.Hp}");
+            ki.Write($"Luck: {playerStats.Luck}\n");
+            ki.WriteLine($"Stamina: {playerStats.Stamina}");
+            ki.WriteLine($"Coins: {playerStats.Coins}");
+            ki.WriteLine($"Felszerelés: vaskard és bőrvért");
+            ki.WriteLine($"Élelmiszer: Sündisznó sülthús");
+            ki.WriteLine($"Ékkövek: Aranyozott tolvaj kincse");
+            ki.Close();
+        }
         private void Tolvaj(int enemySkill, int enemyStamina)
         {
             Player = new PictureBox()
@@ -3048,10 +3062,11 @@ namespace KalandJatek
                     Nyeremeny.Visible = true;
                     Nyeremeny.Text = $"3 Coint kaptál";
                     playerhp.Text =$"Hp:{playerStats.Hp}";
-                    
+                    datairas();
                     return;
                 }
             }
+            
         }
         private void Suni(int enemySkill, int enemyStamina)
         {
@@ -3165,6 +3180,7 @@ namespace KalandJatek
                     return;
                 }
             }
+            datairas();
         }
         private void Galon(int enemySkill, int enemyStamina)
         {
@@ -3274,6 +3290,7 @@ namespace KalandJatek
                     return;
                 }
             }
+            datairas();
             ShowGameOver();
         }
         private void Xlaia(int enemySkill, int enemyStamina)
@@ -3384,6 +3401,7 @@ namespace KalandJatek
                     return;
                 }
             }
+            datairas();
         }
         private void torpe(int enemySkill, int enemyStamina)
         {
@@ -3493,6 +3511,7 @@ namespace KalandJatek
                     return;
                 }
             }
+            datairas();
         }
         private void Ork(int enemySkill, int enemyStamina)
         {
@@ -3602,6 +3621,9 @@ namespace KalandJatek
                     return;
                 }
             }
+            datairas();
         }
+
+        
     }
 }
